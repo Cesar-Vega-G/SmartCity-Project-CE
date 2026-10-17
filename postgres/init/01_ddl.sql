@@ -1,4 +1,4 @@
--- Modelo relacional SmartCity
+-- Modelo relacional SmartCity Madrid
 
 CREATE TABLE ciudad (
     id_ciudad   SMALLINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -54,8 +54,10 @@ CREATE TABLE usuario (
 );
 
 -- id_sensor es el mismo codigo que se usa en Mongo (ej: S-00001)
+-- codigo_origen es el codigo del sensor en los datos abiertos de Madrid
 CREATE TABLE sensor (
     id_sensor         VARCHAR(12) PRIMARY KEY,
+    codigo_origen     VARCHAR(30),
     nombre            VARCHAR(150) NOT NULL,
     id_tipo           SMALLINT NOT NULL REFERENCES tipo_sensor(id_tipo),
     id_ubicacion      INT NOT NULL REFERENCES ubicacion(id_ubicacion),
