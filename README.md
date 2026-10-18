@@ -27,6 +27,12 @@ Avance 1: PostgreSQL + MongoDB.
    python data/generators/cargar_mongo.py
    python data/generators/cargar_postgres.py
    ```
+5. Medir el rendimiento con y sin índices (opcional, tarda unos minutos):
+   ```
+   python postgres/rendimiento/medir_pg.py
+   python mongo/rendimiento/medir_mongo.py
+   ```
+   Los resultados quedan en `docs/rendimiento_postgres.md` y `docs/rendimiento_mongo.md`.
 
 ## Estructura
 
@@ -35,6 +41,8 @@ Avance 1: PostgreSQL + MongoDB.
 | `postgres/init` | DDL que crea las tablas (se ejecuta solo al levantar Docker) |
 | `postgres/consultas` | Consultas de PostgreSQL |
 | `postgres/vistas_funciones` | Vistas, vista materializada y funciones |
+| `postgres/rendimiento` | Índices de PostgreSQL y script que mide con y sin índices |
 | `mongo/consultas` | Consultas de MongoDB |
+| `mongo/rendimiento` | Índices de MongoDB y script que mide con y sin índices |
 | `data/generators` | Scripts de carga de datos |
-| `docs` | Contrato de datos, generación de datos y documentación |
+| `docs` | Contrato de datos, generación de datos, infraestructura y rendimiento |

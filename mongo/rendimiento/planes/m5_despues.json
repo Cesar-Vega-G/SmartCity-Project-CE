@@ -1,0 +1,199 @@
+{
+  "explainVersion": "1",
+  "stages": [
+    {
+      "$cursor": {
+        "queryPlanner": {
+          "namespace": "smartcity.alertas",
+          "indexFilterSet": false,
+          "parsedQuery": {
+            "nivel": {
+              "$eq": "critica"
+            }
+          },
+          "queryHash": "7AE08463",
+          "planCacheKey": "D8C74DD8",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "winningPlan": {
+            "stage": "PROJECTION_DEFAULT",
+            "transformBy": {
+              "ubicacion.distrito": 1,
+              "_id": 0
+            },
+            "inputStage": {
+              "stage": "IXSCAN",
+              "keyPattern": {
+                "nivel": 1,
+                "ubicacion.distrito": 1
+              },
+              "indexName": "idx_nivel_distrito",
+              "isMultiKey": false,
+              "multiKeyPaths": {
+                "nivel": [],
+                "ubicacion.distrito": []
+              },
+              "isUnique": false,
+              "isSparse": false,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "forward",
+              "indexBounds": {
+                "nivel": [
+                  "[\"critica\", \"critica\"]"
+                ],
+                "ubicacion.distrito": [
+                  "[MinKey, MaxKey]"
+                ]
+              }
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 4996,
+          "executionTimeMillis": 7,
+          "totalKeysExamined": 4996,
+          "totalDocsExamined": 0,
+          "executionStages": {
+            "stage": "PROJECTION_DEFAULT",
+            "nReturned": 4996,
+            "executionTimeMillisEstimate": 0,
+            "works": 4997,
+            "advanced": 4996,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 5,
+            "restoreState": 5,
+            "isEOF": 1,
+            "transformBy": {
+              "ubicacion.distrito": 1,
+              "_id": 0
+            },
+            "inputStage": {
+              "stage": "IXSCAN",
+              "nReturned": 4996,
+              "executionTimeMillisEstimate": 0,
+              "works": 4997,
+              "advanced": 4996,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 5,
+              "restoreState": 5,
+              "isEOF": 1,
+              "keyPattern": {
+                "nivel": 1,
+                "ubicacion.distrito": 1
+              },
+              "indexName": "idx_nivel_distrito",
+              "isMultiKey": false,
+              "multiKeyPaths": {
+                "nivel": [],
+                "ubicacion.distrito": []
+              },
+              "isUnique": false,
+              "isSparse": false,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "forward",
+              "indexBounds": {
+                "nivel": [
+                  "[\"critica\", \"critica\"]"
+                ],
+                "ubicacion.distrito": [
+                  "[MinKey, MaxKey]"
+                ]
+              },
+              "keysExamined": 4996,
+              "seeks": 1,
+              "dupsTested": 0,
+              "dupsDropped": 0
+            }
+          }
+        }
+      },
+      "nReturned": 4996,
+      "executionTimeMillisEstimate": 4
+    },
+    {
+      "$group": {
+        "_id": "$ubicacion.distrito",
+        "total": {
+          "$sum": {
+            "$const": 1
+          }
+        }
+      },
+      "maxAccumulatorMemoryUsageBytes": {
+        "total": 1152
+      },
+      "totalOutputDataSizeBytes": 3073,
+      "usedDisk": false,
+      "spills": 0,
+      "spilledDataStorageSize": 0,
+      "numBytesSpilledEstimate": 0,
+      "spilledRecords": 0,
+      "nReturned": 12,
+      "executionTimeMillisEstimate": 7
+    },
+    {
+      "$sort": {
+        "sortKey": {
+          "total": -1
+        }
+      },
+      "totalDataSizeSortedBytesEstimate": 3169,
+      "usedDisk": false,
+      "spills": 0,
+      "spilledDataStorageSize": 0,
+      "nReturned": 12,
+      "executionTimeMillisEstimate": 7
+    }
+  ],
+  "serverInfo": {
+    "host": "1f665f04c3ad",
+    "port": 27017,
+    "version": "7.0.45",
+    "gitVersion": "a52313e13ab55c9bddf7c3ff91dab286fa381796"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "forceClassicEngine"
+  },
+  "command": {
+    "aggregate": "alertas",
+    "pipeline": [
+      {
+        "$match": {
+          "nivel": "critica"
+        }
+      },
+      {
+        "$group": {
+          "_id": "$ubicacion.distrito",
+          "total": {
+            "$sum": 1
+          }
+        }
+      },
+      {
+        "$sort": {
+          "total": -1
+        }
+      }
+    ],
+    "cursor": {},
+    "$db": "smartcity"
+  },
+  "ok": 1.0
+}

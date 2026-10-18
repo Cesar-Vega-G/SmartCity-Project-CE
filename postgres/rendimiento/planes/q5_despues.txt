@@ -1,0 +1,28 @@
+SELECT s.id_sensor, s.nombre
+        FROM sensor s
+        WHERE NOT EXISTS (SELECT 1 FROM medicion m WHERE m.id_sensor = s.id_sensor)
+
+Nested Loop Anti Join  (cost=0.43..18226.84 rows=10 width=51) (actual time=0.909..3.367 rows=9 loops=1)
+  Buffers: shared hit=2594
+  ->  Seq Scan on sensor s  (cost=0.00..8.24 rows=324 width=51) (actual time=0.004..0.042 rows=324 loops=1)
+        Buffers: shared hit=5
+  ->  Append  (cost=0.43..1285.17 rows=51566 width=8) (actual time=0.010..0.010 rows=1 loops=324)
+        Buffers: shared hit=2589
+        ->  Index Only Scan using medicion_2024_id_sensor_fecha_hora_idx on medicion_2024 m_1  (cost=0.43..457.26 rows=24214 width=8) (actual time=0.003..0.003 rows=0 loops=324)
+              Index Cond: (id_sensor = (s.id_sensor)::text)
+              Heap Fetches: 0
+              Buffers: shared hit=973
+        ->  Index Only Scan using medicion_2025_id_sensor_fecha_hora_idx on medicion_2025 m_2  (cost=0.43..391.77 rows=20026 width=8) (actual time=0.002..0.002 rows=0 loops=279)
+              Index Cond: (id_sensor = (s.id_sensor)::text)
+              Heap Fetches: 0
+              Buffers: shared hit=838
+        ->  Index Only Scan using medicion_2026_id_sensor_fecha_hora_idx on medicion_2026 m_3  (cost=0.43..178.31 rows=7325 width=8) (actual time=0.006..0.006 rows=1 loops=259)
+              Index Cond: (id_sensor = (s.id_sensor)::text)
+              Heap Fetches: 0
+              Buffers: shared hit=778
+        ->  Seq Scan on medicion_default m_4  (cost=0.00..0.00 rows=1 width=42) (actual time=0.000..0.000 rows=0 loops=9)
+              Filter: ((id_sensor)::text = (s.id_sensor)::text)
+Planning:
+  Buffers: shared hit=7
+Planning Time: 0.345 ms
+Execution Time: 3.390 ms

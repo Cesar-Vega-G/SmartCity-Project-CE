@@ -1,0 +1,27 @@
+SELECT COUNT(*)
+        FROM medicion m
+        JOIN variable v ON v.id_variable = m.id_variable
+        WHERE v.nombre = 'carga' AND m.valor > 80
+          AND m.fecha_hora >= '2026-07-01' AND m.fecha_hora < '2026-08-01'
+
+Aggregate  (cost=20692.47..20692.48 rows=1 width=8) (actual time=24.338..24.341 rows=1 loops=1)
+  Buffers: shared hit=4138
+  ->  Nested Loop  (cost=648.45..20672.39 rows=8033 width=0) (actual time=5.118..24.296 rows=622 loops=1)
+        Buffers: shared hit=4138
+        ->  Seq Scan on variable v  (cost=0.00..1.19 rows=1 width=2) (actual time=0.004..0.008 rows=1 loops=1)
+              Filter: ((nombre)::text = 'carga'::text)
+              Rows Removed by Filter: 14
+              Buffers: shared hit=1
+        ->  Bitmap Heap Scan on medicion_2026 m  (cost=648.45..20590.87 rows=8033 width=2) (actual time=5.112..24.228 rows=622 loops=1)
+              Recheck Cond: ((id_variable = v.id_variable) AND (fecha_hora >= '2026-07-01 00:00:00'::timestamp without time zone) AND (fecha_hora < '2026-08-01 00:00:00'::timestamp without time zone))
+              Filter: (valor > '80'::numeric)
+              Rows Removed by Filter: 147293
+              Heap Blocks: exact=4006
+              Buffers: shared hit=4137
+              ->  Bitmap Index Scan on medicion_2026_id_variable_fecha_hora_idx  (cost=0.00..646.44 rows=39521 width=0) (actual time=4.431..4.432 rows=147915 loops=1)
+                    Index Cond: ((id_variable = v.id_variable) AND (fecha_hora >= '2026-07-01 00:00:00'::timestamp without time zone) AND (fecha_hora < '2026-08-01 00:00:00'::timestamp without time zone))
+                    Buffers: shared hit=131
+Planning:
+  Buffers: shared hit=4
+Planning Time: 0.220 ms
+Execution Time: 24.366 ms

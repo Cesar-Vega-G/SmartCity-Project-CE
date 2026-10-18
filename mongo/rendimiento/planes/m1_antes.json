@@ -1,0 +1,125 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "smartcity.lecturas",
+    "indexFilterSet": false,
+    "parsedQuery": {
+      "$and": [
+        {
+          "id_sensor": {
+            "$eq": "S-00002"
+          }
+        },
+        {
+          "timestamp": {
+            "$lt": "2025-04-01 00:00:00"
+          }
+        },
+        {
+          "timestamp": {
+            "$gte": "2025-03-01 00:00:00"
+          }
+        }
+      ]
+    },
+    "queryHash": "B8504638",
+    "planCacheKey": "B8504638",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "winningPlan": {
+      "stage": "COLLSCAN",
+      "filter": {
+        "$and": [
+          {
+            "id_sensor": {
+              "$eq": "S-00002"
+            }
+          },
+          {
+            "timestamp": {
+              "$lt": "2025-04-01 00:00:00"
+            }
+          },
+          {
+            "timestamp": {
+              "$gte": "2025-03-01 00:00:00"
+            }
+          }
+        ]
+      },
+      "direction": "forward"
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 744,
+    "executionTimeMillis": 1022,
+    "totalKeysExamined": 0,
+    "totalDocsExamined": 3151581,
+    "executionStages": {
+      "stage": "COLLSCAN",
+      "filter": {
+        "$and": [
+          {
+            "id_sensor": {
+              "$eq": "S-00002"
+            }
+          },
+          {
+            "timestamp": {
+              "$lt": "2025-04-01 00:00:00"
+            }
+          },
+          {
+            "timestamp": {
+              "$gte": "2025-03-01 00:00:00"
+            }
+          }
+        ]
+      },
+      "nReturned": 744,
+      "executionTimeMillisEstimate": 78,
+      "works": 3151582,
+      "advanced": 744,
+      "needTime": 3150837,
+      "needYield": 0,
+      "saveState": 3151,
+      "restoreState": 3151,
+      "isEOF": 1,
+      "direction": "forward",
+      "docsExamined": 3151581
+    }
+  },
+  "command": {
+    "find": "lecturas",
+    "filter": {
+      "id_sensor": "S-00002",
+      "timestamp": {
+        "$gte": "2025-03-01 00:00:00",
+        "$lt": "2025-04-01 00:00:00"
+      }
+    },
+    "$db": "smartcity"
+  },
+  "serverInfo": {
+    "host": "1f665f04c3ad",
+    "port": 27017,
+    "version": "7.0.45",
+    "gitVersion": "a52313e13ab55c9bddf7c3ff91dab286fa381796"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "forceClassicEngine"
+  },
+  "ok": 1.0
+}

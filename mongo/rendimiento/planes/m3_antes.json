@@ -1,0 +1,208 @@
+{
+  "explainVersion": "1",
+  "stages": [
+    {
+      "$cursor": {
+        "queryPlanner": {
+          "namespace": "smartcity.lecturas",
+          "indexFilterSet": false,
+          "parsedQuery": {
+            "$and": [
+              {
+                "tipo": {
+                  "$eq": "calidad_aire"
+                }
+              },
+              {
+                "timestamp": {
+                  "$lt": "2025-02-01 00:00:00"
+                }
+              },
+              {
+                "timestamp": {
+                  "$gte": "2025-01-01 00:00:00"
+                }
+              }
+            ]
+          },
+          "queryHash": "3683F7F7",
+          "planCacheKey": "3683F7F7",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "winningPlan": {
+            "stage": "PROJECTION_DEFAULT",
+            "transformBy": {
+              "medicion.no2": 1,
+              "ubicacion.distrito": 1,
+              "_id": 0
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "$and": [
+                  {
+                    "tipo": {
+                      "$eq": "calidad_aire"
+                    }
+                  },
+                  {
+                    "timestamp": {
+                      "$lt": "2025-02-01 00:00:00"
+                    }
+                  },
+                  {
+                    "timestamp": {
+                      "$gte": "2025-01-01 00:00:00"
+                    }
+                  }
+                ]
+              },
+              "direction": "forward"
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 17112,
+          "executionTimeMillis": 1103,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 3151581,
+          "executionStages": {
+            "stage": "PROJECTION_DEFAULT",
+            "nReturned": 17112,
+            "executionTimeMillisEstimate": 86,
+            "works": 3151582,
+            "advanced": 17112,
+            "needTime": 3134469,
+            "needYield": 0,
+            "saveState": 3152,
+            "restoreState": 3152,
+            "isEOF": 1,
+            "transformBy": {
+              "medicion.no2": 1,
+              "ubicacion.distrito": 1,
+              "_id": 0
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "$and": [
+                  {
+                    "tipo": {
+                      "$eq": "calidad_aire"
+                    }
+                  },
+                  {
+                    "timestamp": {
+                      "$lt": "2025-02-01 00:00:00"
+                    }
+                  },
+                  {
+                    "timestamp": {
+                      "$gte": "2025-01-01 00:00:00"
+                    }
+                  }
+                ]
+              },
+              "nReturned": 17112,
+              "executionTimeMillisEstimate": 83,
+              "works": 3151582,
+              "advanced": 17112,
+              "needTime": 3134469,
+              "needYield": 0,
+              "saveState": 3152,
+              "restoreState": 3152,
+              "isEOF": 1,
+              "direction": "forward",
+              "docsExamined": 3151581
+            }
+          }
+        }
+      },
+      "nReturned": 17112,
+      "executionTimeMillisEstimate": 1095
+    },
+    {
+      "$group": {
+        "_id": "$ubicacion.distrito",
+        "promedio": {
+          "$avg": "$medicion.no2"
+        }
+      },
+      "maxAccumulatorMemoryUsageBytes": {
+        "promedio": 1664
+      },
+      "totalOutputDataSizeBytes": 4082,
+      "usedDisk": false,
+      "spills": 0,
+      "spilledDataStorageSize": 0,
+      "numBytesSpilledEstimate": 0,
+      "spilledRecords": 0,
+      "nReturned": 16,
+      "executionTimeMillisEstimate": 1101
+    },
+    {
+      "$sort": {
+        "sortKey": {
+          "promedio": -1
+        }
+      },
+      "totalDataSizeSortedBytesEstimate": 4210,
+      "usedDisk": false,
+      "spills": 0,
+      "spilledDataStorageSize": 0,
+      "nReturned": 16,
+      "executionTimeMillisEstimate": 1101
+    }
+  ],
+  "serverInfo": {
+    "host": "1f665f04c3ad",
+    "port": 27017,
+    "version": "7.0.45",
+    "gitVersion": "a52313e13ab55c9bddf7c3ff91dab286fa381796"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "forceClassicEngine"
+  },
+  "command": {
+    "aggregate": "lecturas",
+    "pipeline": [
+      {
+        "$match": {
+          "tipo": "calidad_aire",
+          "timestamp": {
+            "$gte": "2025-01-01 00:00:00",
+            "$lt": "2025-02-01 00:00:00"
+          }
+        }
+      },
+      {
+        "$group": {
+          "_id": "$ubicacion.distrito",
+          "promedio": {
+            "$avg": "$medicion.no2"
+          }
+        }
+      },
+      {
+        "$sort": {
+          "promedio": -1
+        }
+      }
+    ],
+    "cursor": {},
+    "$db": "smartcity"
+  },
+  "ok": 1.0
+}

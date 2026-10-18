@@ -1,0 +1,10 @@
+SELECT fecha_hora, id_variable, valor
+        FROM medicion
+        WHERE id_sensor = 'S-00002'
+          AND fecha_hora >= '2025-03-01' AND fecha_hora < '2025-04-01'
+
+Index Scan using medicion_2025_id_sensor_fecha_hora_idx on medicion_2025 medicion  (cost=0.43..6716.02 rows=3680 width=15) (actual time=0.011..0.381 rows=3666 loops=1)
+  Index Cond: (((id_sensor)::text = 'S-00002'::text) AND (fecha_hora >= '2025-03-01 00:00:00'::timestamp without time zone) AND (fecha_hora < '2025-04-01 00:00:00'::timestamp without time zone))
+  Buffers: shared hit=41
+Planning Time: 0.072 ms
+Execution Time: 0.484 ms

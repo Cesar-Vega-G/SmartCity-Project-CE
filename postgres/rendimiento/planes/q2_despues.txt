@@ -1,0 +1,38 @@
+SELECT m.fecha_hora, m.valor
+        FROM medicion m
+        JOIN variable v ON v.id_variable = m.id_variable
+        WHERE m.id_sensor = 'S-00002' AND v.nombre = 'no2'
+        ORDER BY m.fecha_hora DESC
+        LIMIT 24
+
+Limit  (cost=1.45..231.19 rows=24 width=13) (actual time=0.041..0.083 rows=24 loops=1)
+  Buffers: shared hit=16
+  ->  Nested Loop  (cost=1.45..76007.47 rows=7940 width=13) (actual time=0.040..0.081 rows=24 loops=1)
+        Join Filter: (m.id_variable = v.id_variable)
+        Rows Removed by Join Filter: 93
+        Buffers: shared hit=16
+        ->  Merge Append  (cost=1.45..74219.70 rows=119105 width=15) (actual time=0.033..0.056 rows=117 loops=1)
+              Sort Key: m.fecha_hora DESC
+              Buffers: shared hit=15
+              ->  Index Scan Backward using medicion_2024_id_sensor_fecha_hora_idx on medicion_2024 m_1  (cost=0.43..17367.41 rows=45656 width=14) (actual time=0.012..0.012 rows=1 loops=1)
+                    Index Cond: ((id_sensor)::text = 'S-00002'::text)
+                    Buffers: shared hit=4
+              ->  Index Scan Backward using medicion_2025_id_sensor_fecha_hora_idx on medicion_2025 m_2  (cost=0.43..23774.04 rows=43107 width=15) (actual time=0.010..0.010 rows=1 loops=1)
+                    Index Cond: ((id_sensor)::text = 'S-00002'::text)
+                    Buffers: shared hit=4
+              ->  Index Scan Backward using medicion_2026_id_sensor_fecha_hora_idx on medicion_2026 m_3  (cost=0.43..31283.50 rows=30341 width=15) (actual time=0.009..0.023 rows=117 loops=1)
+                    Index Cond: ((id_sensor)::text = 'S-00002'::text)
+                    Buffers: shared hit=5
+              ->  Index Scan Backward using medicion_default_id_sensor_fecha_hora_idx on medicion_default m_4  (cost=0.12..8.14 rows=1 width=26) (actual time=0.001..0.001 rows=0 loops=1)
+                    Index Cond: ((id_sensor)::text = 'S-00002'::text)
+                    Buffers: shared hit=2
+        ->  Materialize  (cost=0.00..1.19 rows=1 width=2) (actual time=0.000..0.000 rows=1 loops=117)
+              Buffers: shared hit=1
+              ->  Seq Scan on variable v  (cost=0.00..1.19 rows=1 width=2) (actual time=0.003..0.004 rows=1 loops=1)
+                    Filter: ((nombre)::text = 'no2'::text)
+                    Rows Removed by Filter: 14
+                    Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=7
+Planning Time: 0.221 ms
+Execution Time: 0.102 ms

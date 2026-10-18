@@ -1,0 +1,15 @@
+SELECT fecha_hora, id_variable, valor
+        FROM medicion
+        WHERE id_sensor = 'S-00002'
+          AND fecha_hora >= '2025-03-01' AND fecha_hora < '2025-04-01'
+
+Gather  (cost=1000.00..21407.64 rows=3662 width=15) (actual time=3.123..30.684 rows=3666 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=1541 read=9155
+  ->  Parallel Seq Scan on medicion_2025 medicion  (cost=0.00..20041.44 rows=1526 width=15) (actual time=9.162..26.014 rows=1222 loops=3)
+        Filter: ((fecha_hora >= '2025-03-01 00:00:00'::timestamp without time zone) AND (fecha_hora < '2025-04-01 00:00:00'::timestamp without time zone) AND ((id_sensor)::text = 'S-00002'::text))
+        Rows Removed by Filter: 425998
+        Buffers: shared hit=1541 read=9155
+Planning Time: 0.087 ms
+Execution Time: 30.797 ms

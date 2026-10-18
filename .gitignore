@@ -220,3 +220,6 @@ __marimo__/
 # datos del proyecto
 data/raw/
 data/generated/
+
+# apuntes personales
+apuntes_cesar/
