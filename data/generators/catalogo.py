@@ -40,12 +40,9 @@ def leer_puntos_trafico():
 
 
 def ids_con_datos():
-    archivos = sorted((RAW / "trafico").glob("*/*.csv"))
-    if not archivos:
-        return set()
-    print("Leyendo ids de", archivos[0].name, "...")
-    ids = pd.read_csv(archivos[0], sep=";", usecols=["id"])["id"].unique()
-    return set(int(i) for i in ids)
+    # sacado del historico completo de junio
+    ruta = RAW / "trafico" / "ids_con_datos.txt"
+    return set(int(i) for i in ruta.read_text().split())
 
 
 def distrito_cercano(lat, lon, puntos):

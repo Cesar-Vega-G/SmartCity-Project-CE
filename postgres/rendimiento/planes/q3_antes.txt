@@ -9,65 +9,65 @@ SELECT d.nombre, ROUND(AVG(m.valor), 2) AS promedio
         GROUP BY d.nombre
         ORDER BY promedio DESC
 
-Sort  (cost=20118.31..20118.36 rows=21 width=43) (actual time=40.028..41.110 rows=16 loops=1)
+Sort  (cost=20112.77..20112.82 rows=21 width=43) (actual time=47.421..48.571 rows=16 loops=1)
   Sort Key: (round(avg(m.valor), 2)) DESC
   Sort Method: quicksort  Memory: 25kB
-  Buffers: shared hit=2187 read=8703
-  ->  Finalize GroupAggregate  (cost=20089.37..20117.85 rows=21 width=43) (actual time=39.015..41.098 rows=16 loops=1)
+  Buffers: shared hit=898 read=9992
+  ->  Finalize GroupAggregate  (cost=20084.14..20112.31 rows=21 width=43) (actual time=46.140..48.558 rows=16 loops=1)
         Group Key: d.nombre
-        Buffers: shared hit=2187 read=8703
-        ->  Gather Merge  (cost=20089.37..20117.22 rows=42 width=43) (actual time=38.926..41.056 rows=44 loops=1)
+        Buffers: shared hit=898 read=9992
+        ->  Gather Merge  (cost=20084.14..20111.68 rows=42 width=43) (actual time=46.000..48.510 rows=43 loops=1)
               Workers Planned: 2
               Workers Launched: 2
-              Buffers: shared hit=2187 read=8703
-              ->  Partial GroupAggregate  (cost=19089.34..19112.34 rows=21 width=43) (actual time=35.017..35.860 rows=15 loops=3)
+              Buffers: shared hit=898 read=9992
+              ->  Partial GroupAggregate  (cost=19084.12..19106.80 rows=21 width=43) (actual time=41.401..42.550 rows=14 loops=3)
                     Group Key: d.nombre
-                    Buffers: shared hit=2187 read=8703
-                    ->  Sort  (cost=19089.34..19096.92 rows=3032 width=16) (actual time=34.972..35.194 rows=5628 loops=3)
+                    Buffers: shared hit=898 read=9992
+                    ->  Sort  (cost=19084.12..19091.59 rows=2990 width=16) (actual time=41.307..41.585 rows=5628 loops=3)
                           Sort Key: d.nombre
-                          Sort Method: quicksort  Memory: 434kB
-                          Buffers: shared hit=2187 read=8703
-                          Worker 0:  Sort Method: quicksort  Memory: 455kB
-                          Worker 1:  Sort Method: quicksort  Memory: 423kB
-                          ->  Hash Join  (cost=28.83..18914.00 rows=3032 width=16) (actual time=0.581..33.946 rows=5628 loops=3)
+                          Sort Method: quicksort  Memory: 505kB
+                          Buffers: shared hit=898 read=9992
+                          Worker 0:  Sort Method: quicksort  Memory: 382kB
+                          Worker 1:  Sort Method: quicksort  Memory: 425kB
+                          ->  Hash Join  (cost=28.83..18911.51 rows=2990 width=16) (actual time=0.589..39.804 rows=5628 loops=3)
                                 Hash Cond: (u.id_distrito = d.id_distrito)
-                                Buffers: shared hit=2113 read=8703
-                                ->  Hash Join  (cost=27.36..18902.97 rows=3032 width=9) (actual time=0.540..33.177 rows=5628 loops=3)
+                                Buffers: shared hit=824 read=9992
+                                ->  Hash Join  (cost=27.36..18900.60 rows=2990 width=9) (actual time=0.542..38.877 rows=5628 loops=3)
                                       Hash Cond: (s.id_ubicacion = u.id_ubicacion)
-                                      Buffers: shared hit=2082 read=8703
-                                      ->  Hash Join  (cost=13.49..18881.05 rows=3032 width=9) (actual time=0.426..32.244 rows=5628 loops=3)
+                                      Buffers: shared hit=793 read=9992
+                                      ->  Hash Join  (cost=13.49..18878.80 rows=2990 width=9) (actual time=0.446..37.938 rows=5628 loops=3)
                                             Hash Cond: ((m.id_sensor)::text = (s.id_sensor)::text)
-                                            Buffers: shared hit=2067 read=8703
-                                            ->  Hash Join  (cost=1.20..18860.71 rows=3032 width=13) (actual time=0.334..31.308 rows=5628 loops=3)
+                                            Buffers: shared hit=778 read=9992
+                                            ->  Hash Join  (cost=1.20..18858.56 rows=2990 width=13) (actual time=0.331..36.846 rows=5628 loops=3)
                                                   Hash Cond: (m.id_variable = v.id_variable)
-                                                  Buffers: shared hit=2024 read=8703
-                                                  ->  Parallel Seq Scan on medicion_2025 m  (cost=0.00..18706.38 rows=45483 width=15) (actual time=0.282..28.886 rows=36371 loops=3)
+                                                  Buffers: shared hit=735 read=9992
+                                                  ->  Parallel Seq Scan on medicion_2025 m  (cost=0.00..18706.38 rows=44845 width=15) (actual time=0.288..33.672 rows=36371 loops=3)
                                                         Filter: ((fecha_hora >= '2025-01-01 00:00:00'::timestamp without time zone) AND (fecha_hora < '2025-02-01 00:00:00'::timestamp without time zone))
                                                         Rows Removed by Filter: 390850
-                                                        Buffers: shared hit=1993 read=8703
-                                                  ->  Hash  (cost=1.19..1.19 rows=1 width=2) (actual time=0.019..0.019 rows=1 loops=3)
+                                                        Buffers: shared hit=704 read=9992
+                                                  ->  Hash  (cost=1.19..1.19 rows=1 width=2) (actual time=0.018..0.019 rows=1 loops=3)
                                                         Buckets: 1024  Batches: 1  Memory Usage: 9kB
                                                         Buffers: shared hit=3
-                                                        ->  Seq Scan on variable v  (cost=0.00..1.19 rows=1 width=2) (actual time=0.013..0.014 rows=1 loops=3)
+                                                        ->  Seq Scan on variable v  (cost=0.00..1.19 rows=1 width=2) (actual time=0.013..0.015 rows=1 loops=3)
                                                               Filter: ((nombre)::text = 'no2'::text)
                                                               Rows Removed by Filter: 14
                                                               Buffers: shared hit=3
-                                            ->  Hash  (cost=8.24..8.24 rows=324 width=12) (actual time=0.065..0.066 rows=324 loops=3)
+                                            ->  Hash  (cost=8.24..8.24 rows=324 width=12) (actual time=0.093..0.094 rows=324 loops=3)
                                                   Buckets: 1024  Batches: 1  Memory Usage: 22kB
                                                   Buffers: shared hit=15
-                                                  ->  Seq Scan on sensor s  (cost=0.00..8.24 rows=324 width=12) (actual time=0.007..0.033 rows=324 loops=3)
+                                                  ->  Seq Scan on sensor s  (cost=0.00..8.24 rows=324 width=12) (actual time=0.007..0.052 rows=324 loops=3)
                                                         Buffers: shared hit=15
-                                      ->  Hash  (cost=8.94..8.94 rows=394 width=8) (actual time=0.087..0.088 rows=394 loops=3)
+                                      ->  Hash  (cost=8.94..8.94 rows=394 width=8) (actual time=0.084..0.084 rows=394 loops=3)
                                             Buckets: 1024  Batches: 1  Memory Usage: 24kB
                                             Buffers: shared hit=15
-                                            ->  Seq Scan on ubicacion u  (cost=0.00..8.94 rows=394 width=8) (actual time=0.009..0.042 rows=394 loops=3)
+                                            ->  Seq Scan on ubicacion u  (cost=0.00..8.94 rows=394 width=8) (actual time=0.005..0.039 rows=394 loops=3)
                                                   Buffers: shared hit=15
-                                ->  Hash  (cost=1.21..1.21 rows=21 width=15) (actual time=0.023..0.024 rows=21 loops=3)
+                                ->  Hash  (cost=1.21..1.21 rows=21 width=15) (actual time=0.021..0.022 rows=21 loops=3)
                                       Buckets: 1024  Batches: 1  Memory Usage: 9kB
                                       Buffers: shared hit=3
-                                      ->  Seq Scan on distrito d  (cost=0.00..1.21 rows=21 width=15) (actual time=0.015..0.016 rows=21 loops=3)
+                                      ->  Seq Scan on distrito d  (cost=0.00..1.21 rows=21 width=15) (actual time=0.012..0.014 rows=21 loops=3)
                                             Buffers: shared hit=3
 Planning:
   Buffers: shared hit=14
-Planning Time: 0.354 ms
-Execution Time: 41.202 ms
+Planning Time: 0.482 ms
+Execution Time: 48.619 ms

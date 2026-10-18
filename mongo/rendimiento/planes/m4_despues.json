@@ -139,7 +139,7 @@
   "executionStats": {
     "executionSuccess": true,
     "nReturned": 19900,
-    "executionTimeMillis": 221,
+    "executionTimeMillis": 229,
     "totalKeysExamined": 135338,
     "totalDocsExamined": 135317,
     "executionStages": {
@@ -172,7 +172,7 @@
         ]
       },
       "nReturned": 19900,
-      "executionTimeMillisEstimate": 35,
+      "executionTimeMillisEstimate": 34,
       "works": 135339,
       "advanced": 19900,
       "needTime": 115438,
@@ -185,7 +185,7 @@
       "inputStage": {
         "stage": "IXSCAN",
         "nReturned": 135317,
-        "executionTimeMillisEstimate": 9,
+        "executionTimeMillisEstimate": 4,
         "works": 135339,
         "advanced": 135317,
         "needTime": 21,
@@ -287,7 +287,7 @@
     "$db": "smartcity"
   },
   "serverInfo": {
-    "host": "1f665f04c3ad",
+    "host": "2ae25cb2c683",
     "port": 27017,
     "version": "7.0.45",
     "gitVersion": "a52313e13ab55c9bddf7c3ff91dab286fa381796"

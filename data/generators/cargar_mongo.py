@@ -236,7 +236,7 @@ def cargar_clima(c, sensores):
 
 
 def patron_energia():
-    df = pd.read_csv(RAW / "energia" / "household_power_consumption.txt", sep=";",
+    df = pd.read_csv(RAW / "energia" / "household_power_consumption.zip", sep=";",
                      usecols=["Date", "Time", "Global_active_power"], na_values="?", low_memory=False)
     df = df.dropna()
     df["dia"] = pd.to_datetime(df["Date"], format="%d/%m/%Y").dt.dayofweek

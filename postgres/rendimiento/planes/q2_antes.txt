@@ -5,45 +5,45 @@ SELECT m.fecha_hora, m.valor
         ORDER BY m.fecha_hora DESC
         LIMIT 24
 
-Limit  (cost=64713.75..64716.55 rows=24 width=13) (actual time=109.086..112.699 rows=24 loops=1)
-  Buffers: shared hit=15906 read=23199 written=1
-  ->  Gather Merge  (cost=64713.75..65450.44 rows=6314 width=13) (actual time=109.085..112.695 rows=24 loops=1)
+Limit  (cost=64687.46..64690.26 rows=24 width=13) (actual time=123.948..127.303 rows=24 loops=1)
+  Buffers: shared hit=12165 read=26920
+  ->  Gather Merge  (cost=64687.46..65414.58 rows=6232 width=13) (actual time=123.946..127.300 rows=24 loops=1)
         Workers Planned: 2
         Workers Launched: 2
-        Buffers: shared hit=15906 read=23199 written=1
-        ->  Sort  (cost=63713.73..63721.62 rows=3157 width=13) (actual time=106.353..106.357 rows=16 loops=3)
+        Buffers: shared hit=12165 read=26920
+        ->  Sort  (cost=63687.44..63695.23 rows=3116 width=13) (actual time=121.141..121.146 rows=16 loops=3)
               Sort Key: m.fecha_hora DESC
               Sort Method: top-N heapsort  Memory: 26kB
-              Buffers: shared hit=15906 read=23199 written=1
+              Buffers: shared hit=12165 read=26920
               Worker 0:  Sort Method: top-N heapsort  Memory: 26kB
               Worker 1:  Sort Method: top-N heapsort  Memory: 26kB
-              ->  Hash Join  (cost=1.20..63625.57 rows=3157 width=13) (actual time=3.067..105.321 rows=7657 loops=3)
+              ->  Hash Join  (cost=1.20..63600.42 rows=3116 width=13) (actual time=2.125..120.137 rows=7657 loops=3)
                     Hash Cond: (m.id_variable = v.id_variable)
-                    Buffers: shared hit=15834 read=23199 written=1
-                    ->  Parallel Append  (cost=0.00..63464.94 rows=47357 width=15) (actual time=2.965..102.545 rows=38149 loops=3)
-                          Buffers: shared hit=15737 read=23199 written=1
-                          ->  Parallel Seq Scan on medicion_2026 m_3  (cost=0.00..31093.58 rows=12069 width=15) (actual time=13.999..46.506 rows=9564 loops=3)
+                    Buffers: shared hit=12093 read=26920
+                    ->  Parallel Append  (cost=0.00..63441.86 rows=46742 width=15) (actual time=2.031..117.309 rows=38149 loops=3)
+                          Buffers: shared hit=11996 read=26920
+                          ->  Parallel Seq Scan on medicion_2026 m_3  (cost=0.00..31073.58 rows=10477 width=15) (actual time=15.275..53.250 rows=9564 loops=3)
                                 Filter: ((id_sensor)::text = 'S-00002'::text)
                                 Rows Removed by Filter: 754697
-                                Buffers: shared hit=8850 read=10302 written=1
-                          ->  Parallel Seq Scan on medicion_2025 m_2  (cost=0.00..17371.32 rows=17641 width=15) (actual time=6.291..43.827 rows=21368 loops=2)
+                                Buffers: shared hit=11405 read=7727
+                          ->  Parallel Seq Scan on medicion_2025 m_2  (cost=0.00..17371.32 rows=18406 width=15) (actual time=6.670..51.116 rows=21368 loops=2)
                                 Filter: ((id_sensor)::text = 'S-00002'::text)
                                 Rows Removed by Filter: 619463
-                                Buffers: shared hit=1737 read=8959
-                          ->  Parallel Seq Scan on medicion_2024 m_1  (cost=0.00..14763.26 rows=17646 width=14) (actual time=2.274..73.827 rows=43020 loops=1)
+                                Buffers: shared hit=448 read=10248
+                          ->  Parallel Seq Scan on medicion_2024 m_1  (cost=0.00..14763.26 rows=17858 width=14) (actual time=2.048..83.935 rows=43020 loops=1)
                                 Filter: ((id_sensor)::text = 'S-00002'::text)
                                 Rows Removed by Filter: 1046629
-                                Buffers: shared hit=5150 read=3938
+                                Buffers: shared hit=143 read=8945
                           ->  Parallel Seq Scan on medicion_default m_4  (cost=0.00..0.00 rows=1 width=26) (actual time=0.001..0.001 rows=0 loops=1)
                                 Filter: ((id_sensor)::text = 'S-00002'::text)
-                    ->  Hash  (cost=1.19..1.19 rows=1 width=2) (actual time=0.024..0.025 rows=1 loops=3)
+                    ->  Hash  (cost=1.19..1.19 rows=1 width=2) (actual time=0.021..0.022 rows=1 loops=3)
                           Buckets: 1024  Batches: 1  Memory Usage: 9kB
                           Buffers: shared hit=3
-                          ->  Seq Scan on variable v  (cost=0.00..1.19 rows=1 width=2) (actual time=0.015..0.017 rows=1 loops=3)
+                          ->  Seq Scan on variable v  (cost=0.00..1.19 rows=1 width=2) (actual time=0.014..0.015 rows=1 loops=3)
                                 Filter: ((nombre)::text = 'no2'::text)
                                 Rows Removed by Filter: 14
                                 Buffers: shared hit=3
 Planning:
   Buffers: shared hit=5
-Planning Time: 0.236 ms
-Execution Time: 112.729 ms
+Planning Time: 0.178 ms
+Execution Time: 127.330 ms

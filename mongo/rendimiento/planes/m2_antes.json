@@ -37,13 +37,13 @@
   "executionStats": {
     "executionSuccess": true,
     "nReturned": 24,
-    "executionTimeMillis": 1036,
+    "executionTimeMillis": 1001,
     "totalKeysExamined": 0,
     "totalDocsExamined": 3151581,
     "executionStages": {
       "stage": "SORT",
       "nReturned": 24,
-      "executionTimeMillisEstimate": 72,
+      "executionTimeMillisEstimate": 63,
       "works": 3151607,
       "advanced": 24,
       "needTime": 3151582,
@@ -69,7 +69,7 @@
           }
         },
         "nReturned": 1542,
-        "executionTimeMillisEstimate": 72,
+        "executionTimeMillisEstimate": 63,
         "works": 3151582,
         "advanced": 1542,
         "needTime": 3150039,
@@ -94,7 +94,7 @@
     "$db": "smartcity"
   },
   "serverInfo": {
-    "host": "1f665f04c3ad",
+    "host": "2ae25cb2c683",
     "port": 27017,
     "version": "7.0.45",
     "gitVersion": "a52313e13ab55c9bddf7c3ff91dab286fa381796"

@@ -137,7 +137,7 @@
       "numBytesSpilledEstimate": 0,
       "spilledRecords": 0,
       "nReturned": 12,
-      "executionTimeMillisEstimate": 7
+      "executionTimeMillisEstimate": 4
     },
     {
       "$sort": {
@@ -150,11 +150,11 @@
       "spills": 0,
       "spilledDataStorageSize": 0,
       "nReturned": 12,
-      "executionTimeMillisEstimate": 7
+      "executionTimeMillisEstimate": 4
     }
   ],
   "serverInfo": {
-    "host": "1f665f04c3ad",
+    "host": "2ae25cb2c683",
     "port": 27017,
     "version": "7.0.45",
     "gitVersion": "a52313e13ab55c9bddf7c3ff91dab286fa381796"

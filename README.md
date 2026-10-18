@@ -10,29 +10,19 @@ Avance 1: PostgreSQL + MongoDB.
 
 ## Cómo levantar todo
 
-1. Copiar las variables de entorno y levantar las bases:
-   ```
-   copy .env.example .env
-   docker compose up -d
-   ```
-2. Instalar las librerías de Python:
-   ```
-   pip install -r requirements.txt
-   ```
-3. Descargar los datos crudos en `data/raw/` (ver `docs/generacion_datos.md`).
-4. Correr los scripts en este orden:
-   ```
-   python data/generators/catalogo.py
-   python data/generators/clima.py
-   python data/generators/cargar_mongo.py
-   python data/generators/cargar_postgres.py
-   ```
-5. Medir el rendimiento con y sin índices (opcional, tarda unos minutos):
-   ```
-   python postgres/rendimiento/medir_pg.py
-   python mongo/rendimiento/medir_mongo.py
-   ```
-   Los resultados quedan en `docs/rendimiento_postgres.md` y `docs/rendimiento_mongo.md`.
+```
+copy .env.example .env
+docker compose up -d
+pip install -r requirements.txt
+python data/generators/catalogo.py
+python data/generators/clima.py
+python data/generators/cargar_mongo.py
+python data/generators/cargar_postgres.py
+```
+
+Postgres queda en el puerto 5433 y Mongo en el 27017 (usuario y contraseña en `.env`).
+
+Para medir los índices: `python postgres/rendimiento/medir_pg.py` y `python mongo/rendimiento/medir_mongo.py`. Los resultados quedan en `docs/`.
 
 ## Estructura
 
@@ -45,4 +35,5 @@ Avance 1: PostgreSQL + MongoDB.
 | `mongo/consultas` | Consultas de MongoDB |
 | `mongo/rendimiento` | Índices de MongoDB y script que mide con y sin índices |
 | `data/generators` | Scripts de carga de datos |
-| `docs` | Contrato de datos, generación de datos, infraestructura y rendimiento |
+| `data/raw` | Datos crudos (ya vienen en el repo) |
+| `docs` | Contrato de datos, datos y resultados de rendimiento |

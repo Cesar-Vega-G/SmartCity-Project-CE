@@ -73,13 +73,13 @@
         "executionStats": {
           "executionSuccess": true,
           "nReturned": 17112,
-          "executionTimeMillis": 48,
+          "executionTimeMillis": 35,
           "totalKeysExamined": 17112,
           "totalDocsExamined": 17112,
           "executionStages": {
             "stage": "PROJECTION_DEFAULT",
             "nReturned": 17112,
-            "executionTimeMillisEstimate": 7,
+            "executionTimeMillisEstimate": 3,
             "works": 17113,
             "advanced": 17112,
             "needTime": 0,
@@ -108,7 +108,7 @@
               "inputStage": {
                 "stage": "IXSCAN",
                 "nReturned": 17112,
-                "executionTimeMillisEstimate": 1,
+                "executionTimeMillisEstimate": 0,
                 "works": 17113,
                 "advanced": 17112,
                 "needTime": 0,
@@ -149,7 +149,7 @@
         }
       },
       "nReturned": 17112,
-      "executionTimeMillisEstimate": 39
+      "executionTimeMillisEstimate": 27
     },
     {
       "$group": {
@@ -168,7 +168,7 @@
       "numBytesSpilledEstimate": 0,
       "spilledRecords": 0,
       "nReturned": 16,
-      "executionTimeMillisEstimate": 46
+      "executionTimeMillisEstimate": 28
     },
     {
       "$sort": {
@@ -181,11 +181,11 @@
       "spills": 0,
       "spilledDataStorageSize": 0,
       "nReturned": 16,
-      "executionTimeMillisEstimate": 46
+      "executionTimeMillisEstimate": 28
     }
   ],
   "serverInfo": {
-    "host": "1f665f04c3ad",
+    "host": "2ae25cb2c683",
     "port": 27017,
     "version": "7.0.45",
     "gitVersion": "a52313e13ab55c9bddf7c3ff91dab286fa381796"
