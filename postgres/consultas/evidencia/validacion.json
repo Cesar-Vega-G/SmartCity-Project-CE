@@ -1,0 +1,1631 @@
+{
+  "fecha_costa_rica": "2026-10-26T15:39:21.332486-06:00",
+  "commit_sql": "583d64b1d649a7147097648cc27f3f8a7ce6179f",
+  "validador_sha256": "f4080e2dace155a5a97944f7ed6cb9b9ee5ff69ebba609e631a38df8ffbbc5ba",
+  "archivos_sha256": {
+    "postgres/consultas/01_sensores_por_tipo.sql": "6447a77a69641274b426ed5874e3c813537236da59330482eeae0efd6977d5e8",
+    "postgres/consultas/02_sensores_por_ubicacion.sql": "a8798ef9437520fefbdb7ea76d1acfad4233a8e44ffcedf09e90233a732c16c2",
+    "postgres/consultas/03_sensores_por_estado.sql": "bfd8548428ed2cdbb57b75962141967ceae4e9ffa2e87014f1bacacd730811ca",
+    "postgres/consultas/04_sensores_por_organismo.sql": "b71e6a23f068acf08588820be211e14e88cc2dae2845175b81a8fc65b046edcb",
+    "postgres/consultas/05_ubicaciones_con_mas_sensores.sql": "1f50866aa786226d4a128b1b7631cb4493536ac261ac6759be7124463dbc4605",
+    "postgres/consultas/06_instalaciones_por_anio.sql": "b31f419d2df0de5d5a5d2c06a2867a4990adf5bdaab0d55128bce7c61b5757ff",
+    "postgres/consultas/07_sensores_sin_actividad.sql": "7ac05953afcfeb9976f6279b6a39255e8073d06a1b55409dcf61bf23455949aa",
+    "postgres/consultas/08_ranking_distritos.sql": "694921ce57bd68994bf9fd34afc9bebfae05362a2e21d1d44f4719a9e45428d0",
+    "postgres/consultas/11_temperatura_por_distrito.sql": "9866f42c4b4daa5c7761c1eb710e71c9a0a2c8320791a645497f9ceda6648590",
+    "postgres/consultas/12_distritos_sobre_promedio.sql": "6580fce01bbeec41ead6f51f49493d459c94fc06e7b404086f2cd9bff860ad16",
+    "postgres/consultas/13_distritos_sobre_umbral.sql": "77f9ad67cee895570dcdd614dd4283a34a2bfe44261fe9678c04dcafee0fd1ac",
+    "postgres/consultas/14_sensores_que_dejaron_de_registrar.sql": "a0a945590395daf739f964ebf246e917e678f8dd45a7b1ffde692fd5d496a6ac",
+    "postgres/consultas/15_carga_promedio_por_hora.sql": "c45a58362e82346093aa3eafff9e29f3f311c332dff9e48fc37fa0b160e9f6fe",
+    "postgres/consultas/16_tipos_de_sensor_por_distrito.sql": "08552c074d76ba4c7905125167224f2e6e2244a3d34be9d15e616640ab49bef9",
+    "postgres/consultas/17_mediciones_sensor_por_mes.sql": "7a57628ead76818aa6f46e8606025c5693b303af946aabec1f8df8285446700e",
+    "postgres/vistas_funciones/09_consulta_vistas.sql": "e3fa4e6a419890867fb961c09dc6b62cdc8351021447b7b88472a5a9257f2f94",
+    "postgres/vistas_funciones/10_consulta_funciones.sql": "de2f0f2145665adfa182b8d6932dad3c05dca493b93f3baaf943b8bcfbaaf33f"
+  },
+  "consultas": {
+    "01": {
+      "archivo": "postgres/consultas/01_sensores_por_tipo.sql",
+      "filas": 324,
+      "columnas": [
+        "id_sensor",
+        "nombre_sensor",
+        "tipo_sensor",
+        "estado"
+      ],
+      "muestra": [
+        [
+          "S-00004",
+          "Aire - Arturo Soria",
+          "calidad_aire",
+          "activo"
+        ],
+        [
+          "S-00008",
+          "Aire - Barajas Pueblo",
+          "calidad_aire",
+          "activo"
+        ],
+        [
+          "S-00012",
+          "Aire - Barrio del Pilar",
+          "calidad_aire",
+          "activo"
+        ],
+        [
+          "S-00007",
+          "Aire - Casa de Campo",
+          "calidad_aire",
+          "activo"
+        ],
+        [
+          "S-00015",
+          "Aire - Castellana",
+          "calidad_aire",
+          "activo"
+        ]
+      ],
+      "ms_observados": 4.561
+    },
+    "02": {
+      "archivo": "postgres/consultas/02_sensores_por_ubicacion.sql",
+      "filas": 324,
+      "columnas": [
+        "id_sensor",
+        "nombre_sensor",
+        "estado",
+        "id_ubicacion",
+        "nombre_zona",
+        "distrito"
+      ],
+      "muestra": [
+        [
+          "S-00119",
+          "Trafico - 13XC97PM01",
+          "activo",
+          56,
+          "13XC97PM01",
+          "Arganzuela"
+        ],
+        [
+          "S-00122",
+          "Trafico - AV PLANETARIO O-E(SALIDA TUNEL)",
+          "activo",
+          59,
+          "AV PLANETARIO O-E(SALIDA TUNEL)",
+          "Arganzuela"
+        ],
+        [
+          "S-00128",
+          "Trafico - BATALLA DEL SALADO N-S(CANARIAS-FERROCARRIL)",
+          "activo",
+          65,
+          "BATALLA DEL SALADO N-S(CANARIAS-FERROCARRIL)",
+          "Arganzuela"
+        ],
+        [
+          "S-00029",
+          "Clima - Arganzuela",
+          "activo",
+          26,
+          "Centro de control Arganzuela",
+          "Arganzuela"
+        ],
+        [
+          "S-00030",
+          "Energia - Arganzuela",
+          "activo",
+          26,
+          "Centro de control Arganzuela",
+          "Arganzuela"
+        ]
+      ],
+      "ms_observados": 4.009
+    },
+    "03": {
+      "archivo": "postgres/consultas/03_sensores_por_estado.sql",
+      "filas": 3,
+      "columnas": [
+        "estado",
+        "cantidad_sensores"
+      ],
+      "muestra": [
+        [
+          "activo",
+          304
+        ],
+        [
+          "inactivo",
+          11
+        ],
+        [
+          "mantenimiento",
+          9
+        ]
+      ],
+      "ms_observados": 1.943
+    },
+    "04": {
+      "archivo": "postgres/consultas/04_sensores_por_organismo.sql",
+      "filas": 4,
+      "columnas": [
+        "id_organismo",
+        "nombre_organismo",
+        "responsable",
+        "cantidad_sensores"
+      ],
+      "muestra": [
+        [
+          2,
+          "Ayuntamiento de Madrid - Movilidad",
+          "Direccion General de Gestion y Vigilancia de la Circulacion",
+          237
+        ],
+        [
+          1,
+          "Ayuntamiento de Madrid - Calidad del Aire",
+          "Direccion General de Sostenibilidad y Control Ambiental",
+          66
+        ],
+        [
+          4,
+          "Distribuidora Electrica Madrid",
+          "Centro de Control de Red",
+          21
+        ],
+        [
+          3,
+          "EMT Madrid",
+          "Direccion de Operaciones EMT",
+          0
+        ]
+      ],
+      "ms_observados": 1.474
+    },
+    "05": {
+      "archivo": "postgres/consultas/05_ubicaciones_con_mas_sensores.sql",
+      "filas": 261,
+      "columnas": [
+        "id_ubicacion",
+        "nombre_zona",
+        "id_distrito",
+        "distrito",
+        "cantidad_sensores"
+      ],
+      "muestra": [
+        [
+          25,
+          "Centro de control Centro",
+          1,
+          "Centro",
+          4
+        ],
+        [
+          26,
+          "Centro de control Arganzuela",
+          2,
+          "Arganzuela",
+          4
+        ],
+        [
+          27,
+          "Centro de control Retiro",
+          3,
+          "Retiro",
+          4
+        ],
+        [
+          28,
+          "Centro de control Salamanca",
+          4,
+          "Salamanca",
+          4
+        ],
+        [
+          29,
+          "Centro de control Chamartin",
+          5,
+          "Chamartin",
+          4
+        ]
+      ],
+      "ms_observados": 2.009
+    },
+    "06": {
+      "archivo": "postgres/consultas/06_instalaciones_por_anio.sql",
+      "filas": 22,
+      "columnas": [
+        "anio",
+        "cantidad_sensores"
+      ],
+      "muestra": [
+        [
+          1998,
+          9
+        ],
+        [
+          1999,
+          2
+        ],
+        [
+          2001,
+          1
+        ],
+        [
+          2002,
+          1
+        ],
+        [
+          2009,
+          5
+        ]
+      ],
+      "ms_observados": 1.495
+    },
+    "07": {
+      "archivo": "postgres/consultas/07_sensores_sin_actividad.sql",
+      "filas": 9,
+      "columnas": [
+        "id_sensor",
+        "nombre_sensor",
+        "tipo_sensor",
+        "estado",
+        "id_ubicacion",
+        "nombre_zona",
+        "distrito"
+      ],
+      "muestra": [
+        [
+          "S-00079",
+          "Parking - Moratalaz",
+          "estacionamiento",
+          "mantenimiento",
+          38,
+          "Centro de control Moratalaz",
+          "Moratalaz"
+        ],
+        [
+          "S-00082",
+          "Energia - Ciudad Lineal",
+          "medidor_energia",
+          "mantenimiento",
+          39,
+          "Centro de control Ciudad Lineal",
+          "Ciudad Lineal"
+        ],
+        [
+          "S-00088",
+          "Ruido - Hortaleza",
+          "ruido",
+          "mantenimiento",
+          40,
+          "Centro de control Hortaleza",
+          "Hortaleza"
+        ],
+        [
+          "S-00319",
+          "Trafico - Av. Moratalaz O-E - Arroyo Media Legua-Arroyo Pilillas",
+          "trafico",
+          "mantenimiento",
+          256,
+          "Av. Moratalaz O-E - Arroyo Media Legua-Arroyo Pilillas",
+          "Moratalaz"
+        ],
+        [
+          "S-00320",
+          "Trafico - 10TC93PM01",
+          "trafico",
+          "mantenimiento",
+          257,
+          "10TC93PM01",
+          "Moratalaz"
+        ]
+      ],
+      "ms_observados": 727.201
+    },
+    "08": {
+      "archivo": "postgres/consultas/08_ranking_distritos.sql",
+      "filas": 21,
+      "columnas": [
+        "posicion",
+        "id_distrito",
+        "distrito",
+        "total_sensores",
+        "sensores_activos"
+      ],
+      "muestra": [
+        [
+          1,
+          8,
+          "Fuencarral-El Pardo",
+          18,
+          17
+        ],
+        [
+          2,
+          21,
+          "Barajas",
+          17,
+          17
+        ],
+        [
+          2,
+          11,
+          "Carabanchel",
+          17,
+          15
+        ],
+        [
+          2,
+          14,
+          "Moratalaz",
+          17,
+          14
+        ],
+        [
+          3,
+          1,
+          "Centro",
+          16,
+          14
+        ]
+      ],
+      "ms_observados": 2.242
+    },
+    "11": {
+      "archivo": "postgres/consultas/11_temperatura_por_distrito.sql",
+      "filas": 21,
+      "columnas": [
+        "id_distrito",
+        "distrito",
+        "unidad",
+        "cantidad_mediciones",
+        "temperatura_promedio",
+        "temperatura_minima",
+        "temperatura_maxima"
+      ],
+      "muestra": [
+        [
+          2,
+          "Arganzuela",
+          "C",
+          744,
+          "29.3571236559139785",
+          "16.900",
+          "39.100"
+        ],
+        [
+          11,
+          "Carabanchel",
+          "C",
+          744,
+          "29.3571236559139785",
+          "16.900",
+          "39.100"
+        ],
+        [
+          1,
+          "Centro",
+          "C",
+          744,
+          "29.3571236559139785",
+          "16.900",
+          "39.100"
+        ],
+        [
+          14,
+          "Moratalaz",
+          "C",
+          744,
+          "29.3571236559139785",
+          "16.900",
+          "39.100"
+        ],
+        [
+          13,
+          "Puente de Vallecas",
+          "C",
+          744,
+          "29.3571236559139785",
+          "16.900",
+          "39.100"
+        ]
+      ],
+      "ms_observados": 115.465
+    },
+    "12": {
+      "archivo": "postgres/consultas/12_distritos_sobre_promedio.sql",
+      "filas": 9,
+      "columnas": [
+        "id_distrito",
+        "distrito",
+        "cantidad_sensores",
+        "promedio_sensores_por_distrito",
+        "total_sensores_ciudad",
+        "participacion_porcentaje"
+      ],
+      "muestra": [
+        [
+          8,
+          "Fuencarral-El Pardo",
+          18,
+          "15.4285714285714286",
+          "324",
+          "5.56"
+        ],
+        [
+          21,
+          "Barajas",
+          17,
+          "15.4285714285714286",
+          "324",
+          "5.25"
+        ],
+        [
+          11,
+          "Carabanchel",
+          17,
+          "15.4285714285714286",
+          "324",
+          "5.25"
+        ],
+        [
+          14,
+          "Moratalaz",
+          17,
+          "15.4285714285714286",
+          "324",
+          "5.25"
+        ],
+        [
+          1,
+          "Centro",
+          16,
+          "15.4285714285714286",
+          "324",
+          "4.94"
+        ]
+      ],
+      "ms_observados": 2.412
+    },
+    "13": {
+      "archivo": "postgres/consultas/13_distritos_sobre_umbral.sql",
+      "filas": 9,
+      "columnas": [
+        "id_distrito",
+        "distrito",
+        "cantidad_sensores"
+      ],
+      "muestra": [
+        [
+          8,
+          "Fuencarral-El Pardo",
+          18
+        ],
+        [
+          21,
+          "Barajas",
+          17
+        ],
+        [
+          11,
+          "Carabanchel",
+          17
+        ],
+        [
+          14,
+          "Moratalaz",
+          17
+        ],
+        [
+          1,
+          "Centro",
+          16
+        ]
+      ],
+      "ms_observados": 1.775
+    },
+    "14": {
+      "archivo": "postgres/consultas/14_sensores_que_dejaron_de_registrar.sql",
+      "filas": 14,
+      "columnas": [
+        "id_sensor",
+        "nombre_sensor",
+        "tipo_sensor",
+        "estado",
+        "id_distrito",
+        "distrito",
+        "ultima_medicion"
+      ],
+      "muestra": [
+        [
+          "S-00019",
+          "Aire - Urb. Embajada",
+          "calidad_aire",
+          "activo",
+          21,
+          "Barajas",
+          "2024-12-31T23:00:00"
+        ],
+        [
+          "S-00207",
+          "Trafico - 05FT10PM01",
+          "trafico",
+          "activo",
+          10,
+          "Latina",
+          "2026-06-17T01:00:00"
+        ],
+        [
+          "S-00201",
+          "Trafico - (TACTICO) VILLAMANIN Ø45 S-N GIRO IZDA (A-5-VILLASANDINO)",
+          "trafico",
+          "activo",
+          10,
+          "Latina",
+          "2026-07-01T12:00:00"
+        ],
+        [
+          "S-00058",
+          "Energia - Moncloa-Aravaca",
+          "medidor_energia",
+          "inactivo",
+          9,
+          "Moncloa-Aravaca",
+          "2026-07-14T23:00:00"
+        ],
+        [
+          "S-00063",
+          "Parking - Latina",
+          "estacionamiento",
+          "inactivo",
+          10,
+          "Latina",
+          "2026-07-14T23:00:00"
+        ]
+      ],
+      "ms_observados": 411.768
+    },
+    "15": {
+      "archivo": "postgres/consultas/15_carga_promedio_por_hora.sql",
+      "filas": 24,
+      "columnas": [
+        "hora_del_dia",
+        "unidad",
+        "carga_promedio",
+        "cantidad_mediciones"
+      ],
+      "muestra": [
+        [
+          14,
+          "0-100",
+          "25.2236967887687591",
+          6197
+        ],
+        [
+          15,
+          "0-100",
+          "24.2676206285253828",
+          6205
+        ],
+        [
+          13,
+          "0-100",
+          "24.0764042861746697",
+          6206
+        ],
+        [
+          19,
+          "0-100",
+          "23.7889951306606070",
+          6161
+        ],
+        [
+          18,
+          "0-100",
+          "23.5673292781832928",
+          6165
+        ]
+      ],
+      "ms_observados": 135.212
+    },
+    "16": {
+      "archivo": "postgres/consultas/16_tipos_de_sensor_por_distrito.sql",
+      "filas": 6,
+      "columnas": [
+        "id_distrito",
+        "distrito",
+        "id_tipo",
+        "tipo_sensor"
+      ],
+      "muestra": [
+        [
+          1,
+          "Centro",
+          1,
+          "calidad_aire"
+        ],
+        [
+          1,
+          "Centro",
+          5,
+          "estacionamiento"
+        ],
+        [
+          1,
+          "Centro",
+          6,
+          "medidor_energia"
+        ],
+        [
+          1,
+          "Centro",
+          2,
+          "meteorologico"
+        ],
+        [
+          1,
+          "Centro",
+          3,
+          "ruido"
+        ]
+      ],
+      "ms_observados": 1.902
+    },
+    "17": {
+      "archivo": "postgres/consultas/17_mediciones_sensor_por_mes.sql",
+      "filas": 3666,
+      "columnas": [
+        "id_medicion",
+        "id_sensor",
+        "fecha_hora",
+        "id_variable",
+        "variable",
+        "unidad",
+        "valor"
+      ],
+      "muestra": [
+        [
+          123501,
+          "S-00002",
+          "2025-03-01T00:00:00",
+          1,
+          "no2",
+          "ug/m3",
+          "18.000"
+        ],
+        [
+          123503,
+          "S-00002",
+          "2025-03-01T00:00:00",
+          2,
+          "pm10",
+          "ug/m3",
+          "19.000"
+        ],
+        [
+          123504,
+          "S-00002",
+          "2025-03-01T00:00:00",
+          3,
+          "pm25",
+          "ug/m3",
+          "8.000"
+        ],
+        [
+          123500,
+          "S-00002",
+          "2025-03-01T00:00:00",
+          4,
+          "co",
+          "mg/m3",
+          "0.200"
+        ],
+        [
+          123502,
+          "S-00002",
+          "2025-03-01T00:00:00",
+          5,
+          "o3",
+          "ug/m3",
+          "73.000"
+        ]
+      ],
+      "ms_observados": 63.211
+    },
+    "09a": {
+      "archivo": "postgres/vistas_funciones/09_consulta_vistas.sql",
+      "filas": 21,
+      "columnas": [
+        "posicion_criticidad",
+        "distrito",
+        "pct_sobre_limite",
+        "mediciones_sobre_limite",
+        "total_mediciones",
+        "posicion_actividad",
+        "posicion_sensores",
+        "total_sensores",
+        "sensores_activos",
+        "promedio_no2",
+        "promedio_pm25",
+        "actualizado_en"
+      ],
+      "muestra": [
+        [
+          1,
+          "Carabanchel",
+          "2.161",
+          5314,
+          310414,
+          3,
+          2,
+          17,
+          15,
+          "26.99",
+          "11.02",
+          "2026-10-26T21:05:54.825166+00:00"
+        ],
+        [
+          2,
+          "Moratalaz",
+          "1.911",
+          2487,
+          203721,
+          12,
+          2,
+          17,
+          14,
+          "22.92",
+          null,
+          "2026-10-26T21:05:54.825166+00:00"
+        ],
+        [
+          3,
+          "Puente de Vallecas",
+          "1.857",
+          2463,
+          200029,
+          15,
+          4,
+          15,
+          14,
+          "24.53",
+          null,
+          "2026-10-26T21:05:54.825166+00:00"
+        ],
+        [
+          4,
+          "Chamberi",
+          "1.720",
+          3842,
+          290290,
+          4,
+          3,
+          16,
+          16,
+          "21.38",
+          "9.25",
+          "2026-10-26T21:05:54.825166+00:00"
+        ],
+        [
+          5,
+          "Hortaleza",
+          "1.612",
+          2493,
+          222166,
+          10,
+          3,
+          16,
+          14,
+          "18.14",
+          "8.69",
+          "2026-10-26T21:05:54.825166+00:00"
+        ]
+      ],
+      "ms_observados": 1.793
+    },
+    "09b": {
+      "archivo": "postgres/vistas_funciones/09_consulta_vistas.sql",
+      "filas": 16,
+      "columnas": [
+        "distrito",
+        "horas_medidas",
+        "promedio_no2",
+        "maximo_no2",
+        "horas_sobre_limite"
+      ],
+      "muestra": [
+        [
+          "Villaverde",
+          735,
+          "39.95",
+          "123.000",
+          0
+        ],
+        [
+          "Salamanca",
+          734,
+          "39.50",
+          "103.000",
+          0
+        ],
+        [
+          "Carabanchel",
+          1471,
+          "37.61",
+          "129.000",
+          0
+        ],
+        [
+          "Puente de Vallecas",
+          737,
+          "36.06",
+          "113.000",
+          0
+        ],
+        [
+          "Villa de Vallecas",
+          736,
+          "36.06",
+          "145.000",
+          0
+        ]
+      ],
+      "ms_observados": 78.727
+    },
+    "09c": {
+      "archivo": "postgres/vistas_funciones/09_consulta_vistas.sql",
+      "filas": 4,
+      "columnas": [
+        "organismo",
+        "categoria",
+        "total_sensores",
+        "activos",
+        "inactivos",
+        "en_mantenimiento"
+      ],
+      "muestra": [
+        [
+          "Ayuntamiento de Madrid - Calidad del Aire",
+          "ambiente",
+          66,
+          64,
+          1,
+          1
+        ],
+        [
+          "Ayuntamiento de Madrid - Movilidad",
+          "espacios_publicos",
+          21,
+          19,
+          1,
+          1
+        ],
+        [
+          "Ayuntamiento de Madrid - Movilidad",
+          "movilidad",
+          216,
+          202,
+          8,
+          6
+        ],
+        [
+          "Distribuidora Electrica Madrid",
+          "energia",
+          21,
+          19,
+          1,
+          1
+        ]
+      ],
+      "ms_observados": 2.294
+    },
+    "10a": {
+      "archivo": "postgres/vistas_funciones/10_consulta_funciones.sql",
+      "filas": 5,
+      "columnas": [
+        "variable",
+        "unidad",
+        "limite_alerta",
+        "cantidad_mediciones",
+        "promedio",
+        "minimo",
+        "maximo",
+        "mediciones_sobre_limite",
+        "nivel_maximo",
+        "primera_medicion",
+        "ultima_medicion"
+      ],
+      "muestra": [
+        [
+          "co",
+          "mg/m3",
+          "10.00",
+          730,
+          "0.273",
+          "0.200",
+          "1.000",
+          0,
+          "normal",
+          "2025-03-01T00:00:00",
+          "2025-03-31T23:00:00"
+        ],
+        [
+          "no2",
+          "ug/m3",
+          "200.00",
+          732,
+          "26.480",
+          "6.000",
+          "90.000",
+          0,
+          "normal",
+          "2025-03-01T00:00:00",
+          "2025-03-31T23:00:00"
+        ],
+        [
+          "o3",
+          "ug/m3",
+          "180.00",
+          732,
+          "56.999",
+          "3.000",
+          "100.000",
+          0,
+          "normal",
+          "2025-03-01T00:00:00",
+          "2025-03-31T23:00:00"
+        ],
+        [
+          "pm10",
+          "ug/m3",
+          "50.00",
+          736,
+          "11.516",
+          "1.000",
+          "66.000",
+          1,
+          "advertencia",
+          "2025-03-01T00:00:00",
+          "2025-03-31T23:00:00"
+        ],
+        [
+          "pm25",
+          "ug/m3",
+          "25.00",
+          736,
+          "6.156",
+          "1.000",
+          "23.000",
+          0,
+          "normal",
+          "2025-03-01T00:00:00",
+          "2025-03-31T23:00:00"
+        ]
+      ],
+      "ms_observados": 87.622
+    },
+    "10b": {
+      "archivo": "postgres/vistas_funciones/10_consulta_funciones.sql",
+      "filas": 16,
+      "columnas": [
+        "id_sensor",
+        "nombre_sensor",
+        "tipo_sensor",
+        "estado",
+        "nombre_zona",
+        "fecha_instalacion"
+      ],
+      "muestra": [
+        [
+          "S-00009",
+          "Aire - Plaza del Carmen",
+          "calidad_aire",
+          "activo",
+          "Plaza del Carmen",
+          "1999-11-01"
+        ],
+        [
+          "S-00027",
+          "Parking - Centro",
+          "estacionamiento",
+          "activo",
+          "Centro de control Centro",
+          "2018-04-13"
+        ],
+        [
+          "S-00026",
+          "Energia - Centro",
+          "medidor_energia",
+          "activo",
+          "Centro de control Centro",
+          "2019-04-02"
+        ],
+        [
+          "S-00025",
+          "Clima - Centro",
+          "meteorologico",
+          "activo",
+          "Centro de control Centro",
+          "2023-12-01"
+        ],
+        [
+          "S-00028",
+          "Ruido - Centro",
+          "ruido",
+          "activo",
+          "Centro de control Centro",
+          "2021-01-31"
+        ]
+      ],
+      "ms_observados": 2.513
+    },
+    "10c": {
+      "archivo": "postgres/vistas_funciones/10_consulta_funciones.sql",
+      "filas": 20,
+      "columnas": [
+        "fecha_hora",
+        "id_sensor",
+        "distrito",
+        "valor",
+        "limite_alerta",
+        "nivel"
+      ],
+      "muestra": [
+        [
+          "2026-07-25T13:00:00",
+          "S-00024",
+          "Fuencarral-El Pardo",
+          "128.000",
+          "25.00",
+          "critica"
+        ],
+        [
+          "2026-07-24T22:00:00",
+          "S-00024",
+          "Fuencarral-El Pardo",
+          "125.000",
+          "25.00",
+          "critica"
+        ],
+        [
+          "2026-07-25T01:00:00",
+          "S-00024",
+          "Fuencarral-El Pardo",
+          "121.000",
+          "25.00",
+          "critica"
+        ],
+        [
+          "2026-07-25T09:00:00",
+          "S-00001",
+          "Moncloa-Aravaca",
+          "121.000",
+          "25.00",
+          "critica"
+        ],
+        [
+          "2026-07-25T13:00:00",
+          "S-00001",
+          "Moncloa-Aravaca",
+          "115.000",
+          "25.00",
+          "critica"
+        ]
+      ],
+      "ms_observados": 194.954
+    }
+  },
+  "comprobaciones": [
+    {
+      "nombre": "Motor PostgreSQL 16",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "Carga de referencia completa",
+      "ok": true,
+      "detalle": "Referencia del repositorio: 324 sensores y 4.664.093 mediciones; diferencias requieren explicación."
+    },
+    {
+      "nombre": "01: detalle y unicidad de sensores",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "02: ubicación y unicidad",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "03: tres estados y total",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "04: organismos incluidos con cero",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "05: ubicaciones por identificador",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "06: año de instalación",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "07: ausencia de historia y exhaustividad",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "08: conteos, ceros y ranking denso",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "09a: ranking materializado coincide con 08",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "09a: volumen materializado",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "09a: agregados de criticidad y contaminación",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "09a: posiciones por criticidad y actividad",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "09b: vista frente a tablas originales",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "09c: organismo, categoría y estados",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10a: variables y cantidades frente a 17",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10a: resumen de co",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10a: resumen de no2",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10a: resumen de o3",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10a: resumen de pm10",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10a: resumen de pm25",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10b: sensores del distrito",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10b: mayúsculas/minúsculas",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10c: niveles y las 20 mediciones mayores",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10: fronteras de alertas",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "11: temperatura y promedio ponderado",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "12: selección y total anterior al filtro",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "13: umbral estricto",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "14: historia previa y ausencia en ventana",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "15: horas, variable y promedio",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "16: tipos sin duplicados",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "17: mediciones completas y límites del mes",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "17: poda a partición 2025",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "17: acceso mediante índice",
+      "ok": false,
+      "detalle": "No se observó acceso por índice; revisar indices_medicion y plan_17, sin forzar el optimizador."
+    },
+    {
+      "nombre": "10: error esperado sensor inexistente",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10: error esperado distrito inexistente",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10: error esperado fechas invertidas",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10: error esperado fechas iguales",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10: error esperado fecha nula",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10d: estados calculados y mantenimiento preservado",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "nombre": "10d: rollback restaura cada sensor",
+      "ok": true,
+      "detalle": ""
+    }
+  ],
+  "servidor": [
+    "PostgreSQL 16.15 (Debian 16.15-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+    "smartcity",
+    "160015"
+  ],
+  "carga": {
+    "mediciones": 4664093,
+    "primera": "2024-01-01T00:00:00",
+    "ultima": "2026-08-31T23:00:00",
+    "sensores": 324,
+    "distritos": 21
+  },
+  "indices_medicion": [
+    [
+      "medicion",
+      "medicion_pkey",
+      "CREATE UNIQUE INDEX medicion_pkey ON ONLY public.medicion USING btree (id_medicion, fecha_hora)"
+    ],
+    [
+      "medicion_2024",
+      "medicion_2024_pkey",
+      "CREATE UNIQUE INDEX medicion_2024_pkey ON public.medicion_2024 USING btree (id_medicion, fecha_hora)"
+    ],
+    [
+      "medicion_2025",
+      "medicion_2025_pkey",
+      "CREATE UNIQUE INDEX medicion_2025_pkey ON public.medicion_2025 USING btree (id_medicion, fecha_hora)"
+    ],
+    [
+      "medicion_2026",
+      "medicion_2026_pkey",
+      "CREATE UNIQUE INDEX medicion_2026_pkey ON public.medicion_2026 USING btree (id_medicion, fecha_hora)"
+    ],
+    [
+      "medicion_default",
+      "medicion_default_pkey",
+      "CREATE UNIQUE INDEX medicion_default_pkey ON public.medicion_default USING btree (id_medicion, fecha_hora)"
+    ]
+  ],
+  "estadisticas_medicion": [
+    [
+      "medicion",
+      0,
+      "2026-10-26T21:00:09.571649+00:00",
+      null
+    ],
+    [
+      "medicion_2024",
+      1089201,
+      "2026-10-26T21:00:09.696196+00:00",
+      "2026-10-26T20:59:11.127340+00:00"
+    ],
+    [
+      "medicion_2025",
+      1281661,
+      "2026-10-26T21:00:09.816091+00:00",
+      "2026-10-26T21:00:08.036995+00:00"
+    ],
+    [
+      "medicion_2026",
+      2290552,
+      "2026-10-26T21:00:10.481041+00:00",
+      "2026-10-26T21:00:10.330655+00:00"
+    ],
+    [
+      "medicion_default",
+      0,
+      "2026-10-26T21:00:10.481646+00:00",
+      null
+    ]
+  ],
+  "plan_17": [
+    {
+      "Plan": {
+        "Node Type": "Gather Merge",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Startup Cost": 21152.87,
+        "Total Cost": 21511.07,
+        "Plan Rows": 3070,
+        "Plan Width": 207,
+        "Actual Startup Time": 43.401,
+        "Actual Total Time": 47.984,
+        "Actual Rows": 3666,
+        "Actual Loops": 1,
+        "Workers Planned": 2,
+        "Workers Launched": 2,
+        "Shared Hit Blocks": 1735,
+        "Shared Read Blocks": 9072,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0,
+        "Plans": [
+          {
+            "Node Type": "Sort",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 20152.85,
+            "Total Cost": 20156.69,
+            "Plan Rows": 1535,
+            "Plan Width": 207,
+            "Actual Startup Time": 29.253,
+            "Actual Total Time": 29.327,
+            "Actual Rows": 1222,
+            "Actual Loops": 3,
+            "Sort Key": [
+              "m.fecha_hora",
+              "v.id_variable",
+              "m.id_medicion"
+            ],
+            "Sort Method": "quicksort",
+            "Sort Space Used": 343,
+            "Sort Space Type": "Memory",
+            "Shared Hit Blocks": 1735,
+            "Shared Read Blocks": 9072,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Workers": [
+              {
+                "Worker Number": 0,
+                "Sort Method": "quicksort",
+                "Sort Space Used": 25,
+                "Sort Space Type": "Memory"
+              },
+              {
+                "Worker Number": 1,
+                "Sort Method": "quicksort",
+                "Sort Space Used": 25,
+                "Sort Space Type": "Memory"
+              }
+            ],
+            "Plans": [
+              {
+                "Node Type": "Hash Join",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Join Type": "Inner",
+                "Startup Cost": 18.1,
+                "Total Cost": 20071.62,
+                "Plan Rows": 1535,
+                "Plan Width": 207,
+                "Actual Startup Time": 15.775,
+                "Actual Total Time": 28.762,
+                "Actual Rows": 1222,
+                "Actual Loops": 3,
+                "Inner Unique": true,
+                "Hash Cond": "(m.id_variable = v.id_variable)",
+                "Shared Hit Blocks": 1633,
+                "Shared Read Blocks": 9072,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Workers": [],
+                "Plans": [
+                  {
+                    "Node Type": "Seq Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": true,
+                    "Async Capable": false,
+                    "Relation Name": "medicion_2025",
+                    "Alias": "m",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 20049.44,
+                    "Plan Rows": 1535,
+                    "Plan Width": 31,
+                    "Actual Startup Time": 15.767,
+                    "Actual Total Time": 28.518,
+                    "Actual Rows": 1222,
+                    "Actual Loops": 3,
+                    "Filter": "((fecha_hora >= '2025-03-01 00:00:00'::timestamp without time zone) AND (fecha_hora < '2025-04-01 00:00:00'::timestamp without time zone) AND ((id_sensor)::text = 'S-00002'::text))",
+                    "Rows Removed by Filter": 425998,
+                    "Shared Hit Blocks": 1632,
+                    "Shared Read Blocks": 9072,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0,
+                    "Workers": []
+                  },
+                  {
+                    "Node Type": "Hash",
+                    "Parent Relationship": "Inner",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Startup Cost": 13.6,
+                    "Total Cost": 13.6,
+                    "Plan Rows": 360,
+                    "Plan Width": 178,
+                    "Actual Startup Time": 0.011,
+                    "Actual Total Time": 0.014,
+                    "Actual Rows": 15,
+                    "Actual Loops": 1,
+                    "Hash Buckets": 1024,
+                    "Original Hash Buckets": 1024,
+                    "Hash Batches": 1,
+                    "Original Hash Batches": 1,
+                    "Peak Memory Usage": 9,
+                    "Shared Hit Blocks": 1,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0,
+                    "Workers": [],
+                    "Plans": [
+                      {
+                        "Node Type": "Seq Scan",
+                        "Parent Relationship": "Outer",
+                        "Parallel Aware": false,
+                        "Async Capable": false,
+                        "Relation Name": "variable",
+                        "Alias": "v",
+                        "Startup Cost": 0.0,
+                        "Total Cost": 13.6,
+                        "Plan Rows": 360,
+                        "Plan Width": 178,
+                        "Actual Startup Time": 0.005,
+                        "Actual Total Time": 0.006,
+                        "Actual Rows": 15,
+                        "Actual Loops": 1,
+                        "Shared Hit Blocks": 1,
+                        "Shared Read Blocks": 0,
+                        "Shared Dirtied Blocks": 0,
+                        "Shared Written Blocks": 0,
+                        "Local Hit Blocks": 0,
+                        "Local Read Blocks": 0,
+                        "Local Dirtied Blocks": 0,
+                        "Local Written Blocks": 0,
+                        "Temp Read Blocks": 0,
+                        "Temp Written Blocks": 0,
+                        "Workers": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "Planning": {
+        "Shared Hit Blocks": 0,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning Time": 0.153,
+      "Triggers": [],
+      "Execution Time": 48.144
+    }
+  ],
+  "estados": {
+    "antes": {
+      "activo": 304,
+      "inactivo": 11,
+      "mantenimiento": 9
+    },
+    "durante": {
+      "activo": 295,
+      "inactivo": 20,
+      "mantenimiento": 9
+    },
+    "sensores_cambiados": 9,
+    "despues": {
+      "activo": 304,
+      "inactivo": 11,
+      "mantenimiento": 9
+    }
+  },
+  "aprobado": false
+}

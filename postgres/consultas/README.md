@@ -2,7 +2,9 @@
 
 Las consultas 1-8 conservan su implementación. Las complementarias 11-17 cubren
 los requisitos básicos, relacionales, analíticos y avanzados junto con las existentes.
-Los números 9 y 10 quedan reservados para las consultas sobre vistas y funciones
+Las consultas [9 (vistas)](../vistas_funciones/09_consulta_vistas.sql) y
+[10 (funciones y procedimientos)](../vistas_funciones/10_consulta_funciones.sql)
+ya están integradas desde el PR #1 de Luis; se conservan en su carpeta.
 
 
 Cada SQL se puede ejecutar completo en DBeaver, sin variables de `psql`.
@@ -71,7 +73,7 @@ los usos de cada herramienta.
 | Funciones de ventana | 8: `DENSE_RANK()` |
 | Fechas | 6: año de instalación; 11, 14, 15, 17: actividad y períodos |
 | Consulta compatible con índices | 17: igualdad por sensor y rango de fecha; confirmar con `EXPLAIN` en la base real |
-| Vistas y funciones/procedimientos | 9 y 10: responsabilidad de persona B, pendientes de integrar |
+| Vistas y funciones/procedimientos | 9 y 10: implementadas por persona B e integradas; ver enlaces anteriores |
 
 ## Validación en la base completa
 
@@ -154,8 +156,57 @@ Index Scan using medicion_2025_id_sensor_fecha_hora_idx on medicion_2025 m
 Solo se accedió a la partición de 2025. Esto confirma el acceso en los datos
 aislados; no representa una medición de rendimiento de la carga real.
 
-**Pendiente:** ejecutar sobre la carga completa y confirmar el plan en
+**Pendiente registrado el 22 de octubre (histórico):** ejecutar sobre la carga completa y confirmar el plan en
 **PostgreSQL 16**, que es la versión del `docker-compose.yml` del proyecto.
 Durante esta implementación no se pudo establecer conexión al servicio local
 en los puertos 5433 y 5432; tampoco había un `.env` en el repositorio.
 No se modificaron el esquema, los índices, los generadores ni los datos del proyecto.
+
+
+## Validación real del 26 de octubre de 2026
+
+**41/42 comprobaciones aprobadas** en PostgreSQL 16.15: 324 sensores,
+21 distritos y 4.664.093 mediciones. Se ejecutaron 21 SELECT que abarcan las
+consultas 1–17, se compararon resultados con referencias independientes y se
+comprobaron los errores esperados de las funciones. Los 324 estados originales
+se conservaron después de la prueba del procedimiento y su ROLLBACK.
+
+**Pendiente real:** la consulta 17 lee solo `medicion_2025`, pero usa recorrido
+secuencial paralelo porque faltan los índices de mediciones definidos por César.
+Solo están los de clave primaria. Coordinar su instalación con César y repetir
+la validación; no forzar el optimizador ni ejecutar el programa de benchmarks.
+
+- [Sección lista para el documento técnico](SECCION_PERSONA_C.md).
+- [Evidencia, resultados y checklist](evidencia/README.md).
+- [Validador reproducible](validar_consultas.py).
+
+Desde la raíz, usando el entorno Python del proyecto:
+
+```powershell
+.\.venv\Scripts\python.exe postgres/consultas/validar_consultas.py
+```
+
+Devuelve código 0 cuando aprueba todo y 1 si hay fallos o pendientes. La ejecución
+actual devuelve 1 por el índice faltante. Escribe solo muestras e informes en
+`postgres/consultas/evidencia`; para conservar la evidencia anterior, indicar
+`--salida postgres/consultas/evidencia_nueva` en una nueva ejecución.
+Requiere las dependencias del proyecto y `.env`; no crea ni recarga datos,
+vistas o índices. Ejecutarlo cuando no haya otras modificaciones simultáneas.
+
+Las consultas de lectura usan REPEATABLE READ READ ONLY. La prueba de estados
+usa otra transacción con ROLLBACK garantizado incluso ante un error.
+El validador no ejecuta la llamada final de refresco del archivo 10: escribe
+en la vista materializada y debe realizarse por separado.
+
+### Repetición manual en DBeaver
+
+Conectar al PostgreSQL del proyecto (puerto predeterminado 5433; credenciales
+de `.env`). Ejecutar 1–8 y 11–17, y los bloques 9a–9c y 10a–10c en una sesión
+de solo lectura como la descrita arriba. Cerrar con ROLLBACK antes de abrir la
+transacción del bloque 10d; ejecutarlo completo hasta su ROLLBACK y comprobar
+de nuevo los estados. La llamada `CALL sp_refrescar_ranking_zonas()` se ejecuta
+por separado si se requiere refrescar. No lanzar el archivo 10 completo dentro
+de la sesión de solo lectura.
+
+La validación registrada se hizo con psycopg contra la instancia Docker;
+DBeaver no estaba disponible. No se atribuyen estas pruebas al cliente gráfico.
