@@ -120,6 +120,58 @@ END;
 $$;
 
 
+-- Función: sensores de un distrito
+-- Qué resuelve:
+-- Recibe el nombre de un distrito y devuelve sus sensores con su tipo, su estado, la
+-- zona donde están y la fecha en que se instalaron. La pidió Sebastián para usarla
+-- en su consulta 10.
+-- Por qué así:
+-- El nombre se compara sin importar mayúsculas ni minúsculas, para que Centro y
+-- centro den el mismo resultado.
+-- Incluye sensores de todos los estados, igual que las consultas de Sebastián, para
+-- que el estado se pueda ver y filtrar después.
+-- Si el distrito no existe da un error claro. Sin esa validación, un nombre mal
+-- escrito y un distrito real sin sensores devolverían los dos una tabla vacía, y no
+-- se podrían distinguir.
+-- Lee la vista de sensores para no repetir sus cinco uniones.
+-- Es STABLE porque lee tablas pero no las modifica.
+CREATE OR REPLACE FUNCTION fn_sensores_por_distrito(p_distrito VARCHAR)
+RETURNS TABLE (
+    id_sensor VARCHAR,
+    nombre_sensor VARCHAR,
+    tipo_sensor VARCHAR,
+    estado VARCHAR,
+    nombre_zona VARCHAR,
+    fecha_instalacion DATE
+)
+LANGUAGE plpgsql
+STABLE
+AS $$
+-- Las columnas de salida se llaman igual que las de la vista. Esta instrucción le
+-- dice a Postgres que, si hay duda, se refiere a la columna de la vista.
+#variable_conflict use_column
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM distrito AS d WHERE lower(d.nombre) = lower(p_distrito)) THEN
+        RAISE EXCEPTION 'No existe el distrito %', p_distrito;
+    END IF;
+
+    RETURN QUERY
+    SELECT
+        sd.id_sensor,
+        sd.nombre_sensor,
+        sd.tipo_sensor,
+        sd.estado,
+        sd.nombre_zona,
+        sd.fecha_instalacion
+    FROM v_sensor_detalle AS sd
+    WHERE lower(sd.distrito) = lower(p_distrito)
+    -- Primero agrupados por tipo y dentro de cada tipo por código de sensor, para que
+    -- el resultado salga siempre en el mismo orden.
+    ORDER BY sd.tipo_sensor, sd.id_sensor;
+END;
+$$;
+
+
 -- Procedimiento: actualizar el estado de los sensores según si llegan datos
 -- Qué resuelve:
 -- Pasa a inactivo los sensores activos que no tienen mediciones en las últimas

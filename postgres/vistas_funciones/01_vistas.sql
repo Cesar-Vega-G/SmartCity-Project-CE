@@ -84,7 +84,9 @@ INNER JOIN v_sensor_detalle AS sd ON sd.id_sensor = m.id_sensor;
 -- Qué resuelve:
 -- Una fila por distrito con cuántos sensores tiene, cuántas mediciones produjo, qué
 -- parte de ellas pasó el límite de alerta y cuánto NO2 y PM2.5 registra en promedio.
--- Ordena los distritos de dos maneras:
+-- Ordena los distritos de tres maneras:
+--   posición por sensores: por cantidad total de sensores, con el mismo criterio
+--   que la consulta 8 de Sebastián, para que los dos resultados coincidan.
 --   posición de criticidad: por porcentaje de mediciones sobre el límite.
 --   posición de actividad: por cantidad de mediciones.
 -- Por qué es materializada:
@@ -156,11 +158,14 @@ resumen AS (
     LEFT JOIN mediciones AS me ON me.id_distrito = se.id_distrito
 )
 
--- Paso 4: calcular las dos posiciones.
+-- Paso 4: calcular las tres posiciones.
 -- La función de ranking denso da la misma posición a los empates y no deja huecos:
 -- si dos distritos empatan en el primer lugar, el siguiente queda segundo y no tercero.
+-- La posición por sensores cuenta los sensores de todos los estados y usa el mismo
+-- ranking denso que la consulta 8, así que para cada distrito da el mismo número.
 -- La última columna guarda cuándo se calculó, para saber si el ranking está al día.
 SELECT
+    DENSE_RANK() OVER (ORDER BY total_sensores DESC) AS posicion_sensores,
     DENSE_RANK() OVER (ORDER BY pct_sobre_limite DESC) AS posicion_criticidad,
     DENSE_RANK() OVER (ORDER BY total_mediciones DESC) AS posicion_actividad,
     resumen.*,

@@ -19,6 +19,7 @@ SELECT
     mediciones_sobre_limite,
     total_mediciones,
     posicion_actividad,
+    posicion_sensores,
     total_sensores,
     sensores_activos,
     promedio_no2,

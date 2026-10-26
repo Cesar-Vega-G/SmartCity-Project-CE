@@ -23,9 +23,10 @@ Si se recargan las mediciones, hay que recalcular la vista materializada:
 | --- | --- | --- |
 | `v_sensor_detalle` | vista | Sensor con tipo, categoría, organismo, ubicación y distrito |
 | `v_medicion_detalle` | vista | Medición con variable, unidad, límite, distrito y si pasó el límite |
-| `mv_ranking_zonas` | vista materializada | Ranking de distritos por criticidad (% sobre el límite) y por actividad |
+| `mv_ranking_zonas` | vista materializada | Ranking de distritos por cantidad de sensores (mismo criterio que la consulta 8), por criticidad (% sobre el límite) y por actividad |
 | `fn_nivel_alerta(valor, limite)` | función escalar | normal / advertencia / critica, misma regla que las alertas de Mongo |
 | `fn_resumen_sensor(id, desde, hasta)` | función que devuelve tabla | Resumen por variable de un sensor en un período |
+| `fn_sensores_por_distrito(distrito)` | función que devuelve tabla | Sensores de un distrito con su tipo, estado, zona y fecha de instalación |
 | `sp_actualizar_estado_sensores(fecha, horas)` | procedimiento | Marca inactivo/activo según si llegaron datos |
 | `sp_refrescar_ranking_zonas(concurrente)` | procedimiento | Recalcula `mv_ranking_zonas` |
 
