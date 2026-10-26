@@ -18,6 +18,7 @@ python data/generators/catalogo.py
 python data/generators/clima.py
 python data/generators/cargar_mongo.py
 python data/generators/cargar_postgres.py
+python postgres/vistas_funciones/crear.py
 ```
 
 Postgres queda en el puerto 5433 y Mongo en el 27017 (usuario y contraseña en `.env`).
