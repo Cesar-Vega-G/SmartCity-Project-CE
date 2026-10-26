@@ -3,7 +3,7 @@
 Las consultas 1-8 conservan su implementación. Las complementarias 11-17 cubren
 los requisitos básicos, relacionales, analíticos y avanzados junto con las existentes.
 Los números 9 y 10 quedan reservados para las consultas sobre vistas y funciones
-o procedimientos de la persona B; esta entrega no las implementa.
+
 
 Cada SQL se puede ejecutar completo en DBeaver, sin variables de `psql`.
 Sus comentarios describen la pregunta, el criterio del resultado y la justificación.
