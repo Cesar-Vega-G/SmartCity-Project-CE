@@ -22,7 +22,7 @@ AS $$
         WHEN p_valor > 1.5 * p_limite THEN 'critica'
         WHEN p_valor > p_limite THEN 'advertencia'
         ELSE 'normal'
-    END;
+    END::VARCHAR;
 $$;
 
 
