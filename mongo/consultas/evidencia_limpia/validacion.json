@@ -1,0 +1,238 @@
+{
+  "fecha": {
+    "$date": "2026-10-27T19:00:32.026Z"
+  },
+  "modo": "controladas",
+  "base": "smartcity",
+  "version": "7.0.45",
+  "comprobaciones": [
+    {
+      "nombre": "estadisticas con valores sanos de documentos parcialmente invalidos",
+      "aprobado": true
+    },
+    {
+      "nombre": "variables y unidades separadas",
+      "aprobado": true
+    },
+    {
+      "nombre": "variable explicitamente invalida excluida",
+      "aprobado": true
+    },
+    {
+      "nombre": "inicio incluido y fin excluido",
+      "aprobado": true
+    },
+    {
+      "nombre": "detalle conserva invalidos y proyeccion",
+      "aprobado": true
+    },
+    {
+      "nombre": "rango completo cuenta documentos",
+      "aprobado": true
+    },
+    {
+      "nombre": "sensor inexistente",
+      "aprobado": true
+    },
+    {
+      "nombre": "distrito inexistente",
+      "aprobado": true
+    },
+    {
+      "nombre": "severidad de eventos independiente del nivel",
+      "aprobado": true
+    },
+    {
+      "nombre": "filtro de tipo de evento",
+      "aprobado": true
+    },
+    {
+      "nombre": "alertas por distrito y nivel",
+      "aprobado": true
+    },
+    {
+      "nombre": "promedio por zona",
+      "aprobado": true
+    },
+    {
+      "nombre": "promedio por tipo y variable",
+      "aprobado": true
+    },
+    {
+      "nombre": "incidentes usan fecha_reporte y estados separados",
+      "aprobado": true
+    },
+    {
+      "nombre": "conteo documental no cuenta variables",
+      "aprobado": true
+    },
+    {
+      "nombre": "umbral estricto y filtros multiples",
+      "aprobado": true
+    },
+    {
+      "nombre": "temperatura reutiliza consulta 6",
+      "aprobado": true
+    },
+    {
+      "nombre": "comparacion valor > limite entre campos",
+      "aprobado": true
+    },
+    {
+      "nombre": "ranking solo del contaminante elegido",
+      "aprobado": true
+    },
+    {
+      "nombre": "serie diaria sin ceros inventados",
+      "aprobado": true
+    },
+    {
+      "nombre": "campo dinamico de incidentes",
+      "aprobado": true
+    },
+    {
+      "nombre": "rechaza parametros invalidos {\"desde\":\"2026-08-01T00:00:00.000Z\",\"hasta\":\"2026-07-01T00:00:00.000Z\"}",
+      "aprobado": true
+    },
+    {
+      "nombre": "rechaza parametros invalidos {\"desde\":\"2026-07-01\"}",
+      "aprobado": true
+    },
+    {
+      "nombre": "rechaza parametros invalidos {\"variable\":\"xyz\"}",
+      "aprobado": true
+    },
+    {
+      "nombre": "rechaza parametros invalidos {\"limite\":0}",
+      "aprobado": true
+    },
+    {
+      "nombre": "rechaza parametros invalidos {\"limite\":101}",
+      "aprobado": true
+    },
+    {
+      "nombre": "rechaza parametros invalidos {\"umbral\":\"80\"}",
+      "aprobado": true
+    },
+    {
+      "nombre": "detalle limita a 100 y agregacion procesa 105",
+      "aprobado": true
+    },
+    {
+      "nombre": "CRUD repetible, siete operaciones y limpieza",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 1 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 2 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 3 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 4 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 5 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 6 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 7 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 8 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 9 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 10 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 11 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 12 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 13 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 14 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 15 sobre coleccion vacia",
+      "aprobado": true
+    }
+  ],
+  "controladas": {
+    "base_temporal": "smartcity_personad_pruebas_60a35a21ce9e4b49a2587eb3fdde7aa4",
+    "resultado": {
+      "casos": 15,
+      "crud": {
+        "pasos": [
+          "insertOne",
+          "insertMany",
+          "find",
+          "findOne",
+          "updateOne",
+          "updateMany",
+          "deleteOne",
+          "limpieza"
+        ],
+        "documentos_restantes": 0
+      }
+    }
+  },
+  "duracion_ms": 774,
+  "aprobado": true,
+  "resumen": {
+    "aprobadas": 44,
+    "fallidas": 0
+  },
+  "codigo_sha256": {
+    "00_comprobar.js": "dc5b9f614283c8254d086ed6cc5e531cc3326ebed4f5b983c668b89ef0819ab1",
+    "01_lecturas_sensor.js": "7d5b6aff342fedd1deec6714de871c60fc9e325616cae001ef5f33a4d2eb0ac5",
+    "02_lecturas_fechas.js": "a095e84bf04344f6c92316b6463b97c2cb84cb14a3410c827f3d24b83702af0d",
+    "03_extremos.js": "1035ed193eb944b4873758c2366d27adf4d1582fa59a364cfd9d13994e8eda97",
+    "04_eventos_criticos.js": "c585ca7d7ab75b53713bf64e3f3c0f978a9a2194e85c35ada6bd3d0bbbdf6646",
+    "05_alertas_zona.js": "0c2aa37041e4a339ab5bdf3a6325f96c6b3e823d18d3ceaad0ece8ea904ac55c",
+    "06_promedio_zona.js": "0a4a3fdc9a795e01e0aee54b440f57ca50085f12695728746248d9ac2bb56579",
+    "07_promedio_tipo.js": "a848b09c2b2b206366a8a606f6128e04f097de1f6d208439a93107076f4c4044",
+    "08_incidentes_categoria.js": "549a1feaa125ac217f0cd5fd4d9be5fd317320b5ae86e86e35a028d7b867cc92",
+    "09_lecturas_por_sensor.js": "32958d599ecab8773e01c9d16352a06e9b188dad667b1dc6d01008616377ece2",
+    "10_filtros_multiples.js": "33cdfbe130beaed0f72ecf6f099e2f01b264133c9edd88994bea35cf1ab4bf52",
+    "11_temperatura_zona.js": "71c193ed59e0d2f9c52b72859ee69b44137725e4b39e870c0ec63e82a0ff99b3",
+    "12_sensores_sobre_limite.js": "8d733d6fba5cce07387324cfdd85bc26ab7ffe841ebf5780298ac27d7d216676",
+    "13_ranking_contaminacion.js": "f48a882fac0a5682819549b9eb524dee588a8421fa478f013bb1ee8207219c7b",
+    "14_evolucion_diaria.js": "8e277eb8a94feaba7e6efe8a2b75aa97b7311313022aa2f17d712cc3a0354865",
+    "15_incidentes_heridos.js": "94f4eeccacec583de8fd36abab26ccad32f80129225ca2c99266c4dd15914d6a",
+    "16_crud.js": "c94fd734426059ea4a3ac6722e99ccc14d21a59c4952f2f333d01fc6cc0dd83b",
+    "cargar.js": "0ed9477f48d4d113ebb19aab943ac1cfc60da1a34832f2517ad98bfc65b6ebdc",
+    "crud.js": "cca4e17dbbdb84cabfb0f4dc8918332c8e221ffa30daeb2e974d8c0a381733ab",
+    "ejecutar.py": "0494ad78362531cdbe967227b40a9ee267c883bc707a88c56cd243baec07d5fa",
+    "entrada.js": "d10ee6a02023b82e9de0ac7974a2bd6a342e3959d34a9f56c056f8a498cf9942",
+    "lib.js": "80678ccf1070e856b8d6af41047baa42d943f0ae9904d547554f417bd6aaf7ca",
+    "prueba_limpia.py": "3bcc82a2c9671fd0aba40ffd40e9d115d0b1b80f0525f67e50de94159b948bc7",
+    "pruebas_controladas.js": "121cfa25544c3e7f600aaf2d90a248bb7cf94775339148cae41bbb8703800e5e",
+    "validacion.js": "650de83d7efd2dceb78b5b4eae885ed6ba4cb2f4ac3dcec4cddf11a8dc362821"
+  }
+}

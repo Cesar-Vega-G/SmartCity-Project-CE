@@ -1,0 +1,7 @@
+{
+  "imagen_id": "sha256:c53852c00c23ca9f23fc39690350ffa9a80e3642fe8f96879726d8da0abe80a7",
+  "contenedor_temporal": "smartcity_personad_limpio_d207d8a44b674713809a78246730aeba",
+  "volumenes_del_proyecto": false,
+  "puertos_publicados": false,
+  "alcance": "Scripts y fixtures; no carga masiva ni stack completo"
+}

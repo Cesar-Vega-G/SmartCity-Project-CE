@@ -1,0 +1,6212 @@
+{
+  "fecha": {
+    "$date": "2026-10-27T19:01:34.434Z"
+  },
+  "modo": "todo",
+  "base": "smartcity",
+  "version": "7.0.45",
+  "comprobaciones": [
+    {
+      "nombre": "estadisticas con valores sanos de documentos parcialmente invalidos",
+      "aprobado": true
+    },
+    {
+      "nombre": "variables y unidades separadas",
+      "aprobado": true
+    },
+    {
+      "nombre": "variable explicitamente invalida excluida",
+      "aprobado": true
+    },
+    {
+      "nombre": "inicio incluido y fin excluido",
+      "aprobado": true
+    },
+    {
+      "nombre": "detalle conserva invalidos y proyeccion",
+      "aprobado": true
+    },
+    {
+      "nombre": "rango completo cuenta documentos",
+      "aprobado": true
+    },
+    {
+      "nombre": "sensor inexistente",
+      "aprobado": true
+    },
+    {
+      "nombre": "distrito inexistente",
+      "aprobado": true
+    },
+    {
+      "nombre": "severidad de eventos independiente del nivel",
+      "aprobado": true
+    },
+    {
+      "nombre": "filtro de tipo de evento",
+      "aprobado": true
+    },
+    {
+      "nombre": "alertas por distrito y nivel",
+      "aprobado": true
+    },
+    {
+      "nombre": "promedio por zona",
+      "aprobado": true
+    },
+    {
+      "nombre": "promedio por tipo y variable",
+      "aprobado": true
+    },
+    {
+      "nombre": "incidentes usan fecha_reporte y estados separados",
+      "aprobado": true
+    },
+    {
+      "nombre": "conteo documental no cuenta variables",
+      "aprobado": true
+    },
+    {
+      "nombre": "umbral estricto y filtros multiples",
+      "aprobado": true
+    },
+    {
+      "nombre": "temperatura reutiliza consulta 6",
+      "aprobado": true
+    },
+    {
+      "nombre": "comparacion valor > limite entre campos",
+      "aprobado": true
+    },
+    {
+      "nombre": "ranking solo del contaminante elegido",
+      "aprobado": true
+    },
+    {
+      "nombre": "serie diaria sin ceros inventados",
+      "aprobado": true
+    },
+    {
+      "nombre": "campo dinamico de incidentes",
+      "aprobado": true
+    },
+    {
+      "nombre": "rechaza parametros invalidos {\"desde\":\"2026-08-01T00:00:00.000Z\",\"hasta\":\"2026-07-01T00:00:00.000Z\"}",
+      "aprobado": true
+    },
+    {
+      "nombre": "rechaza parametros invalidos {\"desde\":\"2026-07-01\"}",
+      "aprobado": true
+    },
+    {
+      "nombre": "rechaza parametros invalidos {\"variable\":\"xyz\"}",
+      "aprobado": true
+    },
+    {
+      "nombre": "rechaza parametros invalidos {\"limite\":0}",
+      "aprobado": true
+    },
+    {
+      "nombre": "rechaza parametros invalidos {\"limite\":101}",
+      "aprobado": true
+    },
+    {
+      "nombre": "rechaza parametros invalidos {\"umbral\":\"80\"}",
+      "aprobado": true
+    },
+    {
+      "nombre": "detalle limita a 100 y agregacion procesa 105",
+      "aprobado": true
+    },
+    {
+      "nombre": "CRUD repetible, siete operaciones y limpieza",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 1 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 2 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 3 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 4 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 5 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 6 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 7 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 8 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 9 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 10 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 11 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 12 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 13 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 14 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 15 sobre coleccion vacia",
+      "aprobado": true
+    },
+    {
+      "nombre": "cuatro colecciones disponibles",
+      "aprobado": true
+    },
+    {
+      "nombre": "minimo 500000 documentos",
+      "aprobado": true
+    },
+    {
+      "nombre": "fechas BSON en todas las colecciones",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 1 ejecutada",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 2 ejecutada",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 3 ejecutada",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 4 ejecutada",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 5 ejecutada",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 6 ejecutada",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 7 ejecutada",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 8 ejecutada",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 9 ejecutada",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 10 ejecutada",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 11 ejecutada",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 12 ejecutada",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 13 ejecutada",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 14 ejecutada",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 15 ejecutada",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 3 coincide con calculo independiente",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 5 coincide con calculo independiente",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 6 coincide con calculo independiente",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 7 coincide con calculo independiente",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 8 coincide con calculo independiente",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 9 coincide con calculo independiente",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 11 coincide con calculo independiente",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 12 coincide con calculo independiente",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 13 coincide con calculo independiente",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 14 coincide con calculo independiente",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 10 coincide con filtro y orden independientes",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 15 coincide con seleccion independiente",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 1 conteo y pertenencia",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 2 cuenta periodo y respeta fechas",
+      "aprobado": true
+    },
+    {
+      "nombre": "consulta 4 selecciona eventos criticos",
+      "aprobado": true
+    },
+    {
+      "nombre": "ranking ordenado por promedio",
+      "aprobado": true
+    },
+    {
+      "nombre": "conteo de sensores coincide con documentos crudos",
+      "aprobado": true
+    },
+    {
+      "nombre": "explain sensor/fecha ejecutado",
+      "aprobado": true
+    },
+    {
+      "nombre": "explain tipo/fecha ejecutado",
+      "aprobado": true
+    },
+    {
+      "nombre": "explain alertas criticas/distrito ejecutado",
+      "aprobado": true
+    },
+    {
+      "nombre": "documentos e indices originales intactos (dbHash)",
+      "aprobado": true
+    }
+  ],
+  "controladas": {
+    "base_temporal": "smartcity_personad_pruebas_a74e69a652e84768a299f550ff315cb2",
+    "resultado": {
+      "casos": 15,
+      "crud": {
+        "pasos": [
+          "insertOne",
+          "insertMany",
+          "find",
+          "findOne",
+          "updateOne",
+          "updateMany",
+          "deleteOne",
+          "limpieza"
+        ],
+        "documentos_restantes": 0
+      }
+    }
+  },
+  "completa": {
+    "inventario": {
+      "base": "smartcity",
+      "version": "7.0.45",
+      "colecciones": {
+        "lecturas": {
+          "existe": true,
+          "cantidad": 3151581,
+          "indices": [
+            {
+              "v": 2,
+              "key": {
+                "_id": 1
+              },
+              "name": "_id_"
+            },
+            {
+              "v": 2,
+              "key": {
+                "id_sensor": 1,
+                "timestamp": 1
+              },
+              "name": "idx_sensor_timestamp"
+            },
+            {
+              "v": 2,
+              "key": {
+                "tipo": 1,
+                "timestamp": 1
+              },
+              "name": "idx_tipo_timestamp"
+            },
+            {
+              "v": 2,
+              "key": {
+                "ubicacion.geo": "2dsphere"
+              },
+              "name": "idx_geo",
+              "2dsphereIndexVersion": 3
+            }
+          ],
+          "fechas": [
+            {
+              "_id": null,
+              "primera": {
+                "$date": "2024-01-01T00:00:00Z"
+              },
+              "ultima": {
+                "$date": "2026-08-31T23:45:00Z"
+              }
+            }
+          ],
+          "tipos_fecha": [
+            {
+              "_id": "date",
+              "cantidad": 3151581
+            }
+          ]
+        },
+        "eventos": {
+          "existe": true,
+          "cantidad": 8936,
+          "indices": [
+            {
+              "v": 2,
+              "key": {
+                "_id": 1
+              },
+              "name": "_id_"
+            },
+            {
+              "v": 2,
+              "key": {
+                "tipo_evento": 1,
+                "timestamp": 1
+              },
+              "name": "idx_tipo_timestamp"
+            }
+          ],
+          "fechas": [
+            {
+              "_id": null,
+              "primera": {
+                "$date": "2024-01-01T00:00:00Z"
+              },
+              "ultima": {
+                "$date": "2026-08-31T14:30:00Z"
+              }
+            }
+          ],
+          "tipos_fecha": [
+            {
+              "_id": "date",
+              "cantidad": 8936
+            }
+          ]
+        },
+        "alertas": {
+          "existe": true,
+          "cantidad": 49448,
+          "indices": [
+            {
+              "v": 2,
+              "key": {
+                "_id": 1
+              },
+              "name": "_id_"
+            },
+            {
+              "v": 2,
+              "key": {
+                "nivel": 1,
+                "ubicacion.distrito": 1
+              },
+              "name": "idx_nivel_distrito"
+            },
+            {
+              "v": 2,
+              "key": {
+                "id_sensor": 1,
+                "timestamp": 1
+              },
+              "name": "idx_sensor_timestamp"
+            }
+          ],
+          "fechas": [
+            {
+              "_id": null,
+              "primera": {
+                "$date": "2024-01-01T02:00:00Z"
+              },
+              "ultima": {
+                "$date": "2026-08-31T23:00:00Z"
+              }
+            }
+          ],
+          "tipos_fecha": [
+            {
+              "_id": "date",
+              "cantidad": 49448
+            }
+          ]
+        },
+        "incidentes": {
+          "existe": true,
+          "cantidad": 4000,
+          "indices": [
+            {
+              "v": 2,
+              "key": {
+                "_id": 1
+              },
+              "name": "_id_"
+            },
+            {
+              "v": 2,
+              "key": {
+                "categoria": 1,
+                "fecha_reporte": 1
+              },
+              "name": "idx_categoria_fecha"
+            }
+          ],
+          "fechas": [
+            {
+              "_id": null,
+              "primera": {
+                "$date": "2024-01-01T02:25:57Z"
+              },
+              "ultima": {
+                "$date": "2026-08-31T22:43:24Z"
+              }
+            }
+          ],
+          "tipos_fecha": [
+            {
+              "_id": "date",
+              "cantidad": 4000
+            }
+          ]
+        }
+      },
+      "tipos_sensores": [
+        "calidad_aire",
+        "estacionamiento",
+        "medidor_energia",
+        "meteorologico",
+        "ruido",
+        "trafico"
+      ],
+      "nota_fechas": "Fechas almacenadas sin desplazamiento adicional; cargador sin zona explicita.",
+      "volumen_minimo_cumplido": true
+    },
+    "consultas": [
+      {
+        "consulta": {
+          "numero": 1,
+          "titulo": "Lecturas de un sensor",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100,
+            "sensor": "S-00001"
+          },
+          "coleccion": "lecturas",
+          "operacion": "find",
+          "filtro": {
+            "timestamp": {
+              "$gte": {
+                "$date": "2026-07-01T00:00:00Z"
+              },
+              "$lt": {
+                "$date": "2026-08-01T00:00:00Z"
+              }
+            },
+            "id_sensor": "S-00001"
+          },
+          "proyeccion": {
+            "_id": 1,
+            "id_sensor": 1,
+            "tipo": 1,
+            "ubicacion": 1,
+            "medicion": 1,
+            "timestamp": 1,
+            "valido": 1,
+            "invalidos": 1
+          },
+          "orden": {
+            "timestamp": 1,
+            "_id": 1
+          },
+          "limite": 100
+        },
+        "duracion_ms": 6,
+        "filas": 100,
+        "muestra": [
+          {
+            "_id": {
+              "$oid": "6adfbe6fdae8c444c41d3b62"
+            },
+            "id_sensor": "S-00001",
+            "tipo": "calidad_aire",
+            "ubicacion": {
+              "distrito": "Moncloa-Aravaca",
+              "nombre": "Plaza de Espana",
+              "geo": {
+                "type": "Point",
+                "coordinates": [
+                  -3.712257,
+                  40.423882
+                ]
+              }
+            },
+            "medicion": {
+              "co": 0.2,
+              "no2": 13,
+              "pm10": 17,
+              "pm25": 7
+            },
+            "valido": true,
+            "timestamp": {
+              "$date": "2026-07-01T00:00:00Z"
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbe6fdae8c444c41d3b63"
+            },
+            "id_sensor": "S-00001",
+            "tipo": "calidad_aire",
+            "ubicacion": {
+              "distrito": "Moncloa-Aravaca",
+              "nombre": "Plaza de Espana",
+              "geo": {
+                "type": "Point",
+                "coordinates": [
+                  -3.712257,
+                  40.423882
+                ]
+              }
+            },
+            "medicion": {
+              "co": 0.1,
+              "no2": 9,
+              "pm10": 17,
+              "pm25": 7
+            },
+            "valido": true,
+            "timestamp": {
+              "$date": "2026-07-01T01:00:00Z"
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbe6fdae8c444c41d3b64"
+            },
+            "id_sensor": "S-00001",
+            "tipo": "calidad_aire",
+            "ubicacion": {
+              "distrito": "Moncloa-Aravaca",
+              "nombre": "Plaza de Espana",
+              "geo": {
+                "type": "Point",
+                "coordinates": [
+                  -3.712257,
+                  40.423882
+                ]
+              }
+            },
+            "medicion": {
+              "co": 0.1,
+              "no2": 6,
+              "pm10": 14,
+              "pm25": 6
+            },
+            "valido": true,
+            "timestamp": {
+              "$date": "2026-07-01T02:00:00Z"
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbe6fdae8c444c41d3b65"
+            },
+            "id_sensor": "S-00001",
+            "tipo": "calidad_aire",
+            "ubicacion": {
+              "distrito": "Moncloa-Aravaca",
+              "nombre": "Plaza de Espana",
+              "geo": {
+                "type": "Point",
+                "coordinates": [
+                  -3.712257,
+                  40.423882
+                ]
+              }
+            },
+            "medicion": {
+              "co": 0.1,
+              "no2": 5,
+              "pm10": 12,
+              "pm25": 6
+            },
+            "valido": true,
+            "timestamp": {
+              "$date": "2026-07-01T03:00:00Z"
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbe6fdae8c444c41d3b66"
+            },
+            "id_sensor": "S-00001",
+            "tipo": "calidad_aire",
+            "ubicacion": {
+              "distrito": "Moncloa-Aravaca",
+              "nombre": "Plaza de Espana",
+              "geo": {
+                "type": "Point",
+                "coordinates": [
+                  -3.712257,
+                  40.423882
+                ]
+              }
+            },
+            "medicion": {
+              "co": 0.1,
+              "no2": 5,
+              "pm10": 13,
+              "pm25": 6
+            },
+            "valido": true,
+            "timestamp": {
+              "$date": "2026-07-01T04:00:00Z"
+            }
+          }
+        ]
+      },
+      {
+        "consulta": {
+          "numero": 2,
+          "titulo": "Lecturas en un rango de fechas",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100
+          },
+          "coleccion": "lecturas",
+          "operacion": "find",
+          "filtro": {
+            "timestamp": {
+              "$gte": {
+                "$date": "2026-07-01T00:00:00Z"
+              },
+              "$lt": {
+                "$date": "2026-08-01T00:00:00Z"
+              }
+            }
+          },
+          "proyeccion": {
+            "_id": 1,
+            "id_sensor": 1,
+            "tipo": 1,
+            "ubicacion": 1,
+            "medicion": 1,
+            "timestamp": 1,
+            "valido": 1,
+            "invalidos": 1
+          },
+          "orden": {
+            "timestamp": 1,
+            "_id": 1
+          },
+          "limite": 100
+        },
+        "duracion_ms": 2025,
+        "filas": 100,
+        "muestra": [
+          {
+            "_id": {
+              "$oid": "6adfbe6fdae8c444c41d3b62"
+            },
+            "id_sensor": "S-00001",
+            "tipo": "calidad_aire",
+            "ubicacion": {
+              "distrito": "Moncloa-Aravaca",
+              "nombre": "Plaza de Espana",
+              "geo": {
+                "type": "Point",
+                "coordinates": [
+                  -3.712257,
+                  40.423882
+                ]
+              }
+            },
+            "medicion": {
+              "co": 0.2,
+              "no2": 13,
+              "pm10": 17,
+              "pm25": 7
+            },
+            "valido": true,
+            "timestamp": {
+              "$date": "2026-07-01T00:00:00Z"
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbe70dae8c444c41d96b2"
+            },
+            "id_sensor": "S-00002",
+            "tipo": "calidad_aire",
+            "ubicacion": {
+              "distrito": "Salamanca",
+              "nombre": "Escuelas Aguirre",
+              "geo": {
+                "type": "Point",
+                "coordinates": [
+                  -3.682316,
+                  40.421553
+                ]
+              }
+            },
+            "medicion": {
+              "co": 0.2,
+              "no2": 14,
+              "o3": 92,
+              "pm10": 18,
+              "pm25": 10
+            },
+            "valido": true,
+            "timestamp": {
+              "$date": "2026-07-01T00:00:00Z"
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbe70dae8c444c41df202"
+            },
+            "id_sensor": "S-00003",
+            "tipo": "calidad_aire",
+            "ubicacion": {
+              "distrito": "Chamartin",
+              "nombre": "Ramon y Cajal",
+              "geo": {
+                "type": "Point",
+                "coordinates": [
+                  -3.677349,
+                  40.451473
+                ]
+              }
+            },
+            "medicion": {
+              "no2": 11
+            },
+            "valido": true,
+            "timestamp": {
+              "$date": "2026-07-01T00:00:00Z"
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbe71dae8c444c41e4d52"
+            },
+            "id_sensor": "S-00004",
+            "tipo": "calidad_aire",
+            "ubicacion": {
+              "distrito": "Ciudad Lineal",
+              "nombre": "Arturo Soria",
+              "geo": {
+                "type": "Point",
+                "coordinates": [
+                  -3.639242,
+                  40.440046
+                ]
+              }
+            },
+            "medicion": {
+              "no2": 24,
+              "o3": 78
+            },
+            "valido": true,
+            "timestamp": {
+              "$date": "2026-07-01T00:00:00Z"
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbe71dae8c444c41ea8a2"
+            },
+            "id_sensor": "S-00005",
+            "tipo": "calidad_aire",
+            "ubicacion": {
+              "distrito": "Villaverde",
+              "nombre": "Villaverde",
+              "geo": {
+                "type": "Point",
+                "coordinates": [
+                  -3.713317,
+                  40.347147
+                ]
+              }
+            },
+            "medicion": {
+              "no2": 17,
+              "o3": 90
+            },
+            "valido": true,
+            "timestamp": {
+              "$date": "2026-07-01T00:00:00Z"
+            }
+          }
+        ]
+      },
+      {
+        "consulta": {
+          "numero": 3,
+          "titulo": "Maximos y minimos por variable",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100
+          },
+          "coleccion": "lecturas",
+          "operacion": "aggregate",
+          "pipeline": [
+            {
+              "$match": {
+                "timestamp": {
+                  "$gte": {
+                    "$date": "2026-07-01T00:00:00Z"
+                  },
+                  "$lt": {
+                    "$date": "2026-08-01T00:00:00Z"
+                  }
+                }
+              }
+            },
+            {
+              "$set": {
+                "_invalidos": {
+                  "$cond": [
+                    {
+                      "$isArray": "$invalidos"
+                    },
+                    "$invalidos",
+                    []
+                  ]
+                }
+              }
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$or": [
+                    {
+                      "$ne": [
+                        "$valido",
+                        false
+                      ]
+                    },
+                    {
+                      "$gt": [
+                        {
+                          "$size": "$_invalidos"
+                        },
+                        0
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "$project": {
+                "id_sensor": 1,
+                "tipo": 1,
+                "ubicacion": 1,
+                "timestamp": 1,
+                "_invalidos": 1,
+                "par": {
+                  "$objectToArray": {
+                    "$cond": [
+                      {
+                        "$eq": [
+                          {
+                            "$type": "$medicion"
+                          },
+                          "object"
+                        ]
+                      },
+                      "$medicion",
+                      {}
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "$unwind": "$par"
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$and": [
+                    {
+                      "$isNumber": "$par.v"
+                    },
+                    {
+                      "$not": [
+                        {
+                          "$in": [
+                            "$par.k",
+                            "$_invalidos"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "par.k": {
+                  "$in": [
+                    "no2",
+                    "pm10",
+                    "pm25",
+                    "co",
+                    "o3",
+                    "temperatura",
+                    "humedad",
+                    "precipitacion",
+                    "ruido_db",
+                    "intensidad",
+                    "ocupacion",
+                    "carga",
+                    "velocidad",
+                    "ocupacion_parking",
+                    "consumo_kwh"
+                  ]
+                }
+              }
+            },
+            {
+              "$set": {
+                "unidad": {
+                  "$switch": {
+                    "branches": [
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "no2"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm10"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm25"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "co"
+                          ]
+                        },
+                        "then": "mg/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "o3"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "temperatura"
+                          ]
+                        },
+                        "then": "C"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "humedad"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "precipitacion"
+                          ]
+                        },
+                        "then": "mm"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ruido_db"
+                          ]
+                        },
+                        "then": "dB"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "intensidad"
+                          ]
+                        },
+                        "then": "veh/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "carga"
+                          ]
+                        },
+                        "then": "0-100"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "velocidad"
+                          ]
+                        },
+                        "then": "km/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion_parking"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "consumo_kwh"
+                          ]
+                        },
+                        "then": "kWh"
+                      }
+                    ],
+                    "default": "desconocida"
+                  }
+                }
+              }
+            },
+            {
+              "$group": {
+                "_id": {
+                  "variable": "$par.k",
+                  "unidad": "$unidad"
+                },
+                "cantidad": {
+                  "$sum": 1
+                },
+                "promedio": {
+                  "$avg": "$par.v"
+                },
+                "minimo": {
+                  "$min": "$par.v"
+                },
+                "maximo": {
+                  "$max": "$par.v"
+                }
+              }
+            },
+            {
+              "$sort": {
+                "_id.variable": 1
+              }
+            }
+          ]
+        },
+        "duracion_ms": 8372,
+        "filas": 15,
+        "muestra": [
+          {
+            "_id": {
+              "variable": "carga",
+              "unidad": "0-100"
+            },
+            "cantidad": 585339,
+            "promedio": 16.861912498569204,
+            "minimo": 0,
+            "maximo": 100
+          },
+          {
+            "_id": {
+              "variable": "co",
+              "unidad": "mg/m3"
+            },
+            "cantidad": 2931,
+            "promedio": 0.22910269532582736,
+            "minimo": 0.1,
+            "maximo": 1.1
+          },
+          {
+            "_id": {
+              "variable": "consumo_kwh",
+              "unidad": "kWh"
+            },
+            "cantidad": 14472,
+            "promedio": 252.7387493090105,
+            "minimo": 68.96,
+            "maximo": 662.15
+          },
+          {
+            "_id": {
+              "variable": "humedad",
+              "unidad": "%"
+            },
+            "cantidad": 15624,
+            "promedio": 25.452124935995904,
+            "minimo": 7,
+            "maximo": 88
+          },
+          {
+            "_id": {
+              "variable": "intensidad",
+              "unidad": "veh/h"
+            },
+            "cantidad": 585339,
+            "promedio": 320.7380321488915,
+            "minimo": 0,
+            "maximo": 6613
+          }
+        ]
+      },
+      {
+        "consulta": {
+          "numero": 4,
+          "titulo": "Eventos criticos",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100
+          },
+          "coleccion": "eventos",
+          "operacion": "find",
+          "filtro": {
+            "timestamp": {
+              "$gte": {
+                "$date": "2026-07-01T00:00:00Z"
+              },
+              "$lt": {
+                "$date": "2026-08-01T00:00:00Z"
+              }
+            },
+            "severidad": "critica"
+          },
+          "proyeccion": {
+            "id_sensor": 1,
+            "tipo_evento": 1,
+            "severidad": 1,
+            "ubicacion": 1,
+            "timestamp": 1,
+            "detalles": 1
+          },
+          "orden": {
+            "timestamp": -1,
+            "_id": 1
+          },
+          "limite": 100
+        },
+        "duracion_ms": 9,
+        "filas": 90,
+        "muestra": [
+          {
+            "_id": {
+              "$oid": "6adfbec6dae8c444c44dae0e"
+            },
+            "tipo_evento": "pico_contaminacion",
+            "severidad": "critica",
+            "id_sensor": "S-00024",
+            "ubicacion": {
+              "distrito": "Fuencarral-El Pardo"
+            },
+            "timestamp": {
+              "$date": "2026-07-30T11:00:00Z"
+            },
+            "detalles": {
+              "pm10": 85,
+              "limite": 50
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbec6dae8c444c44d9e86"
+            },
+            "tipo_evento": "pico_contaminacion",
+            "severidad": "critica",
+            "id_sensor": "S-00006",
+            "ubicacion": {
+              "distrito": "Carabanchel"
+            },
+            "timestamp": {
+              "$date": "2026-07-30T09:00:00Z"
+            },
+            "detalles": {
+              "pm10": 87,
+              "limite": 50
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbec6dae8c444c44d9aaa"
+            },
+            "tipo_evento": "pico_contaminacion",
+            "severidad": "critica",
+            "id_sensor": "S-00001",
+            "ubicacion": {
+              "distrito": "Moncloa-Aravaca"
+            },
+            "timestamp": {
+              "$date": "2026-07-30T08:00:00Z"
+            },
+            "detalles": {
+              "pm10": 84,
+              "limite": 50
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbec6dae8c444c44dab46"
+            },
+            "tipo_evento": "pico_contaminacion",
+            "severidad": "critica",
+            "id_sensor": "S-00020",
+            "ubicacion": {
+              "distrito": "Carabanchel"
+            },
+            "timestamp": {
+              "$date": "2026-07-30T01:00:00Z"
+            },
+            "detalles": {
+              "pm25": 44,
+              "limite": 25
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbec6dae8c444c44da834"
+            },
+            "tipo_evento": "pico_contaminacion",
+            "severidad": "critica",
+            "id_sensor": "S-00017",
+            "ubicacion": {
+              "distrito": "Chamartin"
+            },
+            "timestamp": {
+              "$date": "2026-07-29T18:00:00Z"
+            },
+            "detalles": {
+              "pm25": 40,
+              "limite": 25
+            }
+          }
+        ]
+      },
+      {
+        "consulta": {
+          "numero": 5,
+          "titulo": "Alertas por zona",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100
+          },
+          "coleccion": "alertas",
+          "operacion": "aggregate",
+          "pipeline": [
+            {
+              "$match": {
+                "timestamp": {
+                  "$gte": {
+                    "$date": "2026-07-01T00:00:00Z"
+                  },
+                  "$lt": {
+                    "$date": "2026-08-01T00:00:00Z"
+                  }
+                }
+              }
+            },
+            {
+              "$group": {
+                "_id": {
+                  "distrito": "$ubicacion.distrito",
+                  "nivel": "$nivel"
+                },
+                "cantidad": {
+                  "$sum": 1
+                }
+              }
+            },
+            {
+              "$sort": {
+                "cantidad": -1,
+                "_id.distrito": 1,
+                "_id.nivel": 1
+              }
+            }
+          ]
+        },
+        "duracion_ms": 38,
+        "filas": 32,
+        "muestra": [
+          {
+            "_id": {
+              "distrito": "Retiro",
+              "nivel": "advertencia"
+            },
+            "cantidad": 1327
+          },
+          {
+            "_id": {
+              "distrito": "Moncloa-Aravaca",
+              "nivel": "advertencia"
+            },
+            "cantidad": 820
+          },
+          {
+            "_id": {
+              "distrito": "Moratalaz",
+              "nivel": "advertencia"
+            },
+            "cantidad": 529
+          },
+          {
+            "_id": {
+              "distrito": "Salamanca",
+              "nivel": "advertencia"
+            },
+            "cantidad": 403
+          },
+          {
+            "_id": {
+              "distrito": "Carabanchel",
+              "nivel": "advertencia"
+            },
+            "cantidad": 397
+          }
+        ]
+      },
+      {
+        "consulta": {
+          "numero": 6,
+          "titulo": "Promedio por zona y variable",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100
+          },
+          "coleccion": "lecturas",
+          "operacion": "aggregate",
+          "pipeline": [
+            {
+              "$match": {
+                "timestamp": {
+                  "$gte": {
+                    "$date": "2026-07-01T00:00:00Z"
+                  },
+                  "$lt": {
+                    "$date": "2026-08-01T00:00:00Z"
+                  }
+                }
+              }
+            },
+            {
+              "$set": {
+                "_invalidos": {
+                  "$cond": [
+                    {
+                      "$isArray": "$invalidos"
+                    },
+                    "$invalidos",
+                    []
+                  ]
+                }
+              }
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$or": [
+                    {
+                      "$ne": [
+                        "$valido",
+                        false
+                      ]
+                    },
+                    {
+                      "$gt": [
+                        {
+                          "$size": "$_invalidos"
+                        },
+                        0
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "$project": {
+                "id_sensor": 1,
+                "tipo": 1,
+                "ubicacion": 1,
+                "timestamp": 1,
+                "_invalidos": 1,
+                "par": {
+                  "$objectToArray": {
+                    "$cond": [
+                      {
+                        "$eq": [
+                          {
+                            "$type": "$medicion"
+                          },
+                          "object"
+                        ]
+                      },
+                      "$medicion",
+                      {}
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "$unwind": "$par"
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$and": [
+                    {
+                      "$isNumber": "$par.v"
+                    },
+                    {
+                      "$not": [
+                        {
+                          "$in": [
+                            "$par.k",
+                            "$_invalidos"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "par.k": {
+                  "$in": [
+                    "no2",
+                    "pm10",
+                    "pm25",
+                    "co",
+                    "o3",
+                    "temperatura",
+                    "humedad",
+                    "precipitacion",
+                    "ruido_db",
+                    "intensidad",
+                    "ocupacion",
+                    "carga",
+                    "velocidad",
+                    "ocupacion_parking",
+                    "consumo_kwh"
+                  ]
+                }
+              }
+            },
+            {
+              "$set": {
+                "unidad": {
+                  "$switch": {
+                    "branches": [
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "no2"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm10"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm25"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "co"
+                          ]
+                        },
+                        "then": "mg/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "o3"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "temperatura"
+                          ]
+                        },
+                        "then": "C"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "humedad"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "precipitacion"
+                          ]
+                        },
+                        "then": "mm"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ruido_db"
+                          ]
+                        },
+                        "then": "dB"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "intensidad"
+                          ]
+                        },
+                        "then": "veh/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "carga"
+                          ]
+                        },
+                        "then": "0-100"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "velocidad"
+                          ]
+                        },
+                        "then": "km/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion_parking"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "consumo_kwh"
+                          ]
+                        },
+                        "then": "kWh"
+                      }
+                    ],
+                    "default": "desconocida"
+                  }
+                }
+              }
+            },
+            {
+              "$group": {
+                "_id": {
+                  "distrito": "$ubicacion.distrito",
+                  "variable": "$par.k",
+                  "unidad": "$unidad"
+                },
+                "cantidad": {
+                  "$sum": 1
+                },
+                "promedio": {
+                  "$avg": "$par.v"
+                },
+                "minimo": {
+                  "$min": "$par.v"
+                },
+                "maximo": {
+                  "$max": "$par.v"
+                }
+              }
+            },
+            {
+              "$sort": {
+                "_id.distrito": 1,
+                "_id.variable": 1
+              }
+            }
+          ]
+        },
+        "duracion_ms": 8368,
+        "filas": 246,
+        "muestra": [
+          {
+            "_id": {
+              "distrito": "Arganzuela",
+              "variable": "carga",
+              "unidad": "0-100"
+            },
+            "cantidad": 27984,
+            "promedio": 13.187607204116638,
+            "minimo": 0,
+            "maximo": 92
+          },
+          {
+            "_id": {
+              "distrito": "Arganzuela",
+              "variable": "consumo_kwh",
+              "unidad": "kWh"
+            },
+            "cantidad": 744,
+            "promedio": 229.0368817204301,
+            "minimo": 76.39,
+            "maximo": 509.12
+          },
+          {
+            "_id": {
+              "distrito": "Arganzuela",
+              "variable": "humedad",
+              "unidad": "%"
+            },
+            "cantidad": 744,
+            "promedio": 25.161290322580644,
+            "minimo": 7,
+            "maximo": 84
+          },
+          {
+            "_id": {
+              "distrito": "Arganzuela",
+              "variable": "intensidad",
+              "unidad": "veh/h"
+            },
+            "cantidad": 27984,
+            "promedio": 402.5269082332762,
+            "minimo": 0,
+            "maximo": 4428
+          },
+          {
+            "_id": {
+              "distrito": "Arganzuela",
+              "variable": "no2",
+              "unidad": "ug/m3"
+            },
+            "cantidad": 735,
+            "promedio": 18.439455782312926,
+            "minimo": 1,
+            "maximo": 137
+          }
+        ]
+      },
+      {
+        "consulta": {
+          "numero": 7,
+          "titulo": "Promedio por tipo y variable",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100
+          },
+          "coleccion": "lecturas",
+          "operacion": "aggregate",
+          "pipeline": [
+            {
+              "$match": {
+                "timestamp": {
+                  "$gte": {
+                    "$date": "2026-07-01T00:00:00Z"
+                  },
+                  "$lt": {
+                    "$date": "2026-08-01T00:00:00Z"
+                  }
+                }
+              }
+            },
+            {
+              "$set": {
+                "_invalidos": {
+                  "$cond": [
+                    {
+                      "$isArray": "$invalidos"
+                    },
+                    "$invalidos",
+                    []
+                  ]
+                }
+              }
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$or": [
+                    {
+                      "$ne": [
+                        "$valido",
+                        false
+                      ]
+                    },
+                    {
+                      "$gt": [
+                        {
+                          "$size": "$_invalidos"
+                        },
+                        0
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "$project": {
+                "id_sensor": 1,
+                "tipo": 1,
+                "ubicacion": 1,
+                "timestamp": 1,
+                "_invalidos": 1,
+                "par": {
+                  "$objectToArray": {
+                    "$cond": [
+                      {
+                        "$eq": [
+                          {
+                            "$type": "$medicion"
+                          },
+                          "object"
+                        ]
+                      },
+                      "$medicion",
+                      {}
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "$unwind": "$par"
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$and": [
+                    {
+                      "$isNumber": "$par.v"
+                    },
+                    {
+                      "$not": [
+                        {
+                          "$in": [
+                            "$par.k",
+                            "$_invalidos"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "par.k": {
+                  "$in": [
+                    "no2",
+                    "pm10",
+                    "pm25",
+                    "co",
+                    "o3",
+                    "temperatura",
+                    "humedad",
+                    "precipitacion",
+                    "ruido_db",
+                    "intensidad",
+                    "ocupacion",
+                    "carga",
+                    "velocidad",
+                    "ocupacion_parking",
+                    "consumo_kwh"
+                  ]
+                }
+              }
+            },
+            {
+              "$set": {
+                "unidad": {
+                  "$switch": {
+                    "branches": [
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "no2"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm10"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm25"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "co"
+                          ]
+                        },
+                        "then": "mg/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "o3"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "temperatura"
+                          ]
+                        },
+                        "then": "C"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "humedad"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "precipitacion"
+                          ]
+                        },
+                        "then": "mm"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ruido_db"
+                          ]
+                        },
+                        "then": "dB"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "intensidad"
+                          ]
+                        },
+                        "then": "veh/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "carga"
+                          ]
+                        },
+                        "then": "0-100"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "velocidad"
+                          ]
+                        },
+                        "then": "km/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion_parking"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "consumo_kwh"
+                          ]
+                        },
+                        "then": "kWh"
+                      }
+                    ],
+                    "default": "desconocida"
+                  }
+                }
+              }
+            },
+            {
+              "$group": {
+                "_id": {
+                  "tipo": "$tipo",
+                  "variable": "$par.k",
+                  "unidad": "$unidad"
+                },
+                "cantidad": {
+                  "$sum": 1
+                },
+                "promedio": {
+                  "$avg": "$par.v"
+                },
+                "minimo": {
+                  "$min": "$par.v"
+                },
+                "maximo": {
+                  "$max": "$par.v"
+                }
+              }
+            },
+            {
+              "$sort": {
+                "_id.tipo": 1,
+                "_id.variable": 1
+              }
+            }
+          ]
+        },
+        "duracion_ms": 8344,
+        "filas": 15,
+        "muestra": [
+          {
+            "_id": {
+              "tipo": "calidad_aire",
+              "variable": "co",
+              "unidad": "mg/m3"
+            },
+            "cantidad": 2931,
+            "promedio": 0.22910269532582736,
+            "minimo": 0.1,
+            "maximo": 1.1
+          },
+          {
+            "_id": {
+              "tipo": "calidad_aire",
+              "variable": "no2",
+              "unidad": "ug/m3"
+            },
+            "cantidad": 16897,
+            "promedio": 17.723323666923122,
+            "minimo": 0,
+            "maximo": 140
+          },
+          {
+            "_id": {
+              "tipo": "calidad_aire",
+              "variable": "o3",
+              "unidad": "ug/m3"
+            },
+            "cantidad": 9563,
+            "promedio": 90.95921781867615,
+            "minimo": 2,
+            "maximo": 192
+          },
+          {
+            "_id": {
+              "tipo": "calidad_aire",
+              "variable": "pm10",
+              "unidad": "ug/m3"
+            },
+            "cantidad": 9954,
+            "promedio": 28.37191078963231,
+            "minimo": 0,
+            "maximo": 163
+          },
+          {
+            "_id": {
+              "tipo": "calidad_aire",
+              "variable": "pm25",
+              "unidad": "ug/m3"
+            },
+            "cantidad": 7786,
+            "promedio": 13.031466735165681,
+            "minimo": 0,
+            "maximo": 128
+          }
+        ]
+      },
+      {
+        "consulta": {
+          "numero": 8,
+          "titulo": "Incidentes por categoria y estado",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100
+          },
+          "coleccion": "incidentes",
+          "operacion": "aggregate",
+          "pipeline": [
+            {
+              "$match": {
+                "fecha_reporte": {
+                  "$gte": {
+                    "$date": "2026-07-01T00:00:00Z"
+                  },
+                  "$lt": {
+                    "$date": "2026-08-01T00:00:00Z"
+                  }
+                }
+              }
+            },
+            {
+              "$group": {
+                "_id": {
+                  "categoria": "$categoria",
+                  "estado": "$estado"
+                },
+                "cantidad": {
+                  "$sum": 1
+                }
+              }
+            },
+            {
+              "$sort": {
+                "cantidad": -1,
+                "_id.categoria": 1,
+                "_id.estado": 1
+              }
+            }
+          ]
+        },
+        "duracion_ms": 4,
+        "filas": 7,
+        "muestra": [
+          {
+            "_id": {
+              "categoria": "accidente_transito",
+              "estado": "cerrado"
+            },
+            "cantidad": 55
+          },
+          {
+            "_id": {
+              "categoria": "manifestacion",
+              "estado": "cerrado"
+            },
+            "cantidad": 20
+          },
+          {
+            "_id": {
+              "categoria": "arbol_caido",
+              "estado": "cerrado"
+            },
+            "cantidad": 17
+          },
+          {
+            "_id": {
+              "categoria": "inundacion",
+              "estado": "cerrado"
+            },
+            "cantidad": 13
+          },
+          {
+            "_id": {
+              "categoria": "corte_electrico",
+              "estado": "cerrado"
+            },
+            "cantidad": 11
+          }
+        ]
+      },
+      {
+        "consulta": {
+          "numero": 9,
+          "titulo": "Cantidad de lecturas por sensor",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100
+          },
+          "coleccion": "lecturas",
+          "operacion": "aggregate",
+          "pipeline": [
+            {
+              "$match": {
+                "timestamp": {
+                  "$gte": {
+                    "$date": "2026-07-01T00:00:00Z"
+                  },
+                  "$lt": {
+                    "$date": "2026-08-01T00:00:00Z"
+                  }
+                }
+              }
+            },
+            {
+              "$group": {
+                "_id": "$id_sensor",
+                "cantidad": {
+                  "$sum": 1
+                }
+              }
+            },
+            {
+              "$sort": {
+                "cantidad": -1,
+                "_id": 1
+              }
+            }
+          ]
+        },
+        "duracion_ms": 1953,
+        "filas": 312,
+        "muestra": [
+          {
+            "_id": "S-00112",
+            "cantidad": 2976
+          },
+          {
+            "_id": "S-00119",
+            "cantidad": 2976
+          },
+          {
+            "_id": "S-00129",
+            "cantidad": 2976
+          },
+          {
+            "_id": "S-00138",
+            "cantidad": 2976
+          },
+          {
+            "_id": "S-00147",
+            "cantidad": 2976
+          }
+        ]
+      },
+      {
+        "consulta": {
+          "numero": 10,
+          "titulo": "Filtros multiples",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100,
+            "tipo": "trafico",
+            "distrito": "Centro",
+            "variable": "carga",
+            "umbral": 80
+          },
+          "coleccion": "lecturas",
+          "operacion": "aggregate",
+          "pipeline": [
+            {
+              "$match": {
+                "timestamp": {
+                  "$gte": {
+                    "$date": "2026-07-01T00:00:00Z"
+                  },
+                  "$lt": {
+                    "$date": "2026-08-01T00:00:00Z"
+                  }
+                },
+                "ubicacion.distrito": "Centro",
+                "tipo": "trafico",
+                "medicion.carga": {
+                  "$exists": true
+                }
+              }
+            },
+            {
+              "$set": {
+                "_invalidos": {
+                  "$cond": [
+                    {
+                      "$isArray": "$invalidos"
+                    },
+                    "$invalidos",
+                    []
+                  ]
+                }
+              }
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$or": [
+                    {
+                      "$ne": [
+                        "$valido",
+                        false
+                      ]
+                    },
+                    {
+                      "$gt": [
+                        {
+                          "$size": "$_invalidos"
+                        },
+                        0
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "$project": {
+                "id_sensor": 1,
+                "tipo": 1,
+                "ubicacion": 1,
+                "timestamp": 1,
+                "_invalidos": 1,
+                "par": {
+                  "$objectToArray": {
+                    "$cond": [
+                      {
+                        "$eq": [
+                          {
+                            "$type": "$medicion"
+                          },
+                          "object"
+                        ]
+                      },
+                      "$medicion",
+                      {}
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "$unwind": "$par"
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$and": [
+                    {
+                      "$isNumber": "$par.v"
+                    },
+                    {
+                      "$not": [
+                        {
+                          "$in": [
+                            "$par.k",
+                            "$_invalidos"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "par.k": "carga"
+              }
+            },
+            {
+              "$set": {
+                "unidad": {
+                  "$switch": {
+                    "branches": [
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "no2"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm10"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm25"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "co"
+                          ]
+                        },
+                        "then": "mg/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "o3"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "temperatura"
+                          ]
+                        },
+                        "then": "C"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "humedad"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "precipitacion"
+                          ]
+                        },
+                        "then": "mm"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ruido_db"
+                          ]
+                        },
+                        "then": "dB"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "intensidad"
+                          ]
+                        },
+                        "then": "veh/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "carga"
+                          ]
+                        },
+                        "then": "0-100"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "velocidad"
+                          ]
+                        },
+                        "then": "km/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion_parking"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "consumo_kwh"
+                          ]
+                        },
+                        "then": "kWh"
+                      }
+                    ],
+                    "default": "desconocida"
+                  }
+                }
+              }
+            },
+            {
+              "$match": {
+                "par.v": {
+                  "$gt": 80
+                }
+              }
+            },
+            {
+              "$project": {
+                "id_sensor": 1,
+                "tipo": 1,
+                "distrito": "$ubicacion.distrito",
+                "timestamp": 1,
+                "variable": "$par.k",
+                "unidad": 1,
+                "valor": "$par.v"
+              }
+            },
+            {
+              "$sort": {
+                "valor": -1,
+                "timestamp": 1,
+                "_id": 1
+              }
+            },
+            {
+              "$limit": 100
+            }
+          ]
+        },
+        "duracion_ms": 1324,
+        "filas": 100,
+        "muestra": [
+          {
+            "_id": {
+              "$oid": "6adfbe8edae8c444c4300906"
+            },
+            "id_sensor": "S-00117",
+            "tipo": "trafico",
+            "timestamp": {
+              "$date": "2026-07-03T19:00:00Z"
+            },
+            "unidad": "0-100",
+            "distrito": "Centro",
+            "variable": "carga",
+            "valor": 93
+          },
+          {
+            "_id": {
+              "$oid": "6adfbe8edae8c444c4300d0a"
+            },
+            "id_sensor": "S-00117",
+            "tipo": "trafico",
+            "timestamp": {
+              "$date": "2026-07-14T12:00:00Z"
+            },
+            "unidad": "0-100",
+            "distrito": "Centro",
+            "variable": "carga",
+            "valor": 92
+          },
+          {
+            "_id": {
+              "$oid": "6adfbe8edae8c444c4300912"
+            },
+            "id_sensor": "S-00117",
+            "tipo": "trafico",
+            "timestamp": {
+              "$date": "2026-07-03T22:00:00Z"
+            },
+            "unidad": "0-100",
+            "distrito": "Centro",
+            "variable": "carga",
+            "valor": 91
+          },
+          {
+            "_id": {
+              "$oid": "6adfbe8edae8c444c430130c"
+            },
+            "id_sensor": "S-00117",
+            "tipo": "trafico",
+            "timestamp": {
+              "$date": "2026-07-30T12:30:00Z"
+            },
+            "unidad": "0-100",
+            "distrito": "Centro",
+            "variable": "carga",
+            "valor": 91
+          },
+          {
+            "_id": {
+              "$oid": "6adfbe8edae8c444c4300ca5"
+            },
+            "id_sensor": "S-00117",
+            "tipo": "trafico",
+            "timestamp": {
+              "$date": "2026-07-13T10:45:00Z"
+            },
+            "unidad": "0-100",
+            "distrito": "Centro",
+            "variable": "carga",
+            "valor": 89
+          }
+        ]
+      },
+      {
+        "consulta": {
+          "numero": 11,
+          "titulo": "Temperatura promedio por zona",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100,
+            "variable": "temperatura"
+          },
+          "coleccion": "lecturas",
+          "operacion": "aggregate",
+          "pipeline": [
+            {
+              "$match": {
+                "timestamp": {
+                  "$gte": {
+                    "$date": "2026-07-01T00:00:00Z"
+                  },
+                  "$lt": {
+                    "$date": "2026-08-01T00:00:00Z"
+                  }
+                },
+                "medicion.temperatura": {
+                  "$exists": true
+                }
+              }
+            },
+            {
+              "$set": {
+                "_invalidos": {
+                  "$cond": [
+                    {
+                      "$isArray": "$invalidos"
+                    },
+                    "$invalidos",
+                    []
+                  ]
+                }
+              }
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$or": [
+                    {
+                      "$ne": [
+                        "$valido",
+                        false
+                      ]
+                    },
+                    {
+                      "$gt": [
+                        {
+                          "$size": "$_invalidos"
+                        },
+                        0
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "$project": {
+                "id_sensor": 1,
+                "tipo": 1,
+                "ubicacion": 1,
+                "timestamp": 1,
+                "_invalidos": 1,
+                "par": {
+                  "$objectToArray": {
+                    "$cond": [
+                      {
+                        "$eq": [
+                          {
+                            "$type": "$medicion"
+                          },
+                          "object"
+                        ]
+                      },
+                      "$medicion",
+                      {}
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "$unwind": "$par"
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$and": [
+                    {
+                      "$isNumber": "$par.v"
+                    },
+                    {
+                      "$not": [
+                        {
+                          "$in": [
+                            "$par.k",
+                            "$_invalidos"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "par.k": "temperatura"
+              }
+            },
+            {
+              "$set": {
+                "unidad": {
+                  "$switch": {
+                    "branches": [
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "no2"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm10"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm25"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "co"
+                          ]
+                        },
+                        "then": "mg/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "o3"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "temperatura"
+                          ]
+                        },
+                        "then": "C"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "humedad"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "precipitacion"
+                          ]
+                        },
+                        "then": "mm"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ruido_db"
+                          ]
+                        },
+                        "then": "dB"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "intensidad"
+                          ]
+                        },
+                        "then": "veh/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "carga"
+                          ]
+                        },
+                        "then": "0-100"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "velocidad"
+                          ]
+                        },
+                        "then": "km/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion_parking"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "consumo_kwh"
+                          ]
+                        },
+                        "then": "kWh"
+                      }
+                    ],
+                    "default": "desconocida"
+                  }
+                }
+              }
+            },
+            {
+              "$group": {
+                "_id": {
+                  "distrito": "$ubicacion.distrito",
+                  "variable": "$par.k",
+                  "unidad": "$unidad"
+                },
+                "cantidad": {
+                  "$sum": 1
+                },
+                "promedio": {
+                  "$avg": "$par.v"
+                },
+                "minimo": {
+                  "$min": "$par.v"
+                },
+                "maximo": {
+                  "$max": "$par.v"
+                }
+              }
+            },
+            {
+              "$sort": {
+                "_id.distrito": 1,
+                "_id.variable": 1
+              }
+            }
+          ]
+        },
+        "duracion_ms": 1812,
+        "filas": 21,
+        "muestra": [
+          {
+            "_id": {
+              "distrito": "Arganzuela",
+              "variable": "temperatura",
+              "unidad": "C"
+            },
+            "cantidad": 744,
+            "promedio": 29.35712365591398,
+            "minimo": 16.9,
+            "maximo": 39.1
+          },
+          {
+            "_id": {
+              "distrito": "Barajas",
+              "variable": "temperatura",
+              "unidad": "C"
+            },
+            "cantidad": 744,
+            "promedio": 29.3002688172043,
+            "minimo": 16.3,
+            "maximo": 39.5
+          },
+          {
+            "_id": {
+              "distrito": "Carabanchel",
+              "variable": "temperatura",
+              "unidad": "C"
+            },
+            "cantidad": 744,
+            "promedio": 29.35712365591398,
+            "minimo": 16.9,
+            "maximo": 39.1
+          },
+          {
+            "_id": {
+              "distrito": "Centro",
+              "variable": "temperatura",
+              "unidad": "C"
+            },
+            "cantidad": 744,
+            "promedio": 29.35712365591398,
+            "minimo": 16.9,
+            "maximo": 39.1
+          },
+          {
+            "_id": {
+              "distrito": "Chamartin",
+              "variable": "temperatura",
+              "unidad": "C"
+            },
+            "cantidad": 744,
+            "promedio": 28.928629032258065,
+            "minimo": 15.9,
+            "maximo": 38.7
+          }
+        ]
+      },
+      {
+        "consulta": {
+          "numero": 12,
+          "titulo": "Sensores que superaron limites",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100
+          },
+          "coleccion": "alertas",
+          "operacion": "aggregate",
+          "pipeline": [
+            {
+              "$match": {
+                "timestamp": {
+                  "$gte": {
+                    "$date": "2026-07-01T00:00:00Z"
+                  },
+                  "$lt": {
+                    "$date": "2026-08-01T00:00:00Z"
+                  }
+                },
+                "valor": {
+                  "$type": "number"
+                },
+                "limite": {
+                  "$type": "number"
+                },
+                "$expr": {
+                  "$gt": [
+                    "$valor",
+                    "$limite"
+                  ]
+                }
+              }
+            },
+            {
+              "$group": {
+                "_id": {
+                  "sensor": "$id_sensor",
+                  "variable": "$variable"
+                },
+                "cantidad": {
+                  "$sum": 1
+                },
+                "maximo": {
+                  "$max": "$valor"
+                },
+                "primera": {
+                  "$min": "$timestamp"
+                },
+                "ultima": {
+                  "$max": "$timestamp"
+                }
+              }
+            },
+            {
+              "$sort": {
+                "cantidad": -1,
+                "_id.sensor": 1,
+                "_id.variable": 1
+              }
+            }
+          ]
+        },
+        "duracion_ms": 42,
+        "filas": 136,
+        "muestra": [
+          {
+            "_id": {
+              "sensor": "S-00138",
+              "variable": "carga"
+            },
+            "cantidad": 605,
+            "maximo": 97,
+            "primera": {
+              "$date": "2026-07-01T07:30:00Z"
+            },
+            "ultima": {
+              "$date": "2026-07-31T17:30:00Z"
+            }
+          },
+          {
+            "_id": {
+              "sensor": "S-00129",
+              "variable": "carga"
+            },
+            "cantidad": 579,
+            "maximo": 97,
+            "primera": {
+              "$date": "2026-07-01T07:30:00Z"
+            },
+            "ultima": {
+              "$date": "2026-07-31T17:30:00Z"
+            }
+          },
+          {
+            "_id": {
+              "sensor": "S-00239",
+              "variable": "carga"
+            },
+            "cantidad": 279,
+            "maximo": 100,
+            "primera": {
+              "$date": "2026-07-01T12:45:00Z"
+            },
+            "ultima": {
+              "$date": "2026-07-31T22:30:00Z"
+            }
+          },
+          {
+            "_id": {
+              "sensor": "S-00196",
+              "variable": "carga"
+            },
+            "cantidad": 261,
+            "maximo": 100,
+            "primera": {
+              "$date": "2026-07-01T11:45:00Z"
+            },
+            "ultima": {
+              "$date": "2026-07-31T15:45:00Z"
+            }
+          },
+          {
+            "_id": {
+              "sensor": "S-00193",
+              "variable": "carga"
+            },
+            "cantidad": 248,
+            "maximo": 100,
+            "primera": {
+              "$date": "2026-07-01T06:45:00Z"
+            },
+            "ultima": {
+              "$date": "2026-07-31T14:30:00Z"
+            }
+          }
+        ]
+      },
+      {
+        "consulta": {
+          "numero": 13,
+          "titulo": "Ranking de contaminacion",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100,
+            "tipo": "calidad_aire",
+            "variable": "no2"
+          },
+          "coleccion": "lecturas",
+          "operacion": "aggregate",
+          "pipeline": [
+            {
+              "$match": {
+                "timestamp": {
+                  "$gte": {
+                    "$date": "2026-07-01T00:00:00Z"
+                  },
+                  "$lt": {
+                    "$date": "2026-08-01T00:00:00Z"
+                  }
+                },
+                "tipo": "calidad_aire",
+                "medicion.no2": {
+                  "$exists": true
+                }
+              }
+            },
+            {
+              "$set": {
+                "_invalidos": {
+                  "$cond": [
+                    {
+                      "$isArray": "$invalidos"
+                    },
+                    "$invalidos",
+                    []
+                  ]
+                }
+              }
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$or": [
+                    {
+                      "$ne": [
+                        "$valido",
+                        false
+                      ]
+                    },
+                    {
+                      "$gt": [
+                        {
+                          "$size": "$_invalidos"
+                        },
+                        0
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "$project": {
+                "id_sensor": 1,
+                "tipo": 1,
+                "ubicacion": 1,
+                "timestamp": 1,
+                "_invalidos": 1,
+                "par": {
+                  "$objectToArray": {
+                    "$cond": [
+                      {
+                        "$eq": [
+                          {
+                            "$type": "$medicion"
+                          },
+                          "object"
+                        ]
+                      },
+                      "$medicion",
+                      {}
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "$unwind": "$par"
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$and": [
+                    {
+                      "$isNumber": "$par.v"
+                    },
+                    {
+                      "$not": [
+                        {
+                          "$in": [
+                            "$par.k",
+                            "$_invalidos"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "par.k": "no2"
+              }
+            },
+            {
+              "$set": {
+                "unidad": {
+                  "$switch": {
+                    "branches": [
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "no2"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm10"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm25"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "co"
+                          ]
+                        },
+                        "then": "mg/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "o3"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "temperatura"
+                          ]
+                        },
+                        "then": "C"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "humedad"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "precipitacion"
+                          ]
+                        },
+                        "then": "mm"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ruido_db"
+                          ]
+                        },
+                        "then": "dB"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "intensidad"
+                          ]
+                        },
+                        "then": "veh/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "carga"
+                          ]
+                        },
+                        "then": "0-100"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "velocidad"
+                          ]
+                        },
+                        "then": "km/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion_parking"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "consumo_kwh"
+                          ]
+                        },
+                        "then": "kWh"
+                      }
+                    ],
+                    "default": "desconocida"
+                  }
+                }
+              }
+            },
+            {
+              "$group": {
+                "_id": {
+                  "distrito": "$ubicacion.distrito",
+                  "variable": "$par.k",
+                  "unidad": "$unidad"
+                },
+                "cantidad": {
+                  "$sum": 1
+                },
+                "promedio": {
+                  "$avg": "$par.v"
+                },
+                "minimo": {
+                  "$min": "$par.v"
+                },
+                "maximo": {
+                  "$max": "$par.v"
+                }
+              }
+            },
+            {
+              "$sort": {
+                "promedio": -1,
+                "_id.distrito": 1
+              }
+            }
+          ]
+        },
+        "duracion_ms": 142,
+        "filas": 16,
+        "muestra": [
+          {
+            "_id": {
+              "distrito": "Carabanchel",
+              "variable": "no2",
+              "unidad": "ug/m3"
+            },
+            "cantidad": 1471,
+            "promedio": 24.943575798776344,
+            "minimo": 4,
+            "maximo": 140
+          },
+          {
+            "_id": {
+              "distrito": "Villaverde",
+              "variable": "no2",
+              "unidad": "ug/m3"
+            },
+            "cantidad": 733,
+            "promedio": 22.62482946793997,
+            "minimo": 4,
+            "maximo": 92
+          },
+          {
+            "_id": {
+              "distrito": "Barajas",
+              "variable": "no2",
+              "unidad": "ug/m3"
+            },
+            "cantidad": 1467,
+            "promedio": 21.539877300613497,
+            "minimo": 2,
+            "maximo": 129
+          },
+          {
+            "_id": {
+              "distrito": "Ciudad Lineal",
+              "variable": "no2",
+              "unidad": "ug/m3"
+            },
+            "cantidad": 736,
+            "promedio": 19.637228260869566,
+            "minimo": 2,
+            "maximo": 111
+          },
+          {
+            "_id": {
+              "distrito": "Chamartin",
+              "variable": "no2",
+              "unidad": "ug/m3"
+            },
+            "cantidad": 1473,
+            "promedio": 19.41683638832315,
+            "minimo": 0,
+            "maximo": 137
+          }
+        ]
+      },
+      {
+        "consulta": {
+          "numero": 14,
+          "titulo": "Evolucion diaria",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100,
+            "tipo": "meteorologico",
+            "variable": "temperatura"
+          },
+          "coleccion": "lecturas",
+          "operacion": "aggregate",
+          "pipeline": [
+            {
+              "$match": {
+                "timestamp": {
+                  "$gte": {
+                    "$date": "2026-07-01T00:00:00Z"
+                  },
+                  "$lt": {
+                    "$date": "2026-08-01T00:00:00Z"
+                  }
+                },
+                "tipo": "meteorologico",
+                "medicion.temperatura": {
+                  "$exists": true
+                }
+              }
+            },
+            {
+              "$set": {
+                "_invalidos": {
+                  "$cond": [
+                    {
+                      "$isArray": "$invalidos"
+                    },
+                    "$invalidos",
+                    []
+                  ]
+                }
+              }
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$or": [
+                    {
+                      "$ne": [
+                        "$valido",
+                        false
+                      ]
+                    },
+                    {
+                      "$gt": [
+                        {
+                          "$size": "$_invalidos"
+                        },
+                        0
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "$project": {
+                "id_sensor": 1,
+                "tipo": 1,
+                "ubicacion": 1,
+                "timestamp": 1,
+                "_invalidos": 1,
+                "par": {
+                  "$objectToArray": {
+                    "$cond": [
+                      {
+                        "$eq": [
+                          {
+                            "$type": "$medicion"
+                          },
+                          "object"
+                        ]
+                      },
+                      "$medicion",
+                      {}
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "$unwind": "$par"
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$and": [
+                    {
+                      "$isNumber": "$par.v"
+                    },
+                    {
+                      "$not": [
+                        {
+                          "$in": [
+                            "$par.k",
+                            "$_invalidos"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "par.k": "temperatura"
+              }
+            },
+            {
+              "$set": {
+                "unidad": {
+                  "$switch": {
+                    "branches": [
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "no2"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm10"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm25"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "co"
+                          ]
+                        },
+                        "then": "mg/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "o3"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "temperatura"
+                          ]
+                        },
+                        "then": "C"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "humedad"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "precipitacion"
+                          ]
+                        },
+                        "then": "mm"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ruido_db"
+                          ]
+                        },
+                        "then": "dB"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "intensidad"
+                          ]
+                        },
+                        "then": "veh/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "carga"
+                          ]
+                        },
+                        "then": "0-100"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "velocidad"
+                          ]
+                        },
+                        "then": "km/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion_parking"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "consumo_kwh"
+                          ]
+                        },
+                        "then": "kWh"
+                      }
+                    ],
+                    "default": "desconocida"
+                  }
+                }
+              }
+            },
+            {
+              "$group": {
+                "_id": {
+                  "dia": {
+                    "$dateToString": {
+                      "date": "$timestamp",
+                      "format": "%Y-%m-%d",
+                      "timezone": "UTC"
+                    }
+                  },
+                  "distrito": "$ubicacion.distrito",
+                  "variable": "$par.k",
+                  "unidad": "$unidad"
+                },
+                "cantidad": {
+                  "$sum": 1
+                },
+                "promedio": {
+                  "$avg": "$par.v"
+                },
+                "minimo": {
+                  "$min": "$par.v"
+                },
+                "maximo": {
+                  "$max": "$par.v"
+                }
+              }
+            },
+            {
+              "$sort": {
+                "_id.dia": 1,
+                "_id.distrito": 1,
+                "_id.variable": 1
+              }
+            }
+          ]
+        },
+        "duracion_ms": 158,
+        "filas": 651,
+        "muestra": [
+          {
+            "_id": {
+              "dia": "2026-07-01",
+              "distrito": "Arganzuela",
+              "variable": "temperatura",
+              "unidad": "C"
+            },
+            "cantidad": 24,
+            "promedio": 30.058333333333334,
+            "minimo": 21.8,
+            "maximo": 37.2
+          },
+          {
+            "_id": {
+              "dia": "2026-07-01",
+              "distrito": "Barajas",
+              "variable": "temperatura",
+              "unidad": "C"
+            },
+            "cantidad": 24,
+            "promedio": 29.691666666666666,
+            "minimo": 21.5,
+            "maximo": 36.7
+          },
+          {
+            "_id": {
+              "dia": "2026-07-01",
+              "distrito": "Carabanchel",
+              "variable": "temperatura",
+              "unidad": "C"
+            },
+            "cantidad": 24,
+            "promedio": 30.058333333333334,
+            "minimo": 21.8,
+            "maximo": 37.2
+          },
+          {
+            "_id": {
+              "dia": "2026-07-01",
+              "distrito": "Centro",
+              "variable": "temperatura",
+              "unidad": "C"
+            },
+            "cantidad": 24,
+            "promedio": 30.058333333333334,
+            "minimo": 21.8,
+            "maximo": 37.2
+          },
+          {
+            "_id": {
+              "dia": "2026-07-01",
+              "distrito": "Chamartin",
+              "variable": "temperatura",
+              "unidad": "C"
+            },
+            "cantidad": 24,
+            "promedio": 29.46666666666667,
+            "minimo": 21.3,
+            "maximo": 36.4
+          }
+        ]
+      },
+      {
+        "consulta": {
+          "numero": 15,
+          "titulo": "Incidentes con personas heridas",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100
+          },
+          "coleccion": "incidentes",
+          "operacion": "find",
+          "filtro": {
+            "fecha_reporte": {
+              "$gte": {
+                "$date": "2026-07-01T00:00:00Z"
+              },
+              "$lt": {
+                "$date": "2026-08-01T00:00:00Z"
+              }
+            },
+            "categoria": {
+              "$in": [
+                "accidente_transito"
+              ]
+            },
+            "$and": [
+              {
+                "datos_extra.heridos": {
+                  "$exists": true
+                }
+              },
+              {
+                "datos_extra.heridos": {
+                  "$type": "number",
+                  "$gt": 0
+                }
+              }
+            ]
+          },
+          "proyeccion": {
+            "categoria": 1,
+            "estado": 1,
+            "ubicacion": 1,
+            "fecha_reporte": 1,
+            "datos_extra": 1
+          },
+          "orden": {
+            "fecha_reporte": 1,
+            "_id": 1
+          },
+          "limite": 100
+        },
+        "duracion_ms": 3,
+        "filas": 20,
+        "muestra": [
+          {
+            "_id": {
+              "$oid": "6adfbec6dae8c444c44de695"
+            },
+            "categoria": "accidente_transito",
+            "ubicacion": {
+              "distrito": "Ciudad Lineal"
+            },
+            "fecha_reporte": {
+              "$date": "2026-07-01T16:57:39Z"
+            },
+            "estado": "cerrado",
+            "datos_extra": {
+              "vehiculos_involucrados": 4,
+              "heridos": 2
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbec6dae8c444c44df067"
+            },
+            "categoria": "accidente_transito",
+            "ubicacion": {
+              "distrito": "Puente de Vallecas"
+            },
+            "fecha_reporte": {
+              "$date": "2026-07-02T09:58:52Z"
+            },
+            "estado": "cerrado",
+            "datos_extra": {
+              "vehiculos_involucrados": 2,
+              "heridos": 1
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbec6dae8c444c44defe1"
+            },
+            "categoria": "accidente_transito",
+            "ubicacion": {
+              "distrito": "Villa de Vallecas"
+            },
+            "fecha_reporte": {
+              "$date": "2026-07-02T21:43:50Z"
+            },
+            "estado": "cerrado",
+            "datos_extra": {
+              "vehiculos_involucrados": 3,
+              "heridos": 2
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbec6dae8c444c44def55"
+            },
+            "categoria": "accidente_transito",
+            "ubicacion": {
+              "distrito": "Fuencarral-El Pardo"
+            },
+            "fecha_reporte": {
+              "$date": "2026-07-04T03:34:32Z"
+            },
+            "estado": "cerrado",
+            "datos_extra": {
+              "vehiculos_involucrados": 4,
+              "heridos": 1
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6adfbec6dae8c444c44de707"
+            },
+            "categoria": "accidente_transito",
+            "ubicacion": {
+              "distrito": "Hortaleza"
+            },
+            "fecha_reporte": {
+              "$date": "2026-07-05T04:14:15Z"
+            },
+            "estado": "cerrado",
+            "datos_extra": {
+              "vehiculos_involucrados": 1,
+              "heridos": 1
+            }
+          }
+        ]
+      }
+    ],
+    "documentos_periodo": 661491,
+    "planes": [
+      {
+        "consulta": {
+          "numero": 1,
+          "titulo": "Lecturas de un sensor",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100,
+            "sensor": "S-00001"
+          },
+          "coleccion": "lecturas",
+          "operacion": "find",
+          "filtro": {
+            "timestamp": {
+              "$gte": {
+                "$date": "2026-07-01T00:00:00Z"
+              },
+              "$lt": {
+                "$date": "2026-08-01T00:00:00Z"
+              }
+            },
+            "id_sensor": "S-00001"
+          },
+          "proyeccion": {
+            "_id": 1,
+            "id_sensor": 1,
+            "tipo": 1,
+            "ubicacion": 1,
+            "medicion": 1,
+            "timestamp": 1,
+            "valido": 1,
+            "invalidos": 1
+          },
+          "orden": {
+            "timestamp": 1,
+            "_id": 1
+          },
+          "limite": 100
+        },
+        "resumen": {
+          "etapas": [
+            "PROJECTION_SIMPLE",
+            "SORT",
+            "FETCH",
+            "IXSCAN"
+          ],
+          "indices": [
+            "idx_sensor_timestamp"
+          ],
+          "documentos_examinados": 744,
+          "claves_examinadas": 744,
+          "max_filas_etapa": 744,
+          "duracion_cursor_ms": 1
+        },
+        "plan": {
+          "explainVersion": "1",
+          "queryPlanner": {
+            "namespace": "smartcity.lecturas",
+            "indexFilterSet": false,
+            "parsedQuery": {
+              "$and": [
+                {
+                  "id_sensor": {
+                    "$eq": "S-00001"
+                  }
+                },
+                {
+                  "timestamp": {
+                    "$lt": {
+                      "$date": "2026-08-01T00:00:00Z"
+                    }
+                  }
+                },
+                {
+                  "timestamp": {
+                    "$gte": {
+                      "$date": "2026-07-01T00:00:00Z"
+                    }
+                  }
+                }
+              ]
+            },
+            "queryHash": "A9CD0ECF",
+            "planCacheKey": "118645D7",
+            "optimizationTimeMillis": 0,
+            "maxIndexedOrSolutionsReached": false,
+            "maxIndexedAndSolutionsReached": false,
+            "maxScansToExplodeReached": false,
+            "winningPlan": {
+              "stage": "PROJECTION_SIMPLE",
+              "transformBy": {
+                "_id": 1,
+                "id_sensor": 1,
+                "tipo": 1,
+                "ubicacion": 1,
+                "medicion": 1,
+                "timestamp": 1,
+                "valido": 1,
+                "invalidos": 1
+              },
+              "inputStage": {
+                "stage": "SORT",
+                "sortPattern": {
+                  "timestamp": 1,
+                  "_id": 1
+                },
+                "memLimit": 104857600,
+                "limitAmount": 100,
+                "type": "simple",
+                "inputStage": {
+                  "stage": "FETCH",
+                  "inputStage": {
+                    "stage": "IXSCAN",
+                    "keyPattern": {
+                      "id_sensor": 1,
+                      "timestamp": 1
+                    },
+                    "indexName": "idx_sensor_timestamp",
+                    "isMultiKey": false,
+                    "multiKeyPaths": {
+                      "id_sensor": [],
+                      "timestamp": []
+                    },
+                    "isUnique": false,
+                    "isSparse": false,
+                    "isPartial": false,
+                    "indexVersion": 2,
+                    "direction": "forward",
+                    "indexBounds": {
+                      "id_sensor": [
+                        "[\"S-00001\", \"S-00001\"]"
+                      ],
+                      "timestamp": [
+                        "[new Date(1782864000000), new Date(1785542400000))"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "rejectedPlans": []
+          },
+          "executionStats": {
+            "executionSuccess": true,
+            "nReturned": 100,
+            "executionTimeMillis": 1,
+            "totalKeysExamined": 744,
+            "totalDocsExamined": 744,
+            "executionStages": {
+              "stage": "PROJECTION_SIMPLE",
+              "nReturned": 100,
+              "executionTimeMillisEstimate": 0,
+              "works": 846,
+              "advanced": 100,
+              "needTime": 745,
+              "needYield": 0,
+              "saveState": 0,
+              "restoreState": 0,
+              "isEOF": 1,
+              "transformBy": {
+                "_id": 1,
+                "id_sensor": 1,
+                "tipo": 1,
+                "ubicacion": 1,
+                "medicion": 1,
+                "timestamp": 1,
+                "valido": 1,
+                "invalidos": 1
+              },
+              "inputStage": {
+                "stage": "SORT",
+                "nReturned": 100,
+                "executionTimeMillisEstimate": 0,
+                "works": 846,
+                "advanced": 100,
+                "needTime": 745,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "sortPattern": {
+                  "timestamp": 1,
+                  "_id": 1
+                },
+                "memLimit": 104857600,
+                "limitAmount": 100,
+                "type": "simple",
+                "totalDataSizeSorted": 46040,
+                "usedDisk": false,
+                "spills": 0,
+                "spilledDataStorageSize": 0,
+                "inputStage": {
+                  "stage": "FETCH",
+                  "nReturned": 744,
+                  "executionTimeMillisEstimate": 0,
+                  "works": 745,
+                  "advanced": 744,
+                  "needTime": 0,
+                  "needYield": 0,
+                  "saveState": 0,
+                  "restoreState": 0,
+                  "isEOF": 1,
+                  "docsExamined": 744,
+                  "alreadyHasObj": 0,
+                  "inputStage": {
+                    "stage": "IXSCAN",
+                    "nReturned": 744,
+                    "executionTimeMillisEstimate": 0,
+                    "works": 745,
+                    "advanced": 744,
+                    "needTime": 0,
+                    "needYield": 0,
+                    "saveState": 0,
+                    "restoreState": 0,
+                    "isEOF": 1,
+                    "keyPattern": {
+                      "id_sensor": 1,
+                      "timestamp": 1
+                    },
+                    "indexName": "idx_sensor_timestamp",
+                    "isMultiKey": false,
+                    "multiKeyPaths": {
+                      "id_sensor": [],
+                      "timestamp": []
+                    },
+                    "isUnique": false,
+                    "isSparse": false,
+                    "isPartial": false,
+                    "indexVersion": 2,
+                    "direction": "forward",
+                    "indexBounds": {
+                      "id_sensor": [
+                        "[\"S-00001\", \"S-00001\"]"
+                      ],
+                      "timestamp": [
+                        "[new Date(1782864000000), new Date(1785542400000))"
+                      ]
+                    },
+                    "keysExamined": 744,
+                    "seeks": 1,
+                    "dupsTested": 0,
+                    "dupsDropped": 0
+                  }
+                }
+              }
+            }
+          },
+          "command": {
+            "find": "lecturas",
+            "filter": {
+              "timestamp": {
+                "$gte": {
+                  "$date": "2026-07-01T00:00:00Z"
+                },
+                "$lt": {
+                  "$date": "2026-08-01T00:00:00Z"
+                }
+              },
+              "id_sensor": "S-00001"
+            },
+            "projection": {
+              "_id": 1,
+              "id_sensor": 1,
+              "tipo": 1,
+              "ubicacion": 1,
+              "medicion": 1,
+              "timestamp": 1,
+              "valido": 1,
+              "invalidos": 1
+            },
+            "sort": {
+              "timestamp": 1,
+              "_id": 1
+            },
+            "limit": 100,
+            "$db": "smartcity"
+          },
+          "serverInfo": {
+            "host": "cc994bbb35ed",
+            "port": 27017,
+            "version": "7.0.45",
+            "gitVersion": "a52313e13ab55c9bddf7c3ff91dab286fa381796"
+          },
+          "serverParameters": {
+            "internalQueryFacetBufferSizeBytes": 104857600,
+            "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+            "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+            "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+            "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+            "internalQueryProhibitBlockingMergeOnMongoS": 0,
+            "internalQueryMaxAddToSetBytes": 104857600,
+            "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+            "internalQueryFrameworkControl": "forceClassicEngine"
+          },
+          "ok": 1
+        }
+      },
+      {
+        "consulta": {
+          "numero": 6,
+          "titulo": "Promedio por zona y variable",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100,
+            "tipo": "calidad_aire",
+            "variable": "no2"
+          },
+          "coleccion": "lecturas",
+          "operacion": "aggregate",
+          "pipeline": [
+            {
+              "$match": {
+                "timestamp": {
+                  "$gte": {
+                    "$date": "2026-07-01T00:00:00Z"
+                  },
+                  "$lt": {
+                    "$date": "2026-08-01T00:00:00Z"
+                  }
+                },
+                "tipo": "calidad_aire",
+                "medicion.no2": {
+                  "$exists": true
+                }
+              }
+            },
+            {
+              "$set": {
+                "_invalidos": {
+                  "$cond": [
+                    {
+                      "$isArray": "$invalidos"
+                    },
+                    "$invalidos",
+                    []
+                  ]
+                }
+              }
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$or": [
+                    {
+                      "$ne": [
+                        "$valido",
+                        false
+                      ]
+                    },
+                    {
+                      "$gt": [
+                        {
+                          "$size": "$_invalidos"
+                        },
+                        0
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "$project": {
+                "id_sensor": 1,
+                "tipo": 1,
+                "ubicacion": 1,
+                "timestamp": 1,
+                "_invalidos": 1,
+                "par": {
+                  "$objectToArray": {
+                    "$cond": [
+                      {
+                        "$eq": [
+                          {
+                            "$type": "$medicion"
+                          },
+                          "object"
+                        ]
+                      },
+                      "$medicion",
+                      {}
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "$unwind": "$par"
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$and": [
+                    {
+                      "$isNumber": "$par.v"
+                    },
+                    {
+                      "$not": [
+                        {
+                          "$in": [
+                            "$par.k",
+                            "$_invalidos"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "par.k": "no2"
+              }
+            },
+            {
+              "$set": {
+                "unidad": {
+                  "$switch": {
+                    "branches": [
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "no2"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm10"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "pm25"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "co"
+                          ]
+                        },
+                        "then": "mg/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "o3"
+                          ]
+                        },
+                        "then": "ug/m3"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "temperatura"
+                          ]
+                        },
+                        "then": "C"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "humedad"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "precipitacion"
+                          ]
+                        },
+                        "then": "mm"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ruido_db"
+                          ]
+                        },
+                        "then": "dB"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "intensidad"
+                          ]
+                        },
+                        "then": "veh/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "carga"
+                          ]
+                        },
+                        "then": "0-100"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "velocidad"
+                          ]
+                        },
+                        "then": "km/h"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "ocupacion_parking"
+                          ]
+                        },
+                        "then": "%"
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            "consumo_kwh"
+                          ]
+                        },
+                        "then": "kWh"
+                      }
+                    ],
+                    "default": "desconocida"
+                  }
+                }
+              }
+            },
+            {
+              "$group": {
+                "_id": {
+                  "distrito": "$ubicacion.distrito",
+                  "variable": "$par.k",
+                  "unidad": "$unidad"
+                },
+                "cantidad": {
+                  "$sum": 1
+                },
+                "promedio": {
+                  "$avg": "$par.v"
+                },
+                "minimo": {
+                  "$min": "$par.v"
+                },
+                "maximo": {
+                  "$max": "$par.v"
+                }
+              }
+            },
+            {
+              "$sort": {
+                "_id.distrito": 1,
+                "_id.variable": 1
+              }
+            }
+          ]
+        },
+        "resumen": {
+          "etapas": [
+            "PROJECTION_SIMPLE",
+            "FETCH",
+            "IXSCAN"
+          ],
+          "indices": [
+            "idx_tipo_timestamp"
+          ],
+          "documentos_examinados": 17112,
+          "claves_examinadas": 17112,
+          "max_filas_etapa": 48312,
+          "duracion_cursor_ms": 141
+        },
+        "plan": {
+          "explainVersion": "1",
+          "stages": [
+            {
+              "$cursor": {
+                "queryPlanner": {
+                  "namespace": "smartcity.lecturas",
+                  "indexFilterSet": false,
+                  "parsedQuery": {
+                    "$and": [
+                      {
+                        "tipo": {
+                          "$eq": "calidad_aire"
+                        }
+                      },
+                      {
+                        "timestamp": {
+                          "$lt": {
+                            "$date": "2026-08-01T00:00:00Z"
+                          }
+                        }
+                      },
+                      {
+                        "timestamp": {
+                          "$gte": {
+                            "$date": "2026-07-01T00:00:00Z"
+                          }
+                        }
+                      },
+                      {
+                        "medicion.no2": {
+                          "$exists": true
+                        }
+                      }
+                    ]
+                  },
+                  "queryHash": "9595AF03",
+                  "planCacheKey": "D15BA4F3",
+                  "optimizationTimeMillis": 0,
+                  "maxIndexedOrSolutionsReached": false,
+                  "maxIndexedAndSolutionsReached": false,
+                  "maxScansToExplodeReached": false,
+                  "winningPlan": {
+                    "stage": "PROJECTION_SIMPLE",
+                    "transformBy": {
+                      "_id": 1,
+                      "id_sensor": 1,
+                      "invalidos": 1,
+                      "medicion": 1,
+                      "timestamp": 1,
+                      "tipo": 1,
+                      "ubicacion": 1,
+                      "valido": 1
+                    },
+                    "inputStage": {
+                      "stage": "FETCH",
+                      "filter": {
+                        "medicion.no2": {
+                          "$exists": true
+                        }
+                      },
+                      "inputStage": {
+                        "stage": "IXSCAN",
+                        "keyPattern": {
+                          "tipo": 1,
+                          "timestamp": 1
+                        },
+                        "indexName": "idx_tipo_timestamp",
+                        "isMultiKey": false,
+                        "multiKeyPaths": {
+                          "tipo": [],
+                          "timestamp": []
+                        },
+                        "isUnique": false,
+                        "isSparse": false,
+                        "isPartial": false,
+                        "indexVersion": 2,
+                        "direction": "forward",
+                        "indexBounds": {
+                          "tipo": [
+                            "[\"calidad_aire\", \"calidad_aire\"]"
+                          ],
+                          "timestamp": [
+                            "[new Date(1782864000000), new Date(1785542400000))"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "rejectedPlans": []
+                },
+                "executionStats": {
+                  "executionSuccess": true,
+                  "nReturned": 17112,
+                  "executionTimeMillis": 141,
+                  "totalKeysExamined": 17112,
+                  "totalDocsExamined": 17112,
+                  "executionStages": {
+                    "stage": "PROJECTION_SIMPLE",
+                    "nReturned": 17112,
+                    "executionTimeMillisEstimate": 5,
+                    "works": 17113,
+                    "advanced": 17112,
+                    "needTime": 0,
+                    "needYield": 0,
+                    "saveState": 19,
+                    "restoreState": 19,
+                    "isEOF": 1,
+                    "transformBy": {
+                      "_id": 1,
+                      "id_sensor": 1,
+                      "invalidos": 1,
+                      "medicion": 1,
+                      "timestamp": 1,
+                      "tipo": 1,
+                      "ubicacion": 1,
+                      "valido": 1
+                    },
+                    "inputStage": {
+                      "stage": "FETCH",
+                      "filter": {
+                        "medicion.no2": {
+                          "$exists": true
+                        }
+                      },
+                      "nReturned": 17112,
+                      "executionTimeMillisEstimate": 5,
+                      "works": 17113,
+                      "advanced": 17112,
+                      "needTime": 0,
+                      "needYield": 0,
+                      "saveState": 19,
+                      "restoreState": 19,
+                      "isEOF": 1,
+                      "docsExamined": 17112,
+                      "alreadyHasObj": 0,
+                      "inputStage": {
+                        "stage": "IXSCAN",
+                        "nReturned": 17112,
+                        "executionTimeMillisEstimate": 1,
+                        "works": 17113,
+                        "advanced": 17112,
+                        "needTime": 0,
+                        "needYield": 0,
+                        "saveState": 19,
+                        "restoreState": 19,
+                        "isEOF": 1,
+                        "keyPattern": {
+                          "tipo": 1,
+                          "timestamp": 1
+                        },
+                        "indexName": "idx_tipo_timestamp",
+                        "isMultiKey": false,
+                        "multiKeyPaths": {
+                          "tipo": [],
+                          "timestamp": []
+                        },
+                        "isUnique": false,
+                        "isSparse": false,
+                        "isPartial": false,
+                        "indexVersion": 2,
+                        "direction": "forward",
+                        "indexBounds": {
+                          "tipo": [
+                            "[\"calidad_aire\", \"calidad_aire\"]"
+                          ],
+                          "timestamp": [
+                            "[new Date(1782864000000), new Date(1785542400000))"
+                          ]
+                        },
+                        "keysExamined": 17112,
+                        "seeks": 1,
+                        "dupsTested": 0,
+                        "dupsDropped": 0
+                      }
+                    }
+                  }
+                }
+              },
+              "nReturned": 17112,
+              "executionTimeMillisEstimate": 37
+            },
+            {
+              "$set": {
+                "_invalidos": {
+                  "$cond": [
+                    {
+                      "$isArray": [
+                        "$invalidos"
+                      ]
+                    },
+                    "$invalidos",
+                    {
+                      "$const": []
+                    }
+                  ]
+                }
+              },
+              "nReturned": 17112,
+              "executionTimeMillisEstimate": 47
+            },
+            {
+              "$match": {
+                "$expr": {
+                  "$or": [
+                    {
+                      "$ne": [
+                        "$valido",
+                        {
+                          "$const": false
+                        }
+                      ]
+                    },
+                    {
+                      "$gt": [
+                        {
+                          "$size": [
+                            "$_invalidos"
+                          ]
+                        },
+                        {
+                          "$const": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "nReturned": 17112,
+              "executionTimeMillisEstimate": 58
+            },
+            {
+              "$project": {
+                "_id": true,
+                "id_sensor": true,
+                "tipo": true,
+                "ubicacion": true,
+                "timestamp": true,
+                "_invalidos": true,
+                "par": {
+                  "$objectToArray": [
+                    {
+                      "$cond": [
+                        {
+                          "$eq": [
+                            {
+                              "$type": [
+                                "$medicion"
+                              ]
+                            },
+                            {
+                              "$const": "object"
+                            }
+                          ]
+                        },
+                        "$medicion",
+                        {
+                          "$const": {}
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "nReturned": 17112,
+              "executionTimeMillisEstimate": 68
+            },
+            {
+              "$unwind": {
+                "path": "$par"
+              },
+              "nReturned": 48312,
+              "executionTimeMillisEstimate": 68
+            },
+            {
+              "$match": {
+                "$and": [
+                  {
+                    "$expr": {
+                      "$and": [
+                        {
+                          "$isNumber": [
+                            "$par.v"
+                          ]
+                        },
+                        {
+                          "$not": [
+                            {
+                              "$in": [
+                                "$par.k",
+                                "$_invalidos"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "par.k": {
+                      "$eq": "no2"
+                    }
+                  }
+                ]
+              },
+              "nReturned": 16897,
+              "executionTimeMillisEstimate": 120
+            },
+            {
+              "$set": {
+                "unidad": {
+                  "$switch": {
+                    "branches": [
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            {
+                              "$const": "no2"
+                            }
+                          ]
+                        },
+                        "then": {
+                          "$const": "ug/m3"
+                        }
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            {
+                              "$const": "pm10"
+                            }
+                          ]
+                        },
+                        "then": {
+                          "$const": "ug/m3"
+                        }
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            {
+                              "$const": "pm25"
+                            }
+                          ]
+                        },
+                        "then": {
+                          "$const": "ug/m3"
+                        }
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            {
+                              "$const": "co"
+                            }
+                          ]
+                        },
+                        "then": {
+                          "$const": "mg/m3"
+                        }
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            {
+                              "$const": "o3"
+                            }
+                          ]
+                        },
+                        "then": {
+                          "$const": "ug/m3"
+                        }
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            {
+                              "$const": "temperatura"
+                            }
+                          ]
+                        },
+                        "then": {
+                          "$const": "C"
+                        }
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            {
+                              "$const": "humedad"
+                            }
+                          ]
+                        },
+                        "then": {
+                          "$const": "%"
+                        }
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            {
+                              "$const": "precipitacion"
+                            }
+                          ]
+                        },
+                        "then": {
+                          "$const": "mm"
+                        }
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            {
+                              "$const": "ruido_db"
+                            }
+                          ]
+                        },
+                        "then": {
+                          "$const": "dB"
+                        }
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            {
+                              "$const": "intensidad"
+                            }
+                          ]
+                        },
+                        "then": {
+                          "$const": "veh/h"
+                        }
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            {
+                              "$const": "ocupacion"
+                            }
+                          ]
+                        },
+                        "then": {
+                          "$const": "%"
+                        }
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            {
+                              "$const": "carga"
+                            }
+                          ]
+                        },
+                        "then": {
+                          "$const": "0-100"
+                        }
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            {
+                              "$const": "velocidad"
+                            }
+                          ]
+                        },
+                        "then": {
+                          "$const": "km/h"
+                        }
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            {
+                              "$const": "ocupacion_parking"
+                            }
+                          ]
+                        },
+                        "then": {
+                          "$const": "%"
+                        }
+                      },
+                      {
+                        "case": {
+                          "$eq": [
+                            "$par.k",
+                            {
+                              "$const": "consumo_kwh"
+                            }
+                          ]
+                        },
+                        "then": {
+                          "$const": "kWh"
+                        }
+                      }
+                    ],
+                    "default": {
+                      "$const": "desconocida"
+                    }
+                  }
+                }
+              },
+              "nReturned": 16897,
+              "executionTimeMillisEstimate": 120
+            },
+            {
+              "$group": {
+                "_id": {
+                  "distrito": "$ubicacion.distrito",
+                  "variable": "$par.k",
+                  "unidad": "$unidad"
+                },
+                "cantidad": {
+                  "$sum": {
+                    "$const": 1
+                  }
+                },
+                "promedio": {
+                  "$avg": "$par.v"
+                },
+                "minimo": {
+                  "$min": "$par.v"
+                },
+                "maximo": {
+                  "$max": "$par.v"
+                }
+              },
+              "maxAccumulatorMemoryUsageBytes": {
+                "cantidad": 1536,
+                "promedio": 1664,
+                "minimo": 1152,
+                "maximo": 1152
+              },
+              "totalOutputDataSizeBytes": 10050,
+              "usedDisk": false,
+              "spills": 0,
+              "spilledDataStorageSize": 0,
+              "numBytesSpilledEstimate": 0,
+              "spilledRecords": 0,
+              "nReturned": 16,
+              "executionTimeMillisEstimate": 134
+            },
+            {
+              "$sort": {
+                "sortKey": {
+                  "_id.distrito": 1,
+                  "_id.variable": 1
+                }
+              },
+              "totalDataSizeSortedBytesEstimate": 11492,
+              "usedDisk": false,
+              "spills": 0,
+              "spilledDataStorageSize": 0,
+              "nReturned": 16,
+              "executionTimeMillisEstimate": 134
+            }
+          ],
+          "serverInfo": {
+            "host": "cc994bbb35ed",
+            "port": 27017,
+            "version": "7.0.45",
+            "gitVersion": "a52313e13ab55c9bddf7c3ff91dab286fa381796"
+          },
+          "serverParameters": {
+            "internalQueryFacetBufferSizeBytes": 104857600,
+            "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+            "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+            "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+            "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+            "internalQueryProhibitBlockingMergeOnMongoS": 0,
+            "internalQueryMaxAddToSetBytes": 104857600,
+            "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+            "internalQueryFrameworkControl": "forceClassicEngine"
+          },
+          "command": {
+            "aggregate": "lecturas",
+            "pipeline": [
+              {
+                "$match": {
+                  "timestamp": {
+                    "$gte": {
+                      "$date": "2026-07-01T00:00:00Z"
+                    },
+                    "$lt": {
+                      "$date": "2026-08-01T00:00:00Z"
+                    }
+                  },
+                  "tipo": "calidad_aire",
+                  "medicion.no2": {
+                    "$exists": true
+                  }
+                }
+              },
+              {
+                "$set": {
+                  "_invalidos": {
+                    "$cond": [
+                      {
+                        "$isArray": "$invalidos"
+                      },
+                      "$invalidos",
+                      []
+                    ]
+                  }
+                }
+              },
+              {
+                "$match": {
+                  "$expr": {
+                    "$or": [
+                      {
+                        "$ne": [
+                          "$valido",
+                          false
+                        ]
+                      },
+                      {
+                        "$gt": [
+                          {
+                            "$size": "$_invalidos"
+                          },
+                          0
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "id_sensor": 1,
+                  "tipo": 1,
+                  "ubicacion": 1,
+                  "timestamp": 1,
+                  "_invalidos": 1,
+                  "par": {
+                    "$objectToArray": {
+                      "$cond": [
+                        {
+                          "$eq": [
+                            {
+                              "$type": "$medicion"
+                            },
+                            "object"
+                          ]
+                        },
+                        "$medicion",
+                        {}
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "$unwind": "$par"
+              },
+              {
+                "$match": {
+                  "$expr": {
+                    "$and": [
+                      {
+                        "$isNumber": "$par.v"
+                      },
+                      {
+                        "$not": [
+                          {
+                            "$in": [
+                              "$par.k",
+                              "$_invalidos"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "par.k": "no2"
+                }
+              },
+              {
+                "$set": {
+                  "unidad": {
+                    "$switch": {
+                      "branches": [
+                        {
+                          "case": {
+                            "$eq": [
+                              "$par.k",
+                              "no2"
+                            ]
+                          },
+                          "then": "ug/m3"
+                        },
+                        {
+                          "case": {
+                            "$eq": [
+                              "$par.k",
+                              "pm10"
+                            ]
+                          },
+                          "then": "ug/m3"
+                        },
+                        {
+                          "case": {
+                            "$eq": [
+                              "$par.k",
+                              "pm25"
+                            ]
+                          },
+                          "then": "ug/m3"
+                        },
+                        {
+                          "case": {
+                            "$eq": [
+                              "$par.k",
+                              "co"
+                            ]
+                          },
+                          "then": "mg/m3"
+                        },
+                        {
+                          "case": {
+                            "$eq": [
+                              "$par.k",
+                              "o3"
+                            ]
+                          },
+                          "then": "ug/m3"
+                        },
+                        {
+                          "case": {
+                            "$eq": [
+                              "$par.k",
+                              "temperatura"
+                            ]
+                          },
+                          "then": "C"
+                        },
+                        {
+                          "case": {
+                            "$eq": [
+                              "$par.k",
+                              "humedad"
+                            ]
+                          },
+                          "then": "%"
+                        },
+                        {
+                          "case": {
+                            "$eq": [
+                              "$par.k",
+                              "precipitacion"
+                            ]
+                          },
+                          "then": "mm"
+                        },
+                        {
+                          "case": {
+                            "$eq": [
+                              "$par.k",
+                              "ruido_db"
+                            ]
+                          },
+                          "then": "dB"
+                        },
+                        {
+                          "case": {
+                            "$eq": [
+                              "$par.k",
+                              "intensidad"
+                            ]
+                          },
+                          "then": "veh/h"
+                        },
+                        {
+                          "case": {
+                            "$eq": [
+                              "$par.k",
+                              "ocupacion"
+                            ]
+                          },
+                          "then": "%"
+                        },
+                        {
+                          "case": {
+                            "$eq": [
+                              "$par.k",
+                              "carga"
+                            ]
+                          },
+                          "then": "0-100"
+                        },
+                        {
+                          "case": {
+                            "$eq": [
+                              "$par.k",
+                              "velocidad"
+                            ]
+                          },
+                          "then": "km/h"
+                        },
+                        {
+                          "case": {
+                            "$eq": [
+                              "$par.k",
+                              "ocupacion_parking"
+                            ]
+                          },
+                          "then": "%"
+                        },
+                        {
+                          "case": {
+                            "$eq": [
+                              "$par.k",
+                              "consumo_kwh"
+                            ]
+                          },
+                          "then": "kWh"
+                        }
+                      ],
+                      "default": "desconocida"
+                    }
+                  }
+                }
+              },
+              {
+                "$group": {
+                  "_id": {
+                    "distrito": "$ubicacion.distrito",
+                    "variable": "$par.k",
+                    "unidad": "$unidad"
+                  },
+                  "cantidad": {
+                    "$sum": 1
+                  },
+                  "promedio": {
+                    "$avg": "$par.v"
+                  },
+                  "minimo": {
+                    "$min": "$par.v"
+                  },
+                  "maximo": {
+                    "$max": "$par.v"
+                  }
+                }
+              },
+              {
+                "$sort": {
+                  "_id.distrito": 1,
+                  "_id.variable": 1
+                }
+              }
+            ],
+            "cursor": {},
+            "allowDiskUse": true,
+            "$db": "smartcity"
+          },
+          "ok": 1
+        }
+      },
+      {
+        "consulta": {
+          "numero": 5,
+          "titulo": "Alertas por zona",
+          "parametros": {
+            "desde": {
+              "$date": "2026-07-01T00:00:00Z"
+            },
+            "hasta": {
+              "$date": "2026-08-01T00:00:00Z"
+            },
+            "limite": 100,
+            "nivel": "critica"
+          },
+          "coleccion": "alertas",
+          "operacion": "aggregate",
+          "pipeline": [
+            {
+              "$match": {
+                "timestamp": {
+                  "$gte": {
+                    "$date": "2026-07-01T00:00:00Z"
+                  },
+                  "$lt": {
+                    "$date": "2026-08-01T00:00:00Z"
+                  }
+                },
+                "nivel": "critica"
+              }
+            },
+            {
+              "$group": {
+                "_id": {
+                  "distrito": "$ubicacion.distrito",
+                  "nivel": "$nivel"
+                },
+                "cantidad": {
+                  "$sum": 1
+                }
+              }
+            },
+            {
+              "$sort": {
+                "cantidad": -1,
+                "_id.distrito": 1,
+                "_id.nivel": 1
+              }
+            }
+          ]
+        },
+        "resumen": {
+          "etapas": [
+            "PROJECTION_DEFAULT",
+            "FETCH",
+            "IXSCAN"
+          ],
+          "indices": [
+            "idx_nivel_distrito"
+          ],
+          "documentos_examinados": 4996,
+          "claves_examinadas": 4996,
+          "max_filas_etapa": 4996,
+          "duracion_cursor_ms": 8
+        },
+        "plan": {
+          "explainVersion": "1",
+          "stages": [
+            {
+              "$cursor": {
+                "queryPlanner": {
+                  "namespace": "smartcity.alertas",
+                  "indexFilterSet": false,
+                  "parsedQuery": {
+                    "$and": [
+                      {
+                        "nivel": {
+                          "$eq": "critica"
+                        }
+                      },
+                      {
+                        "timestamp": {
+                          "$lt": {
+                            "$date": "2026-08-01T00:00:00Z"
+                          }
+                        }
+                      },
+                      {
+                        "timestamp": {
+                          "$gte": {
+                            "$date": "2026-07-01T00:00:00Z"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "queryHash": "6292E6CB",
+                  "planCacheKey": "85B8FC95",
+                  "optimizationTimeMillis": 0,
+                  "maxIndexedOrSolutionsReached": false,
+                  "maxIndexedAndSolutionsReached": false,
+                  "maxScansToExplodeReached": false,
+                  "winningPlan": {
+                    "stage": "PROJECTION_DEFAULT",
+                    "transformBy": {
+                      "nivel": 1,
+                      "ubicacion.distrito": 1,
+                      "_id": 0
+                    },
+                    "inputStage": {
+                      "stage": "FETCH",
+                      "filter": {
+                        "$and": [
+                          {
+                            "timestamp": {
+                              "$lt": {
+                                "$date": "2026-08-01T00:00:00Z"
+                              }
+                            }
+                          },
+                          {
+                            "timestamp": {
+                              "$gte": {
+                                "$date": "2026-07-01T00:00:00Z"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "inputStage": {
+                        "stage": "IXSCAN",
+                        "keyPattern": {
+                          "nivel": 1,
+                          "ubicacion.distrito": 1
+                        },
+                        "indexName": "idx_nivel_distrito",
+                        "isMultiKey": false,
+                        "multiKeyPaths": {
+                          "nivel": [],
+                          "ubicacion.distrito": []
+                        },
+                        "isUnique": false,
+                        "isSparse": false,
+                        "isPartial": false,
+                        "indexVersion": 2,
+                        "direction": "forward",
+                        "indexBounds": {
+                          "nivel": [
+                            "[\"critica\", \"critica\"]"
+                          ],
+                          "ubicacion.distrito": [
+                            "[MinKey, MaxKey]"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "rejectedPlans": []
+                },
+                "executionStats": {
+                  "executionSuccess": true,
+                  "nReturned": 441,
+                  "executionTimeMillis": 8,
+                  "totalKeysExamined": 4996,
+                  "totalDocsExamined": 4996,
+                  "executionStages": {
+                    "stage": "PROJECTION_DEFAULT",
+                    "nReturned": 441,
+                    "executionTimeMillisEstimate": 1,
+                    "works": 4997,
+                    "advanced": 441,
+                    "needTime": 4555,
+                    "needYield": 0,
+                    "saveState": 5,
+                    "restoreState": 5,
+                    "isEOF": 1,
+                    "transformBy": {
+                      "nivel": 1,
+                      "ubicacion.distrito": 1,
+                      "_id": 0
+                    },
+                    "inputStage": {
+                      "stage": "FETCH",
+                      "filter": {
+                        "$and": [
+                          {
+                            "timestamp": {
+                              "$lt": {
+                                "$date": "2026-08-01T00:00:00Z"
+                              }
+                            }
+                          },
+                          {
+                            "timestamp": {
+                              "$gte": {
+                                "$date": "2026-07-01T00:00:00Z"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "nReturned": 441,
+                      "executionTimeMillisEstimate": 1,
+                      "works": 4997,
+                      "advanced": 441,
+                      "needTime": 4555,
+                      "needYield": 0,
+                      "saveState": 5,
+                      "restoreState": 5,
+                      "isEOF": 1,
+                      "docsExamined": 4996,
+                      "alreadyHasObj": 0,
+                      "inputStage": {
+                        "stage": "IXSCAN",
+                        "nReturned": 4996,
+                        "executionTimeMillisEstimate": 0,
+                        "works": 4997,
+                        "advanced": 4996,
+                        "needTime": 0,
+                        "needYield": 0,
+                        "saveState": 5,
+                        "restoreState": 5,
+                        "isEOF": 1,
+                        "keyPattern": {
+                          "nivel": 1,
+                          "ubicacion.distrito": 1
+                        },
+                        "indexName": "idx_nivel_distrito",
+                        "isMultiKey": false,
+                        "multiKeyPaths": {
+                          "nivel": [],
+                          "ubicacion.distrito": []
+                        },
+                        "isUnique": false,
+                        "isSparse": false,
+                        "isPartial": false,
+                        "indexVersion": 2,
+                        "direction": "forward",
+                        "indexBounds": {
+                          "nivel": [
+                            "[\"critica\", \"critica\"]"
+                          ],
+                          "ubicacion.distrito": [
+                            "[MinKey, MaxKey]"
+                          ]
+                        },
+                        "keysExamined": 4996,
+                        "seeks": 1,
+                        "dupsTested": 0,
+                        "dupsDropped": 0
+                      }
+                    }
+                  }
+                }
+              },
+              "nReturned": 441,
+              "executionTimeMillisEstimate": 7
+            },
+            {
+              "$group": {
+                "_id": {
+                  "distrito": "$ubicacion.distrito",
+                  "nivel": "$nivel"
+                },
+                "cantidad": {
+                  "$sum": {
+                    "$const": 1
+                  }
+                }
+              },
+              "maxAccumulatorMemoryUsageBytes": {
+                "cantidad": 1056
+              },
+              "totalOutputDataSizeBytes": 5523,
+              "usedDisk": false,
+              "spills": 0,
+              "spilledDataStorageSize": 0,
+              "numBytesSpilledEstimate": 0,
+              "spilledRecords": 0,
+              "nReturned": 11,
+              "executionTimeMillisEstimate": 7
+            },
+            {
+              "$sort": {
+                "sortKey": {
+                  "cantidad": -1,
+                  "_id.distrito": 1,
+                  "_id.nivel": 1
+                }
+              },
+              "totalDataSizeSortedBytesEstimate": 6712,
+              "usedDisk": false,
+              "spills": 0,
+              "spilledDataStorageSize": 0,
+              "nReturned": 11,
+              "executionTimeMillisEstimate": 7
+            }
+          ],
+          "serverInfo": {
+            "host": "cc994bbb35ed",
+            "port": 27017,
+            "version": "7.0.45",
+            "gitVersion": "a52313e13ab55c9bddf7c3ff91dab286fa381796"
+          },
+          "serverParameters": {
+            "internalQueryFacetBufferSizeBytes": 104857600,
+            "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+            "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+            "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+            "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+            "internalQueryProhibitBlockingMergeOnMongoS": 0,
+            "internalQueryMaxAddToSetBytes": 104857600,
+            "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+            "internalQueryFrameworkControl": "forceClassicEngine"
+          },
+          "command": {
+            "aggregate": "alertas",
+            "pipeline": [
+              {
+                "$match": {
+                  "timestamp": {
+                    "$gte": {
+                      "$date": "2026-07-01T00:00:00Z"
+                    },
+                    "$lt": {
+                      "$date": "2026-08-01T00:00:00Z"
+                    }
+                  },
+                  "nivel": "critica"
+                }
+              },
+              {
+                "$group": {
+                  "_id": {
+                    "distrito": "$ubicacion.distrito",
+                    "nivel": "$nivel"
+                  },
+                  "cantidad": {
+                    "$sum": 1
+                  }
+                }
+              },
+              {
+                "$sort": {
+                  "cantidad": -1,
+                  "_id.distrito": 1,
+                  "_id.nivel": 1
+                }
+              }
+            ],
+            "cursor": {},
+            "allowDiskUse": true,
+            "$db": "smartcity"
+          },
+          "ok": 1
+        }
+      }
+    ],
+    "integridad": {
+      "antes": {
+        "colecciones": {
+          "alertas": "b8983166d2d5b15e73896d68affe2d8d",
+          "eventos": "1e85b5c3e0a0dc8c2ffce54f71c04983",
+          "incidentes": "4805ccd9fb0c3242e54aca1e7fe67d4b",
+          "lecturas": "ca64dfd3d17eb951ff41e65d9dea8020"
+        },
+        "indices": {
+          "lecturas": [
+            {
+              "v": 2,
+              "key": {
+                "_id": 1
+              },
+              "name": "_id_"
+            },
+            {
+              "v": 2,
+              "key": {
+                "id_sensor": 1,
+                "timestamp": 1
+              },
+              "name": "idx_sensor_timestamp"
+            },
+            {
+              "v": 2,
+              "key": {
+                "tipo": 1,
+                "timestamp": 1
+              },
+              "name": "idx_tipo_timestamp"
+            },
+            {
+              "v": 2,
+              "key": {
+                "ubicacion.geo": "2dsphere"
+              },
+              "name": "idx_geo",
+              "2dsphereIndexVersion": 3
+            }
+          ],
+          "eventos": [
+            {
+              "v": 2,
+              "key": {
+                "_id": 1
+              },
+              "name": "_id_"
+            },
+            {
+              "v": 2,
+              "key": {
+                "tipo_evento": 1,
+                "timestamp": 1
+              },
+              "name": "idx_tipo_timestamp"
+            }
+          ],
+          "alertas": [
+            {
+              "v": 2,
+              "key": {
+                "_id": 1
+              },
+              "name": "_id_"
+            },
+            {
+              "v": 2,
+              "key": {
+                "nivel": 1,
+                "ubicacion.distrito": 1
+              },
+              "name": "idx_nivel_distrito"
+            },
+            {
+              "v": 2,
+              "key": {
+                "id_sensor": 1,
+                "timestamp": 1
+              },
+              "name": "idx_sensor_timestamp"
+            }
+          ],
+          "incidentes": [
+            {
+              "v": 2,
+              "key": {
+                "_id": 1
+              },
+              "name": "_id_"
+            },
+            {
+              "v": 2,
+              "key": {
+                "categoria": 1,
+                "fecha_reporte": 1
+              },
+              "name": "idx_categoria_fecha"
+            }
+          ]
+        }
+      },
+      "despues": {
+        "colecciones": {
+          "alertas": "b8983166d2d5b15e73896d68affe2d8d",
+          "eventos": "1e85b5c3e0a0dc8c2ffce54f71c04983",
+          "incidentes": "4805ccd9fb0c3242e54aca1e7fe67d4b",
+          "lecturas": "ca64dfd3d17eb951ff41e65d9dea8020"
+        },
+        "indices": {
+          "lecturas": [
+            {
+              "v": 2,
+              "key": {
+                "_id": 1
+              },
+              "name": "_id_"
+            },
+            {
+              "v": 2,
+              "key": {
+                "id_sensor": 1,
+                "timestamp": 1
+              },
+              "name": "idx_sensor_timestamp"
+            },
+            {
+              "v": 2,
+              "key": {
+                "tipo": 1,
+                "timestamp": 1
+              },
+              "name": "idx_tipo_timestamp"
+            },
+            {
+              "v": 2,
+              "key": {
+                "ubicacion.geo": "2dsphere"
+              },
+              "name": "idx_geo",
+              "2dsphereIndexVersion": 3
+            }
+          ],
+          "eventos": [
+            {
+              "v": 2,
+              "key": {
+                "_id": 1
+              },
+              "name": "_id_"
+            },
+            {
+              "v": 2,
+              "key": {
+                "tipo_evento": 1,
+                "timestamp": 1
+              },
+              "name": "idx_tipo_timestamp"
+            }
+          ],
+          "alertas": [
+            {
+              "v": 2,
+              "key": {
+                "_id": 1
+              },
+              "name": "_id_"
+            },
+            {
+              "v": 2,
+              "key": {
+                "nivel": 1,
+                "ubicacion.distrito": 1
+              },
+              "name": "idx_nivel_distrito"
+            },
+            {
+              "v": 2,
+              "key": {
+                "id_sensor": 1,
+                "timestamp": 1
+              },
+              "name": "idx_sensor_timestamp"
+            }
+          ],
+          "incidentes": [
+            {
+              "v": 2,
+              "key": {
+                "_id": 1
+              },
+              "name": "_id_"
+            },
+            {
+              "v": 2,
+              "key": {
+                "categoria": 1,
+                "fecha_reporte": 1
+              },
+              "name": "idx_categoria_fecha"
+            }
+          ]
+        }
+      }
+    },
+    "advertencias": []
+  },
+  "duracion_ms": 100542,
+  "aprobado": true,
+  "resumen": {
+    "aprobadas": 83,
+    "fallidas": 0
+  },
+  "codigo_sha256": {
+    "00_comprobar.js": "dc5b9f614283c8254d086ed6cc5e531cc3326ebed4f5b983c668b89ef0819ab1",
+    "01_lecturas_sensor.js": "7d5b6aff342fedd1deec6714de871c60fc9e325616cae001ef5f33a4d2eb0ac5",
+    "02_lecturas_fechas.js": "a095e84bf04344f6c92316b6463b97c2cb84cb14a3410c827f3d24b83702af0d",
+    "03_extremos.js": "1035ed193eb944b4873758c2366d27adf4d1582fa59a364cfd9d13994e8eda97",
+    "04_eventos_criticos.js": "c585ca7d7ab75b53713bf64e3f3c0f978a9a2194e85c35ada6bd3d0bbbdf6646",
+    "05_alertas_zona.js": "0c2aa37041e4a339ab5bdf3a6325f96c6b3e823d18d3ceaad0ece8ea904ac55c",
+    "06_promedio_zona.js": "0a4a3fdc9a795e01e0aee54b440f57ca50085f12695728746248d9ac2bb56579",
+    "07_promedio_tipo.js": "a848b09c2b2b206366a8a606f6128e04f097de1f6d208439a93107076f4c4044",
+    "08_incidentes_categoria.js": "549a1feaa125ac217f0cd5fd4d9be5fd317320b5ae86e86e35a028d7b867cc92",
+    "09_lecturas_por_sensor.js": "32958d599ecab8773e01c9d16352a06e9b188dad667b1dc6d01008616377ece2",
+    "10_filtros_multiples.js": "33cdfbe130beaed0f72ecf6f099e2f01b264133c9edd88994bea35cf1ab4bf52",
+    "11_temperatura_zona.js": "71c193ed59e0d2f9c52b72859ee69b44137725e4b39e870c0ec63e82a0ff99b3",
+    "12_sensores_sobre_limite.js": "8d733d6fba5cce07387324cfdd85bc26ab7ffe841ebf5780298ac27d7d216676",
+    "13_ranking_contaminacion.js": "f48a882fac0a5682819549b9eb524dee588a8421fa478f013bb1ee8207219c7b",
+    "14_evolucion_diaria.js": "8e277eb8a94feaba7e6efe8a2b75aa97b7311313022aa2f17d712cc3a0354865",
+    "15_incidentes_heridos.js": "94f4eeccacec583de8fd36abab26ccad32f80129225ca2c99266c4dd15914d6a",
+    "16_crud.js": "c94fd734426059ea4a3ac6722e99ccc14d21a59c4952f2f333d01fc6cc0dd83b",
+    "cargar.js": "0ed9477f48d4d113ebb19aab943ac1cfc60da1a34832f2517ad98bfc65b6ebdc",
+    "crud.js": "cca4e17dbbdb84cabfb0f4dc8918332c8e221ffa30daeb2e974d8c0a381733ab",
+    "ejecutar.py": "d2698184d22f148ae119f9125bac4c7445969d2c99f757002c132e02359068fc",
+    "entrada.js": "d10ee6a02023b82e9de0ac7974a2bd6a342e3959d34a9f56c056f8a498cf9942",
+    "lib.js": "80678ccf1070e856b8d6af41047baa42d943f0ae9904d547554f417bd6aaf7ca",
+    "prueba_limpia.py": "3bcc82a2c9671fd0aba40ffd40e9d115d0b1b80f0525f67e50de94159b948bc7",
+    "pruebas_controladas.js": "121cfa25544c3e7f600aaf2d90a248bb7cf94775339148cae41bbb8703800e5e",
+    "validacion.js": "6a004d802f384f53bc63c61e0c75d4174323512b4755b29ae19b784074bfbd5c"
+  }
+}
