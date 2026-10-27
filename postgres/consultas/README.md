@@ -165,29 +165,30 @@ No se modificaron el esquema, los índices, los generadores ni los datos del pro
 
 ## Validación real del 26 de octubre de 2026
 
-**41/42 comprobaciones aprobadas** en PostgreSQL 16.15: 324 sensores,
+**42/42 comprobaciones aprobadas** en PostgreSQL 16.15: 324 sensores,
 21 distritos y 4.664.093 mediciones. Se ejecutaron 21 SELECT que abarcan las
 consultas 1–17, se compararon resultados con referencias independientes y se
 comprobaron los errores esperados de las funciones. Los 324 estados originales
 se conservaron después de la prueba del procedimiento y su ROLLBACK.
 
-**Pendiente real:** la consulta 17 lee solo `medicion_2025`, pero usa recorrido
-secuencial paralelo porque faltan los índices de mediciones definidos por César.
-Solo están los de clave primaria. Coordinar su instalación con César y repetir
-la validación; no forzar el optimizador ni ejecutar el programa de benchmarks.
+**Índices resueltos:** se aplicó el script existente de César
+`postgres/rendimiento/indices.sql`, sin modificarlo ni ejecutar el programa de
+benchmarks. La consulta 17 devuelve 3.666 filas y usa
+`medicion_2025_id_sensor_fecha_hora_idx`, leyendo solo la partición de 2025.
+Se conserva la evidencia previa de 41/42 como historial, no como estado actual.
 
 - [Sección lista para el documento técnico](SECCION_PERSONA_C.md).
-- [Evidencia, resultados y checklist](evidencia/README.md).
+- [Evidencia aprobada, resultados y checklist](evidencia_con_indices/README.md).
 - [Validador reproducible](validar_consultas.py).
 
 Desde la raíz, usando el entorno Python del proyecto:
 
 ```powershell
-.\.venv\Scripts\python.exe postgres/consultas/validar_consultas.py
+.\.venv\Scripts\python.exe postgres/consultas/validar_consultas.py --salida postgres/consultas/evidencia_nueva
 ```
 
 Devuelve código 0 cuando aprueba todo y 1 si hay fallos o pendientes. La ejecución
-actual devuelve 1 por el índice faltante. Escribe solo muestras e informes en
+actual devuelve 0; las 42 comprobaciones aprobaron. Escribe solo muestras e informes en
 `postgres/consultas/evidencia`; para conservar la evidencia anterior, indicar
 `--salida postgres/consultas/evidencia_nueva` en una nueva ejecución.
 Requiere las dependencias del proyecto y `.env`; no crea ni recarga datos,

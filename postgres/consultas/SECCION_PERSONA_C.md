@@ -2,11 +2,11 @@
 
 ## Alcance y estado de validación
 
-Validación local del 2026-10-26T15:39:21.332486-06:00 sobre el commit `583d64b1d649a7147097648cc27f3f8a7ce6179f`. Las consultas 1–8 y 11–17 corresponden a persona C; las vistas, funciones y ejemplos 9–10 fueron integrados desde el trabajo de Luis mediante el PR #1.
+Validación local del 2026-10-26T22:15:37.669714-06:00 sobre el commit `dc2b7a11db979c838e5f54c37d5c435562617973`. Las consultas 1–8 y 11–17 corresponden a persona C; las vistas, funciones y ejemplos 9–10 fueron integrados desde el trabajo de Luis mediante el PR #1.
 
-**Resultado: 41 de 42 comprobaciones aprobadas.** Las consultas producen resultados correctos; queda pendiente demostrar el acceso por índice en la base local. El índice previsto no está instalado. Esta sección no declara cerrado el requisito de índices ni la revisión grupal.
+**Resultado: 42 de 42 comprobaciones aprobadas.** Se aplicó el script de índices existente de César y se repitió la validación completa. El requisito de acceso por índice quedó comprobado localmente; la revisión grupal permanece pendiente.
 
-Se ejecutaron 21 sentencias SELECT de los 17 archivos numerados mediante psycopg contra PostgreSQL 16.15 en Docker. No se encontró DBeaver disponible; el procedimiento manual en DBeaver queda documentado en el README. La prueba de estados se ejecutó aparte con ROLLBACK. No se reconstruyeron datos ni se cambiaron esquemas, índices o definiciones de Luis.
+Se ejecutaron 21 sentencias SELECT de los 17 archivos numerados mediante psycopg contra PostgreSQL 16.15 en Docker. No se encontró DBeaver disponible; el procedimiento manual en DBeaver queda documentado en el README. La prueba de estados se ejecutó aparte con ROLLBACK. No se reconstruyeron datos ni se cambiaron tablas o definiciones de Luis. Se instalaron los índices ya definidos en el script de César, sin modificar ese archivo ni ejecutar el programa de benchmarks.
 
 | Dato observado | Resultado |
 | --- | --- |
@@ -32,11 +32,11 @@ La igualdad con los volúmenes de referencia comprueba tamaño y período, no un
 | Fechas | 6, 11, 14, 15, 17 |
 | Vistas / funciones / procedimiento | 9a–9c / 10a–10c / 10d |
 | Poda de particiones | 17: solo medicion_2025 |
-| Acceso por índice | Pendiente local en 17; evidencia y diagnóstico adjuntos |
+| Acceso por índice | Comprobado en 17: medicion_2025_id_sensor_fecha_hora_idx |
 
 ## Consultas, resultados e interpretación
 
-Las tablas siguientes muestran las primeras tres filas de cada resultado, no el resultado completo. Las columnas completas y hasta cinco filas se conservan en [validacion.json](evidencia/validacion.json). Los SQL enlazados contienen la pregunta, el criterio y la justificación detallados.
+Las tablas siguientes muestran las primeras tres filas de cada resultado, no el resultado completo. Las columnas completas y hasta cinco filas se conservan en [validacion.json](evidencia_con_indices/validacion.json). Los SQL enlazados contienen la pregunta, el criterio y la justificación detallados.
 
 ### 01. Sensores por tipo
 
@@ -324,7 +324,7 @@ Las tablas siguientes muestran las primeras tres filas de cada resultado, no el 
 
 **Criterio y justificación:** Igualdad por sensor y rango directo por fecha permiten poda y acceso por índice si este existe; se ordena con desempates.
 
-**Resultado observado:** 3666 filas. Devuelve 3.666 mediciones con variables y unidades separadas. La poda funciona; el índice previsto falta en esta base.
+**Resultado observado:** 3666 filas. Devuelve 3.666 mediciones con variables y unidades separadas. La poda funciona y el plan usa el índice medicion_2025_id_sensor_fecha_hora_idx.
 
 | id_sensor | fecha_hora | variable | unidad | valor |
 | --- | --- | --- | --- | --- |
@@ -348,15 +348,15 @@ Las pruebas de sensor inexistente, distrito inexistente, fechas invertidas, igua
 
 El snapshot existente coincidió con el conteo de sensores, los agregados de mediciones y los tres rankings calculados desde las tablas. No fue necesario recrearlo ni refrescarlo. La ejecución del procedimiento de refresco queda pendiente para el ensayo; su CALL final está fuera del ROLLBACK del archivo 10 y debe ejecutarse por separado, después de cerrar la sesión de lectura.
 
-## Evidencia de rendimiento y pendiente para César
+## Evidencia de acceso por índice — resuelto
 
-La consulta 17 usa un recorrido secuencial paralelo de medicion_2025. El inventario de pg_indexes muestra únicamente los índices de clave primaria en medicion y sus particiones; falta idx_medicion_sensor_fecha. Por eso no se afirma que el optimizador descartó un índice existente. Las estadísticas registran ANALYZE; el primer problema a resolver es la ausencia del índice.
+Se aplicó `postgres/rendimiento/indices.sql` sin modificarlo. El script crea los índices faltantes con IF NOT EXISTS; no elimina datos ni índices. Después se repitieron las 42 comprobaciones y todas aprobaron.
 
-EXPLAIN observó 48.144 ms en esta ejecución y 3.666 filas. Es una observación puntual, no una mediana ni un experimento comparable con los tiempos de César.
+La consulta 17 devuelve 3.666 filas y accede únicamente a medicion_2025 mediante el índice `medicion_2025_id_sensor_fecha_hora_idx`. EXPLAIN observó 2.835 ms en esta ejecución. Es una observación puntual, no una mediana ni una comparación controlada de rendimiento.
 
-[Plan completo](evidencia/consulta_17_explain.json). [Informe e inventario de índices](evidencia/validacion.json).
+[Plan aprobado](evidencia_con_indices/consulta_17_explain.json). [Informe aprobado e inventario de índices](evidencia_con_indices/validacion.json).
 
-Para cerrar: César debe aplicar/revisar el script de índices ya existente; después ejecutar nuevamente el validador y comprobar el nodo de acceso a medicion_2025. No es necesario ejecutar el programa que elimina y recrea índices para medir antes/después. Conservar esta evidencia como diagnóstico previo y guardar la nueva ejecución en otra carpeta.
+Se conserva la [evidencia anterior](evidencia/README.md), con 41/42 y los índices ausentes, como registro histórico del problema resuelto. No queda pendiente instalar índices con César; basta informar que se aplicó su script en esta instancia local. Una instalación nueva también debe aplicar el script antes de comprobar acceso por índice.
 
 ## Límites de interpretación
 
@@ -380,7 +380,7 @@ Para cerrar: César debe aplicar/revisar el script de índices ya existente; des
 
 - [x] Sección técnica y evidencia preparadas para incorporar al documento grupal.
 
-- [ ] César: resolver índices locales y repetir EXPLAIN de la 17.
+- [x] Índices locales instalados desde el script de César y EXPLAIN de la 17 aprobado.
 
 - [ ] Equipo: probar el refresco del ranking y el arranque completo desde una instalación aislada.
 

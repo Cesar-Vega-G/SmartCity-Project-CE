@@ -1,3 +1,5 @@
+> Evidencia histórica anterior a instalar los índices. El problema quedó resuelto; ver [validación actual: 42/42](../evidencia_con_indices/README.md).
+
 # Evidencia de validación — 26 de octubre de 2026
 
 **Estado: 41/42 comprobaciones aprobadas; acceso por índice pendiente.**
