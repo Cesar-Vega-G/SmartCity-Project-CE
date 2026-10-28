@@ -1,5 +1,11 @@
 # Evidencia de MongoDB - 27 de octubre de 2026
 
+> Evidencia historica de los scripts anteriores (commit `d2f5884`). Esos ejecutores
+> se retiraron al simplificar el flujo a Compass. Los archivos JSON se conservan
+> como registro, no como validacion automatica de futuras ediciones.
+> Para comprobar la version actual, seguir [VERIFICACION.md](../VERIFICACION.md).
+
+
 **83/83 comprobaciones aprobadas** en MongoDB 7.0.45: 44 controladas y 39 sobre la carga completa.
 Las quince consultas ejecutadas coinciden con referencias independientes. Las pruebas del motor limpio tambien aprobaron 44/44. Adicionalmente, los 17 archivos numerados se ejecutaron individualmente y sus salidas coincidieron con la validacion.
 

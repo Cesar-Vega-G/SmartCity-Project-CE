@@ -6,7 +6,8 @@ Avance 1: PostgreSQL + MongoDB.
 ## Requisitos
 
 - Docker Desktop
-- Python 3.11 o superior
+- Python 3.11 o superior (generacion y carga inicial de datos)
+- MongoDB Compass (consultas y demostracion de MongoDB)
 
 ## Cómo levantar todo
 
@@ -25,6 +26,14 @@ Postgres queda en el puerto 5433 y Mongo en el 27017 (usuario y contraseña en `
 
 Para medir los índices: `python postgres/rendimiento/medir_pg.py` y `python mongo/rendimiento/medir_mongo.py`. Los resultados quedan en `docs/`.
 
+## Consultar MongoDB con Compass
+
+Una vez cargados los datos, seguir [la guia de MongoDB](mongo/consultas/README.md):
+conectar Compass, elegir la coleccion y pegar uno de los quince pipelines en
+**Aggregations → TEXT → Run**. El CRUD se demuestra desde la shell integrada de
+Compass con un solo archivo independiente. No hay ejecutor Python para consultas.
+Cada integrante guarda sus pipelines localmente; no aparecen automaticamente al clonar.
+
 ## Estructura
 
 | Carpeta | Contenido |
@@ -33,7 +42,7 @@ Para medir los índices: `python postgres/rendimiento/medir_pg.py` y `python mon
 | `postgres/consultas` | Consultas de PostgreSQL |
 | `postgres/vistas_funciones` | Vistas, vista materializada y funciones |
 | `postgres/rendimiento` | Índices de PostgreSQL y script que mide con y sin índices |
-| `mongo/consultas` | Consultas de MongoDB |
+| `mongo/consultas` | Pipelines de Compass, CRUD y guia de verificacion |
 | `mongo/rendimiento` | Índices de MongoDB y script que mide con y sin índices |
 | `data/generators` | Scripts de carga de datos |
 | `data/raw` | Datos crudos (ya vienen en el repo) |

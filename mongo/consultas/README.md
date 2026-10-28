@@ -1,126 +1,82 @@
-# MongoDB - Persona D, Sprint 1
+# MongoDB con Compass — Persona D
 
-CRUD, diez consultas obligatorias y cinco ejemplos complementarios para MongoDB 7.
-Se conserva el modelo de Madrid del contrato del equipo. Rama de trabajo: `MDB/consultas`.
+Este es el punto de entrada para las consultas del Sprint 1. Hay una sola version
+editable de cada consulta: los quince archivos de `compass/`.
 
-## Inicio rapido
+## Preparar y conectar
 
-Requiere Docker Desktop con el contenedor `smartcity_mongo` y la carga de Cesar.
-El ejecutor solo necesita Python 3; usa el `mongosh` que ya incluye el contenedor.
-Desde la raiz del repositorio:
+La instalacion y carga inicial siguen el [README del proyecto](../../README.md).
+Docker ejecuta el servidor y los cargadores Python preparan los datos. Una vez
+cargados, para consultar solo se necesita Compass y el servicio MongoDB encendido.
+Compass es el cliente; instalarlo no instala ni llena el servidor.
 
-```powershell
-python mongo/consultas/ejecutar.py comprobar --salida mongo/consultas/evidencia_inventario_nueva
-python mongo/consultas/ejecutar.py controladas --salida mongo/consultas/evidencia_controladas_nueva
-python mongo/consultas/ejecutar.py completa --salida mongo/consultas/evidencia_completa_nueva
-```
+1. Abrir Compass y crear una conexion a `localhost:27017`.
+2. En Authentication usar usuario y contraseña de `.env` (`MONGO_USER`,
+   `MONGO_PASSWORD`), con Authentication Database `admin`. No guardar claves en Git.
+3. Conectar y abrir `smartcity`. Deben aparecer `lecturas`, `eventos`, `alertas`
+   e `incidentes`. Si no aparecen, revisar la carga inicial antes de consultar.
+4. En Documents inspeccionar documentos; en Indexes revisar los indices existentes.
 
-Cada salida debe ser una carpeta nueva. Codigo de salida 0 significa aprobado;
-1 significa fallo o error. `validacion.json` contiene version, parametros, muestras,
-comprobaciones y, para la prueba completa, planes e integridad. No exporta el dataset.
-`todo` combina controladas y completa. `consultas` ejecuta las quince lecturas sin
-oraculo ni comprobacion de integridad; `crud` ejecuta solo la demostracion aislada.
-El modo `comprobar` es un inventario: consultar `volumen_minimo_cumplido`, no confundir
-conexion exitosa con cumplimiento integral. Se puede cambiar `--contenedor` y `--base`.
+## Ejecutar una consulta
 
-La validacion completa recorre los datos del periodo para calcular referencias
-independientes; puede tardar varios minutos. Ejecutarla sin cargas o escrituras
-concurrentes. No crea indices, no recarga datos y no modifica las cuatro colecciones.
+1. Elegir la coleccion de la tabla siguiente y abrir **Aggregations**.
+2. Seleccionar **Create New**, luego **TEXT**.
+3. Abrir el archivo `.pipeline.js` y copiar todo su contenido en el editor.
+   Es un arreglo de etapas: no agregar `db.lecturas.aggregate(...)`.
+4. Pulsar **Run**. Preview muestra una muestra; Run ejecuta sobre el conjunto filtrado.
+5. Volver a Edit y usar **Save** para ponerle nombre. Reabrir desde **My Queries**
+   o **Saved Pipelines**. STAGES permite estudiar cada etapa por separado.
 
-Las credenciales se leen dentro del contenedor de su entorno existente. No se
-imprimen ni se incluyen en la evidencia. El ejecutor copia solo JavaScript a una
-carpeta temporal unica y la limpia al terminar. No requiere `.env` en el anfitrion.
+Cada integrante debe pegar y guardar las consultas en su propio Compass una vez.
+Clonar el repositorio o levantar Docker no las instala automaticamente en Compass.
+Guardar una consulta tampoco guarda sus resultados ni modifica documentos.
+Si editas el pipeline en Compass, copia el texto de vuelta al archivo del repositorio
+para compartir el cambio; no existe sincronizacion automatica.
 
-## Ejecutar archivos individuales en mongosh
+## Archivo y coleccion
 
-Con `mongosh` instalado localmente, abrirlo desde la raiz del repositorio y
-autenticarse con el usuario configurado en `.env`; `--password` solicita la clave:
 
-```powershell
-mongosh "mongodb://localhost:27017/smartcity?authSource=admin" --username smartcity --password
-```
+| Consulta | Coleccion | Archivo |
+|---|---|---|
+| 01. Lecturas de sensor | lecturas | [01](compass/01_lecturas_sensor.pipeline.js) |
+| 02. Rango de fechas | lecturas | [02](compass/02_lecturas_fechas.pipeline.js) |
+| 03. Maximos y minimos | lecturas | [03](compass/03_extremos.pipeline.js) |
+| 04. Eventos criticos | eventos | [04](compass/04_eventos_criticos.pipeline.js) |
+| 05. Alertas por zona | alertas | [05](compass/05_alertas_zona.pipeline.js) |
+| 06. Promedios por zona | lecturas | [06](compass/06_promedio_zona.pipeline.js) |
+| 07. Promedios por tipo | lecturas | [07](compass/07_promedio_tipo.pipeline.js) |
+| 08. Incidentes por categoria | incidentes | [08](compass/08_incidentes_categoria.pipeline.js) |
+| 09. Cantidad por sensor | lecturas | [09](compass/09_lecturas_por_sensor.pipeline.js) |
+| 10. Filtros multiples | lecturas | [10](compass/10_filtros_multiples.pipeline.js) |
+| 11. Temperatura por zona | lecturas | [11](compass/11_temperatura_zona.pipeline.js) |
+| 12. Sensores sobre limites | alertas | [12](compass/12_sensores_sobre_limite.pipeline.js) |
+| 13. Ranking de contaminacion | lecturas | [13](compass/13_ranking_contaminacion.pipeline.js) |
+| 14. Evolucion diaria | lecturas | [14](compass/14_evolucion_diaria.pipeline.js) |
+| 15. Incidentes con heridos | incidentes | [15](compass/15_incidentes_heridos.pipeline.js) |
 
-En la sesion:
+Las fechas son julio de 2026, con inicio incluido y fin excluido. Para cambiarlas,
+editar los dos `ISODate` de la primera etapa. La 01 contiene un sensor concreto
+existente al generar el archivo: se puede cambiar su `id_sensor` directamente.
+Los filtros y unidades estan desplegados en el propio pipeline; no hay parametros ocultos.
+Si cambias de variable, actualiza todas sus apariciones y el tipo de sensor cuando corresponda.
 
-```javascript
-load("mongo/consultas/00_comprobar.js");
-load("mongo/consultas/01_lecturas_sensor.js");
-load("mongo/consultas/06_promedio_zona.js");
-load("mongo/consultas/16_crud.js");
-```
 
-Los archivos numerados usan `smartcity`. Editar `const parametros = {}` en cada uno
-para cambiar sus filtros. Tambien se pueden ejecutar por `mongosh --file`.
-Se usa `load`, no `require`, para que mongosh adapte las operaciones asincronas de
-su API. Los archivos de soporte se cargan mediante `cargar.js` y exponen `SC`,
-`SC_CRUD`, `SC_TEST` y `SC_VALIDACION` en la sesion. Cargarlos no consulta ni cambia datos.
+## CRUD en Compass
 
-Para obtener un pipeline personalizado sin ejecutarlo:
+Las agregaciones anteriores son de lectura. Para demostrar las siete operaciones
+exigidas, abrir **Open MongoDB Shell** dentro de Compass, pegar todo [crud.js](crud.js)
+y pulsar Enter. No se pega en Aggregations. No requiere Python, una terminal externa
+ni cargar bibliotecas. Si la shell esta deshabilitada, habilitar Enable MongoDB Shell
+en Settings; no funciona en modo de solo lectura.
 
-```javascript
-load("mongo/consultas/cargar.js");
-const s = SC.construir(6, {
-  desde: new Date("2026-07-01T00:00:00Z"),
-  hasta: new Date("2026-08-01T00:00:00Z"),
-  tipo: "calidad_aire", variable: "no2"
-}, db.getSiblingDB("smartcity"));
-printjson(s.pipeline);
-// Ejecutar exactamente el mismo objeto:
-SC.ejecutar(db.getSiblingDB("smartcity"), s);
-```
-
-La consulta 1, si no recibe `sensor`, busca el primer identificador existente en el
-periodo (orden alfabetico). En una coleccion vacia devuelve una lista vacia.
-
-## Compass
-
-1. Conectar a `localhost:27017`, autenticacion en `admin`, usuario y clave del proyecto.
-2. Abrir `smartcity` y la coleccion indicada en la tabla.
-3. Para consultas `find`, copiar los campos `filtro`, `proyeccion`, `orden` y `limite`
-   del descriptor de salida a **Filter**, **Project**, **Sort** y **Limit**.
-4. Para agregaciones, abrir **Aggregations**, usar el modo de texto y pegar
-   exclusivamente el arreglo `pipeline`, no el documento completo del informe.
-5. Las fechas son BSON: usar `ISODate("2026-07-01T00:00:00Z")` en el editor que lo
-   admita. Al importar JSON, mantener Extended JSON `{"$date":"..."}`; no reemplazar
-   una fecha BSON por una cadena simple.
-
-Si Compass ofrece shell integrado, cambiar su directorio de trabajo a la raiz
-del checkout y usar los mismos `load`. El CRUD debe ejecutarse con `16_crud.js`
-en esa shell o con el ejecutor Python; las pestañas de filtro no ejecutan scripts.
-La evidencia automatizada corresponde a mongosh, no se presenta como validacion
-manual realizada en la interfaz grafica de Compass.
-
-## Catalogo y parametros
-
-Todos los rangos usan `[desde, hasta)`. Predeterminado: julio de 2026.
-Los detalles se limitan a 100; las estadisticas usan todos los datos filtrados.
-`sensor`, `distrito` y fechas son opcionales en las consultas de lecturas, eventos y
-alertas. En incidentes usar distrito y fechas: no existe un id_sensor en su modelo.
-
-| N.º / archivo | Coleccion | Pregunta y parametros particulares | Resultado |
-|---|---|---|---|
-| 01_lecturas_sensor.js | lecturas | Lecturas de `sensor`; seleccion automatica si se omite | Crudos, fecha ascendente, calidad visible |
-| 02_lecturas_fechas.js | lecturas | Lecturas del rango | Hasta 100 documentos ordenados |
-| 03_extremos.js | lecturas | Minimos y maximos; `tipo`, `variable` opcionales | Estadisticas por variable/unidad |
-| 04_eventos_criticos.js | eventos | Severidad critica; `tipoEvento` opcional | Eventos recientes y detalles |
-| 05_alertas_zona.js | alertas | Alertas por distrito; `nivel` opcional | Cantidades por distrito/nivel |
-| 06_promedio_zona.js | lecturas | Promedio; `tipo`, `variable` opcionales | Cantidad, promedio, minimo y maximo por distrito/variable |
-| 07_promedio_tipo.js | lecturas | Promedio; `tipo`, `variable` opcionales | Estadisticas por tipo/variable |
-| 08_incidentes_categoria.js | incidentes | Categoria y estado en `fecha_reporte` | Conteos por categoria/estado |
-| 09_lecturas_por_sensor.js | lecturas | Cuantos documentos produjo cada sensor | Ranking; incluye documentos invalidos |
-| 10_filtros_multiples.js | lecturas | `tipo=trafico`, `distrito=Centro`, `variable=carga`, `umbral=80` | Valores validos estrictamente superiores, ordenados |
-| 11_temperatura_zona.js | lecturas | Temperatura, reutiliza la 6 | Estadisticas por zona en C |
-| 12_sensores_sobre_limite.js | alertas | `valor > limite`; `variable` opcional | Conteo, maximo, primera y ultima alerta por sensor/variable |
-| 13_ranking_contaminacion.js | lecturas | `tipo=calidad_aire`, `variable=no2` | Ranking por promedio; admite no2, pm10, pm25, co u o3 |
-| 14_evolucion_diaria.js | lecturas | `tipo=meteorologico`, `variable=temperatura` | Serie por dia, distrito y variable |
-| 15_incidentes_heridos.js | incidentes | Accidentes con `datos_extra.heridos > 0` | Detalle del campo dinamico |
-
-Cambiar conjuntamente tipo y variable cuando corresponda. No enviar parametros que
-la consulta no utilice. Las fechas deben ser `Date`, el rango no puede ser invertido
-ni vacio y `limite` debe ser un entero entre 1 y 100. Se rechazan variables desconocidas.
-Los resultados vacios son validos y no se sustituyen con datos ficticios.
+El archivo ejecuta `insertOne`, `insertMany`, `find`, `findOne`, `updateOne`,
+`updateMany` y `deleteOne`, imprime una comprobacion por operacion y elimina su base
+temporal incluso si falla. Se puede repetir. Usa una base nueva `smartcity_demo_<id>`;
+no modifica `smartcity`. La cuenta debe poder crear y eliminar esa base temporal.
+El resultado esperado es siete lineas OK, confirmacion de limpieza y `aprobado: true`.
 
 ## Calidad, unidades y significado
+
 
 - Zona significa distrito, no coordenada ni estacion individual.
 - Las consultas de detalle conservan `valido` e `invalidos`.
@@ -150,53 +106,32 @@ No se afirma que esto represente correctamente el horario de verano de Madrid.
 Corregir la zona en la ingesta requeriria coordinacion y recarga fuera de Persona D.
 [Referencia oficial](https://www.mongodb.com/docs/languages/python/pymongo-driver/current/data-formats/dates-and-times/).
 
+
 ## Cobertura del cronograma y del enunciado
 
-| Requisito | Evidencia ejecutable |
+| Requisito | Entrega |
 |---|---|
-| insertOne, insertMany, find, findOne, updateOne, updateMany, deleteOne | 16_crud.js / crud.js, con verificaciones y limpieza |
-| Consultas obligatorias 1-10 | Archivos 01-10 |
-| Aggregation Framework en 6-10 | `$match`, `$group`, `$sort`, `$project`, `$sum`, `$avg`, `$min`, `$max` |
-| Flexibilidad documental | 03, 06, 07, 14: `$objectToArray` y `$unwind`; 15: datos_extra |
-| Filtros, operadores logicos y de comparacion | 02, 10, 12, 15; calidad: `$and`, `$or`, `$not`, `$in` |
-| `$gt`, `$gte`, `$lt`, `$exists`, `$expr` | Rango temporal, umbral estricto, campos dinamicos y comparacion entre campos |
-| Proyecciones y ordenamiento | 01, 02, 04, 10, 15; orden de grupos en las demas |
-| Cinco preguntas de ejemplo | Temperatura 11; limites 12; cantidad 09; contaminacion 13; evolucion 14 |
-| Uso de indices | Tres `explain("executionStats")` en la validacion completa |
-| 500.000 documentos o mas | Inventario real y comprobacion del volumen |
-| Pruebas con datos completos | `ejecutar.py completa`, calculos independientes y dbHash |
-| Seccion para persona B | SECCION_PERSONA_D.md |
-| Preparacion de defensa | DEFENSA.md |
+| Siete operaciones CRUD | [crud.js](crud.js), shell integrada de Compass |
+| Diez consultas obligatorias | Pipelines 01–10 |
+| Aggregation Framework | Todos los pipelines; especialmente 06–10 |
+| Campos variables y documentos anidados | 03, 06, 07, 14: `$objectToArray`, `$unwind`; 15: `datos_extra.heridos` |
+| Filtros, comparaciones y logica | 02, 10, 12, 15; `$gt`, `$gte`, `$lt`, `$in`, `$exists`, `$expr`, `$and`, `$or`, `$not` |
+| Proyeccion, orden y grupos | `$project`, `$sort`, `$group` en los archivos |
+| Preguntas complementarias | Temperatura 11; limites 12; cantidad 09; contaminacion 13; evolucion 14 |
+| Volumen, resultados e indices | [Verificacion](VERIFICACION.md) y [evidencia](evidencia/README.md) |
+| Documento tecnico y defensa | [Seccion D](SECCION_PERSONA_D.md), [guion](DEFENSA.md) |
 
-## Pruebas y limites de la evidencia
+## Estructura y mantenimiento
 
-Las controladas escriben fixtures exclusivamente en una base de nombre unico
-`smartcity_personad_pruebas_<uuid>`. Comprueban fronteras de fechas, grupos, tipos,
-datos invalidos, umbrales, ausencia de datos, limite de detalles y CRUD repetido.
-La base se elimina en `finally`. El CRUD limpia solo sus documentos, identificados
-por corrida; tampoco depende de transacciones o replica sets.
+- `compass/`: quince pipelines autonomos, sin generadores ni biblioteca compartida.
+- `crud.js`: demostracion independiente en la shell integrada.
+- `VERIFICACION.md`: comprobaciones para repetir desde Compass.
+- `evidencia*/`: resultados historicos; no son programas que haya que ejecutar.
 
-La prueba completa compara agregaciones con un recorrido independiente del BSON
-crudo en JavaScript. Compara conjuntos de grupos, conteos, promedios y extremos;
-admite diferencia relativa de 1e-9 para aritmetica flotante. Conserva muestras de
-cinco filas y compara `dbHash` e indices antes/despues. `dbHash` requiere permisos
-administrativos; las consultas ordinarias solo requieren lectura.
+Se retiraron los ejecutores Python, wrappers de consultas y validadores anteriores.
+Las pruebas historicas no se presentan como una suite automatica disponible en esta
+version. Los pipelines conservan exactamente los bytes validados; cualquier edicion
+posterior requiere repetir las comprobaciones y registrar evidencia nueva.
 
-Los indices y benchmarks originales pertenecen a Cesar. No ejecutar automaticamente
-`mongo/rendimiento/medir_mongo.py`: elimina indices para medir el antes. La validacion
-de Persona D solo explica consultas y registra si el optimizador eligio un indice.
-Un COLLSCAN no implica por si mismo que una agregacion sea incorrecta.
-
-Para comprobar el arranque de los scripts en un motor limpio:
-
-```powershell
-python mongo/consultas/prueba_limpia.py --salida mongo/consultas/evidencia_limpia_nueva
-```
-
-Usa la misma imagen local del contenedor del proyecto, sin puertos publicados ni
-volumenes compartidos, ejecuta fixtures y elimina su contenedor. **No equivale a
-reconstruir el stack completo ni a regenerar 3 millones de lecturas.** La reproduccion
-integral de la carga y `docker compose up` queda en la verificacion grupal con Cesar.
-
-El estado final de esta implementacion se documenta en `evidencia/README.md`.
-No se abre PR ni se modifica `main`; la revision de otro integrante queda pendiente.
+Referencias oficiales: [Aggregations](https://www.mongodb.com/docs/compass/create-agg-pipeline/)
+y [shell integrada](https://www.mongodb.com/docs/compass/embedded-shell/).

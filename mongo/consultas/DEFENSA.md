@@ -1,26 +1,22 @@
-# Guion de demostracion - Persona D
+# Guion de demostracion — Persona D
 
-Duracion orientativa: 10-15 minutos. Mantener abierta la evidencia, los scripts
-y una sesion de mongosh autenticada; disponer de Compass para inspeccion visual.
+Duracion orientativa: 10–15 minutos. Abrir Compass, los pipelines y la evidencia.
 
-1. **Conexion y volumen (1 min).** Ejecutar 00_comprobar.js. Mostrar version,
-   colecciones, fechas y conteos reales. Distinguir datos del proyecto y base de pruebas.
-2. **Modelo (1 min).** Mostrar una lectura con varias variables, un evento con detalles,
-   una alerta con limite y un incidente con datos_extra. Explicar que id_sensor se
-   comparte con PostgreSQL y que distrito se duplica para consultar sin joins continuos.
-3. **CRUD (2 min).** Ejecutar 16_crud.js. Explicar las siete operaciones, las cantidades
-   verificadas y la limpieza. La demostracion no altera los datos historicos.
-4. **Consultas 1-5 (2 min).** Mostrar sensor, rango, extremos, eventos criticos y alertas
-   por zona. Senalar inicio incluido, fin excluido y los dos campos de criticidad.
-5. **Consultas 6-10 (3 min).** Recorrer los pipelines en lib.js. Explicar `$objectToArray`,
-   `$unwind`, filtro de calidad, agrupacion por variable/unidad y proyecciones.
-   Mostrar que la 9 cuenta documentos mientras las estadisticas cuentan valores.
-6. **Complementarias (2 min).** Mostrar temperatura, sensores sobre el limite, ranking
-   de NO2, evolucion diaria e incidentes con personas heridas. Cambiar un parametro
-   de distrito o fechas y observar el cambio real de resultados.
-7. **Rendimiento y pruebas (2 min).** Mostrar un explain con indice y documentos
-   examinados, los resultados del validador y los hashes de integridad. Distinguir
-   el benchmark original de Cesar de las mediciones de estas consultas.
+1. **Conexion y volumen.** Abrir smartcity; mostrar las cuatro colecciones y repetir
+   el conteo exacto de VERIFICACION.md. Explicar cliente Compass y servidor Docker.
+2. **Modelo.** En Documents mostrar medicion, ubicacion y datos_extra; explicar
+   id_sensor compartido con PostgreSQL y campos variables.
+3. **CRUD.** Pegar crud.js en Open MongoDB Shell. Mostrar siete OK y limpieza de
+   la base temporal. Explicar `$set` sobre un campo anidado.
+4. **Consultas 1–5.** Abrir los pipelines en sus colecciones y pulsar Run.
+   Distinguir fechas BSON, inicio incluido, fin excluido y severidad frente a nivel.
+5. **Consultas 6–10.** Usar STAGES para recorrer filtro, conversion de medicion a
+   pares, unwind, calidad, grupo y orden. La 9 cuenta documentos, no variables.
+6. **Complementarias.** Mostrar temperatura, limites, NO2, evolucion y heridos.
+   Cambiar el distrito o las fechas de una copia y explicar el resultado.
+7. **Pruebas e indices.** Mostrar Explain, la evidencia historica y su alcance.
+   Distinguir validacion previa de comprobaciones hechas hoy. Guardar los pipelines
+   desde Save y mostrar que quedan disponibles en My Queries localmente.
 
 ## Preguntas que debemos poder responder
 

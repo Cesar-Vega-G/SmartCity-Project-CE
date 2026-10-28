@@ -79,7 +79,7 @@ validos y no se sustituyen por datos de demostracion en la base del proyecto.
 
 ## Operaciones y consultas
 
-El CRUD realiza y verifica insertOne, insertMany, find, findOne, updateOne, updateMany
+El archivo independiente crud.js, pegado en la shell integrada de Compass, realiza y verifica insertOne, insertMany, find, findOne, updateOne, updateMany
 y deleteOne. Utiliza una base temporal propia y documentos identificados por corrida.
 La limpieza en finally elimina los documentos de la demostracion y la base temporal;
 los historicos del proyecto permanecen intactos. No requiere transacciones ni replica set.
@@ -95,11 +95,21 @@ compara un contaminante a la vez: sumar NO2, CO y PM2.5 careceria de una unidad 
 Los limites son parametros del proyecto, no una afirmacion de normativa sanitaria.
 
 La [matriz de cobertura](README.md#cobertura-del-cronograma-y-del-enunciado) relaciona
-cada operacion, filtro, proyeccion, ordenamiento, agrupacion e indice con su script.
-Los archivos numerados delegan en una misma biblioteca; las pruebas llaman esas
-mismas funciones para evitar diferencias entre lo demostrado y lo validado.
+cada operacion, filtro, proyeccion, ordenamiento, agrupacion e indice con su archivo.
+Las quince consultas son pipelines autonomos para Aggregations de Compass. Son la
+unica fuente editable; se retiraron la biblioteca compartida y los ejecutores Python.
+El guardado en Compass es local y no se sincroniza con Git ni con el servidor.
 
 ## Verificacion y rendimiento
+
+Las pruebas descritas a continuacion son **evidencia historica de la implementacion
+anterior** (commit `d2f5884`), no una suite incluida en la version simplificada.
+Antes de retirar los ejecutores se verifico equivalencia de los quince pipelines:
+15/15, con hashes de archivos y dbHash intacto en `compass/validacion.json`.
+Los pipelines se conservaron sin cambios. La consulta 13 tambien se ejecuto en la
+interfaz de Compass, con 16 resultados. La nueva rutina de comprobacion se describe
+en [VERIFICACION.md](VERIFICACION.md); cualquier modificacion requiere evidencia nueva.
+
 
 Las pruebas controladas incluyen resultados pequenos conocidos de antemano:
 fechas limite, valores iguales y superiores a umbrales, datos ausentes y parcialmente
