@@ -130,8 +130,9 @@ Corregir la zona en la ingesta requeriria coordinacion y recarga fuera de Person
 
 Se retiraron los ejecutores Python, wrappers de consultas y validadores anteriores.
 Las pruebas historicas no se presentan como una suite automatica disponible en esta
-version. Los pipelines conservan exactamente los bytes validados; cualquier edicion
-posterior requiere repetir las comprobaciones y registrar evidencia nueva.
+version. Los pipelines incluyen comentarios didacticos. Al retirar esas lineas, conservan
+exactamente el texto validado (ver compass/comentarios_verificados.json). Cualquier
+cambio de logica requiere repetir las comprobaciones y registrar evidencia nueva.
 
 Referencias oficiales: [Aggregations](https://www.mongodb.com/docs/compass/create-agg-pipeline/)
 y [shell integrada](https://www.mongodb.com/docs/compass/embedded-shell/).

@@ -95,3 +95,11 @@ forman parte del flujo actual y pueden consultarse en el historial Git.
   Esta comprobacion del script no se presenta como una prueba nueva de la interfaz.
 - Se verificaron los enlaces locales de la documentacion y la ausencia de
   instrucciones que dependan de los ejecutores retirados.
+
+## Comentarios didacticos
+
+Se comentaron las siete operaciones del CRUD y todas las etapas de los quince
+pipelines sin modificar instrucciones. La comparacion del texto ejecutable antes y
+despues fue exacta. Los hashes de archivos completos cambiaron por los comentarios;
+compass/comentarios_verificados.json relaciona cada nuevo hash con el original.
+Esta comprobacion no se presenta como una nueva ejecucion de las consultas.
