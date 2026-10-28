@@ -175,7 +175,6 @@ se conservaron después de la prueba del procedimiento y su ROLLBACK.
 `postgres/rendimiento/indices.sql`, sin modificarlo ni ejecutar el programa de
 benchmarks. La consulta 17 devuelve 3.666 filas y usa
 `medicion_2025_id_sensor_fecha_hora_idx`, leyendo solo la partición de 2025.
-Se conserva la evidencia previa de 41/42 como historial, no como estado actual.
 
 - [Sección lista para el documento técnico](SECCION_PERSONA_C.md).
 - [Evidencia aprobada, resultados y checklist](evidencia_con_indices/README.md).

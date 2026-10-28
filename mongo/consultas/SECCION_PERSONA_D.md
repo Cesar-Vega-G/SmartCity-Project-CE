@@ -53,6 +53,25 @@ La flexibilidad se demuestra con documentos anidados y con `$objectToArray` y
 que pueden filtrarse y agruparse. Los campos dinamicos de incidentes se consultan
 directamente mediante rutas como `datos_extra.heridos`.
 
+## Diagrama del modelo documental
+
+```mermaid
+flowchart LR
+    S["PostgreSQL: sensor / id_sensor"] -. "referencia compartida, sin FK entre motores" .-> L
+    S -. "id_sensor" .-> A
+    S -. "id_sensor" .-> E
+    subgraph MongoDB["MongoDB: smartcity"]
+        L["lecturas<br/>id_sensor, tipo, timestamp<br/>ubicacion: distrito, geo<br/>medicion: campos variables<br/>valido, invalidos"]
+        A["alertas<br/>id_sensor, timestamp<br/>variable, valor, limite, nivel<br/>ubicacion"]
+        E["eventos<br/>id_sensor, timestamp<br/>tipo_evento, severidad<br/>ubicacion, detalles variables"]
+        I["incidentes<br/>fecha_reporte, categoria, estado<br/>ubicacion, datos_extra variables"]
+    end
+```
+
+Las cajas representan colecciones con documentos anidados. No se modela una relacion
+obligatoria de incidente a sensor: el contrato de incidentes no contiene id_sensor.
+Las flechas muestran referencias logicas, no relaciones impuestas por MongoDB.
+
 ## Reglas de analisis y decisiones
 
 Se usan rangos semiabiertos `[desde, hasta)` y julio de 2026 como ejemplo comun.
@@ -80,7 +99,7 @@ validos y no se sustituyen por datos de demostracion en la base del proyecto.
 ## Operaciones y consultas
 
 El archivo independiente crud.js, pegado en la shell integrada de Compass, realiza y verifica insertOne, insertMany, find, findOne, updateOne, updateMany
-y deleteOne. Utiliza una base temporal propia y documentos identificados por corrida.
+y deleteOne. Utiliza una base temporal de nombre unico por ejecucion.
 La limpieza en finally elimina los documentos de la demostracion y la base temporal;
 los historicos del proyecto permanecen intactos. No requiere transacciones ni replica set.
 
@@ -96,51 +115,25 @@ Los limites son parametros del proyecto, no una afirmacion de normativa sanitari
 
 La [matriz de cobertura](README.md#cobertura-del-cronograma-y-del-enunciado) relaciona
 cada operacion, filtro, proyeccion, ordenamiento, agrupacion e indice con su archivo.
-Las quince consultas son pipelines autonomos para Aggregations de Compass. Son la
-unica fuente editable; se retiraron la biblioteca compartida y los ejecutores Python.
+Las quince consultas son pipelines autonomos comentados para Aggregations de Compass
+y constituyen la unica fuente editable de las consultas.
 El guardado en Compass es local y no se sincroniza con Git ni con el servidor.
 
 ## Verificacion y rendimiento
 
-Las pruebas descritas a continuacion son **evidencia historica de la implementacion
-anterior** (commit `d2f5884`), no una suite incluida en la version simplificada.
-Antes de retirar los ejecutores se verifico equivalencia de los quince pipelines:
-15/15, con hashes de archivos y dbHash intacto en `compass/validacion.json`.
-Los pipelines se conservaron sin cambios. La consulta 13 tambien se ejecuto en la
-interfaz de Compass, con 16 resultados. La nueva rutina de comprobacion se describe
-en [VERIFICACION.md](VERIFICACION.md); cualquier modificacion requiere evidencia nueva.
+El estado comprobado y los pendientes estan en [VERIFICACION.md](VERIFICACION.md).
+La revision ejecuta los quince pipelines sobre la carga disponible, comprueba conteos
+seleccionados y ejemplos, repite el CRUD y contrasta los hashes documentales antes y
+despues. Esta comprobacion no equivale a auditar todos los valores ni a reconstruir
+el proyecto completo en otra computadora.
 
-
-Las pruebas controladas incluyen resultados pequenos conocidos de antemano:
-fechas limite, valores iguales y superiores a umbrales, datos ausentes y parcialmente
-invalidos, variables de diferentes unidades, documentos con varios valores y bases
-vacias. Se ejecutan tambien dos ciclos de CRUD para comprobar repetibilidad y limpieza.
-
-La prueba completa ejecuta las quince consultas sobre la carga real y construye
-referencias independientes recorriendo BSON con JavaScript. Compara conteos,
-extremos y promedios, con tolerancia relativa de 1e-9 por aritmetica flotante.
-La evidencia conserva version, parametros, muestras y planes de ejecucion. Se compara
-dbHash de las cuatro colecciones e inventario de indices antes y despues de validar.
-
-Se encontro que esta instancia solo tenia `_id_`. Despues de registrar planes sin
-indices se aplico sin cambios el script de indices existente de Cesar. No se ejecuto
-el benchmark que elimina/recrea indices. La aplicacion agrega las estructuras ya
-previstas por el equipo y no cambia documentos, esquema ni generadores.
-
-Se explican tres accesos: sensor/fecha, tipo/fecha y alertas criticas/distrito.
-Los indices reducen el conjunto que debe examinarse cuando hay filtros selectivos;
-no garantizan que todas las consultas eviten COLLSCAN. Los valores observados se
-presentan en [evidencia/README.md](evidencia/README.md), con los planes originales.
-
-La comparacion anterior de Cesar en [rendimiento Mongo](../../docs/rendimiento_mongo.md)
-usa medianas de tres ejecuciones para sus cinco consultas. Es evidencia del equipo,
-distinta de las mediciones de Persona D. No se mezclan ambos experimentos ni se
-presenta una duracion aislada de explain como benchmark estadistico.
-
-El arranque limpio se comprueba con un contenedor efimero de la misma imagen MongoDB,
-sin puertos ni volumenes del proyecto, usando fixtures. Este ensayo verifica scripts
-y motor; no equivale a reconstruir toda la ingesta de PostgreSQL y MongoDB desde cero.
-Esa prueba integral permanece dentro de la coordinacion grupal con Cesar.
+Los indices estan definidos en `mongo/rendimiento/indices.js`. Se crean desde la shell
+integrada de Compass despues de cargar los datos. Un filtro selectivo puede usar un
+indice; una agregacion amplia puede recorrer la coleccion. Explain muestra la eleccion
+real del optimizador. Los resultados comparativos de indices estan resumidos en
+[rendimiento Mongo](../../docs/rendimiento_mongo.md); son un experimento separado.
+El benchmark elimina y recrea indices para medirlos, por lo que no forma parte del uso
+normal de consultas ni del procedimiento de instalacion de indices.
 
 ## Justificacion tecnologica y conclusiones
 

@@ -15,7 +15,10 @@ Compass es el cliente; instalarlo no instala ni llena el servidor.
    `MONGO_PASSWORD`), con Authentication Database `admin`. No guardar claves en Git.
 3. Conectar y abrir `smartcity`. Deben aparecer `lecturas`, `eventos`, `alertas`
    e `incidentes`. Si no aparecen, revisar la carga inicial antes de consultar.
-4. En Documents inspeccionar documentos; en Indexes revisar los indices existentes.
+4. Despues de la carga inicial, abrir **Open MongoDB Shell** y pegar completo
+   [indices.js](../rendimiento/indices.js). Es idempotente si los indices ya coinciden.
+   Repetir este paso tras recargar: el cargador recrea las colecciones y borra sus indices.
+5. En Documents inspeccionar documentos; en Indexes revisar los indices existentes.
 
 ## Ejecutar una consulta
 
@@ -118,21 +121,21 @@ Corregir la zona en la ingesta requeriria coordinacion y recarga fuera de Person
 | Filtros, comparaciones y logica | 02, 10, 12, 15; `$gt`, `$gte`, `$lt`, `$in`, `$exists`, `$expr`, `$and`, `$or`, `$not` |
 | Proyeccion, orden y grupos | `$project`, `$sort`, `$group` en los archivos |
 | Preguntas complementarias | Temperatura 11; limites 12; cantidad 09; contaminacion 13; evolucion 14 |
-| Volumen, resultados e indices | [Verificacion](VERIFICACION.md) y [evidencia](evidencia/README.md) |
+| Volumen, resultados e indices | [Verificacion y estado actual](VERIFICACION.md) |
 | Documento tecnico y defensa | [Seccion D](SECCION_PERSONA_D.md), [guion](DEFENSA.md) |
 
 ## Estructura y mantenimiento
 
-- `compass/`: quince pipelines autonomos, sin generadores ni biblioteca compartida.
-- `crud.js`: demostracion independiente en la shell integrada.
-- `VERIFICACION.md`: comprobaciones para repetir desde Compass.
-- `evidencia*/`: resultados historicos; no son programas que haya que ejecutar.
+- `compass/`: los quince pipelines comentados; unica version editable de cada consulta.
+- `crud.js`: demostracion de las siete operaciones en la shell integrada.
+- `VERIFICACION.md`: resultados de la revision actual, comprobaciones y pendientes.
+- `SECCION_PERSONA_D.md`: modelo documental y justificacion para el documento del equipo.
+- `DEFENSA.md`: orden sugerido para demostrar y explicar el trabajo.
 
-Se retiraron los ejecutores Python, wrappers de consultas y validadores anteriores.
-Las pruebas historicas no se presentan como una suite automatica disponible en esta
-version. Los pipelines incluyen comentarios didacticos. Al retirar esas lineas, conservan
-exactamente el texto validado (ver compass/comentarios_verificados.json). Cualquier
-cambio de logica requiere repetir las comprobaciones y registrar evidencia nueva.
+Si modificas una consulta, copia el cambio al archivo y repite las comprobaciones.
+El dataset de entrada y los cargadores son necesarios para reproducir el proyecto.
+Los informes antiguos y los archivos auxiliares de versiones anteriores no forman parte
+de esta entrega. La medicion de indices se resume en [rendimiento Mongo](../../docs/rendimiento_mongo.md).
 
 Referencias oficiales: [Aggregations](https://www.mongodb.com/docs/compass/create-agg-pipeline/)
 y [shell integrada](https://www.mongodb.com/docs/compass/embedded-shell/).

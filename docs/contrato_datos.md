@@ -6,7 +6,7 @@ Nombres y reglas que usamos todos para que Postgres y Mongo calcen. Si se cambia
 
 - Ciudad: Madrid. Zona = distrito (21).
 - Nombres sin tildes y en minúscula con guion bajo: `Chamartin`, `calidad_aire`, `id_sensor`.
-- Período: 2024-01-01 a 2026-08-31, hora de Madrid.
+- Periodo previsto: 2024-01-01 a 2026-08-31, hora de Madrid. La ingesta actual de Mongo entrega fechas sin zona y PyMongo las almacena como UTC; las consultas respetan esos valores sin desplazarlos. Revisar esta discrepancia antes de hacer interpretaciones de hora local.
 - `id_sensor` (`S-00001`) es el mismo en las dos bases. `codigo_origen` es el código original de Madrid.
 
 Distritos: Centro, Arganzuela, Retiro, Salamanca, Chamartin, Tetuan, Chamberi, Fuencarral-El Pardo, Moncloa-Aravaca, Latina, Carabanchel, Usera, Puente de Vallecas, Moratalaz, Ciudad Lineal, Hortaleza, Villaverde, Villa de Vallecas, Vicalvaro, San Blas-Canillejas, Barajas.

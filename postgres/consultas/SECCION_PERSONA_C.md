@@ -356,7 +356,6 @@ La consulta 17 devuelve 3.666 filas y accede únicamente a medicion_2025 mediant
 
 [Plan aprobado](evidencia_con_indices/consulta_17_explain.json). [Informe aprobado e inventario de índices](evidencia_con_indices/validacion.json).
 
-Se conserva la [evidencia anterior](evidencia/README.md), con 41/42 y los índices ausentes, como registro histórico del problema resuelto. No queda pendiente instalar índices con César; basta informar que se aplicó su script en esta instancia local. Una instalación nueva también debe aplicar el script antes de comprobar acceso por índice.
 
 ## Límites de interpretación
 

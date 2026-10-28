@@ -2,7 +2,8 @@
 
 Colección `lecturas`: 3.151.581 documentos; datos: 1092 MB; índices: 129 MB.
 Cada tiempo es la mediana de 3 ejecuciones medidas desde Python; el plan y los documentos revisados salen de `explain("executionStats")`.
-Los planes completos están en `mongo/rendimiento/planes/`.
+El script `mongo/rendimiento/medir_mongo.py` genera los planes completos al repetir el experimento.
+Se conserva esta tabla como resultado comparativo del equipo; los volcados intermedios no se incluyen.
 
 | Consulta | Sin índice (ms) | Con índice (ms) | Mejora | Plan sin índice | Plan con índice | Docs revisados sin → con | Resultados |
 | --- | --- | --- | --- | --- | --- | --- | --- |

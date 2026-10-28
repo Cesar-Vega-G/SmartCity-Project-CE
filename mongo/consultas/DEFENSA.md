@@ -1,6 +1,6 @@
 # Guion de demostracion — Persona D
 
-Duracion orientativa: 10–15 minutos. Abrir Compass, los pipelines y la evidencia.
+Duracion orientativa: 10–15 minutos. Abrir Compass, los pipelines y VERIFICACION.md.
 
 1. **Conexion y volumen.** Abrir smartcity; mostrar las cuatro colecciones y repetir
    el conteo exacto de VERIFICACION.md. Explicar cliente Compass y servidor Docker.
@@ -14,8 +14,8 @@ Duracion orientativa: 10–15 minutos. Abrir Compass, los pipelines y la evidenc
    pares, unwind, calidad, grupo y orden. La 9 cuenta documentos, no variables.
 6. **Complementarias.** Mostrar temperatura, limites, NO2, evolucion y heridos.
    Cambiar el distrito o las fechas de una copia y explicar el resultado.
-7. **Pruebas e indices.** Mostrar Explain, la evidencia historica y su alcance.
-   Distinguir validacion previa de comprobaciones hechas hoy. Guardar los pipelines
+7. **Pruebas e indices.** Mostrar Explain y los resultados de VERIFICACION.md, indicando su alcance.
+   Explicar que las estadisticas usan todos los datos filtrados. Guardar los pipelines
    desde Save y mostrar que quedan disponibles en My Queries localmente.
 
 ## Preguntas que debemos poder responder

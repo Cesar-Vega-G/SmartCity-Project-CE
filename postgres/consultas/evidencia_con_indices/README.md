@@ -8,7 +8,7 @@ Carga observada: PostgreSQL 16.15, 324 sensores, 21 distritos y 4.664.093 medici
 
 La consulta 17 devolvió 3.666 filas, usó medicion_2025_id_sensor_fecha_hora_idx y leyó solo medicion_2025. Tiempo observado de EXPLAIN: 2.835 ms; no representa un benchmark controlado.
 
-[Informe, muestras e índices](validacion.json) · [EXPLAIN](consulta_17_explain.json) · [Sección para Luis](../SECCION_PERSONA_C.md) · [Evidencia histórica previa](../evidencia/README.md)
+[Informe, muestras e índices](validacion.json) · [EXPLAIN](consulta_17_explain.json) · [Sección para Luis](../SECCION_PERSONA_C.md)
 
 | Comprobación | Resultado |
 | --- | --- |
