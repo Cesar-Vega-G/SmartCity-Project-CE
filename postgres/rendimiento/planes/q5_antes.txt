@@ -1,0 +1,29 @@
+SELECT s.id_sensor, s.nombre
+        FROM sensor s
+        WHERE NOT EXISTS (SELECT 1 FROM medicion m WHERE m.id_sensor = s.id_sensor)
+
+Hash Right Anti Join  (cost=12.29..171259.35 rows=11 width=51) (actual time=1008.980..1008.995 rows=9 loops=1)
+  Hash Cond: ((m.id_sensor)::text = (s.id_sensor)::text)
+  Buffers: shared hit=12897 read=26024
+  ->  Append  (cost=0.00..108877.40 rows=4664094 width=8) (actual time=0.032..592.117 rows=4664093 loops=1)
+        Buffers: shared hit=12892 read=26024
+        ->  Seq Scan on medicion_2024 m_1  (cost=0.00..19984.49 rows=1089649 width=8) (actual time=0.031..86.328 rows=1089649 loops=1)
+              Buffers: shared hit=239 read=8849
+        ->  Seq Scan on medicion_2025 m_2  (cost=0.00..23512.61 rows=1281661 width=8) (actual time=0.081..93.393 rows=1281661 loops=1)
+              Buffers: shared hit=864 read=9832
+        ->  Seq Scan on medicion_2026 m_3  (cost=0.00..42059.83 rows=2292783 width=8) (actual time=0.066..157.738 rows=2292783 loops=1)
+              Buffers: shared hit=11789 read=7343
+        ->  Seq Scan on medicion_default m_4  (cost=0.00..0.00 rows=1 width=42) (actual time=0.012..0.013 rows=0 loops=1)
+  ->  Hash  (cost=8.24..8.24 rows=324 width=51) (actual time=4.192..4.192 rows=324 loops=1)
+        Buckets: 1024  Batches: 1  Memory Usage: 35kB
+        Buffers: shared hit=5
+        ->  Seq Scan on sensor s  (cost=0.00..8.24 rows=324 width=51) (actual time=4.104..4.140 rows=324 loops=1)
+              Buffers: shared hit=5
+Planning:
+  Buffers: shared hit=5
+Planning Time: 0.191 ms
+JIT:
+  Functions: 16
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.348 ms, Inlining 0.000 ms, Optimization 0.203 ms, Emission 3.973 ms, Total 4.524 ms
+Execution Time: 1009.422 ms

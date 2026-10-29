@@ -1,0 +1,32 @@
+SELECT COUNT(*)
+        FROM medicion m
+        JOIN variable v ON v.id_variable = m.id_variable
+        WHERE v.nombre = 'carga' AND m.valor > 80
+          AND m.fecha_hora >= '2026-07-01' AND m.fecha_hora < '2026-08-01'
+
+Finalize Aggregate  (cost=37030.81..37030.82 rows=1 width=8) (actual time=87.518..90.968 rows=1 loops=1)
+  Buffers: shared hit=11754 read=7503
+  ->  Gather  (cost=37030.60..37030.81 rows=2 width=8) (actual time=87.356..90.961 rows=3 loops=1)
+        Workers Planned: 2
+        Workers Launched: 2
+        Buffers: shared hit=11754 read=7503
+        ->  Partial Aggregate  (cost=36030.60..36030.61 rows=1 width=8) (actual time=84.549..84.551 rows=1 loops=3)
+              Buffers: shared hit=11754 read=7503
+              ->  Hash Join  (cost=1.20..36022.15 rows=3381 width=0) (actual time=32.738..84.531 rows=207 loops=3)
+                    Hash Cond: (m.id_variable = v.id_variable)
+                    Buffers: shared hit=11754 read=7503
+                    ->  Parallel Seq Scan on medicion_2026 m  (cost=0.00..35850.21 rows=50714 width=2) (actual time=1.056..81.699 rows=41609 loops=3)
+                          Filter: ((valor > '80'::numeric) AND (fecha_hora >= '2026-07-01 00:00:00'::timestamp without time zone) AND (fecha_hora < '2026-08-01 00:00:00'::timestamp without time zone))
+                          Rows Removed by Filter: 722652
+                          Buffers: shared hit=11629 read=7503
+                    ->  Hash  (cost=1.19..1.19 rows=1 width=2) (actual time=0.017..0.017 rows=1 loops=3)
+                          Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                          Buffers: shared hit=3
+                          ->  Seq Scan on variable v  (cost=0.00..1.19 rows=1 width=2) (actual time=0.012..0.013 rows=1 loops=3)
+                                Filter: ((nombre)::text = 'carga'::text)
+                                Rows Removed by Filter: 14
+                                Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=4
+Planning Time: 0.210 ms
+Execution Time: 90.998 ms

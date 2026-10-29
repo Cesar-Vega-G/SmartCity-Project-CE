@@ -216,3 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# datos del proyecto
+data/raw_completo/
+data/generated/
+
+# apuntes personales
+apuntes_cesar/

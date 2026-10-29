@@ -1,0 +1,73 @@
+SELECT d.nombre, ROUND(AVG(m.valor), 2) AS promedio
+        FROM medicion m
+        JOIN variable v ON v.id_variable = m.id_variable
+        JOIN sensor s ON s.id_sensor = m.id_sensor
+        JOIN ubicacion u ON u.id_ubicacion = s.id_ubicacion
+        JOIN distrito d ON d.id_distrito = u.id_distrito
+        WHERE v.nombre = 'no2'
+          AND m.fecha_hora >= '2025-01-01' AND m.fecha_hora < '2025-02-01'
+        GROUP BY d.nombre
+        ORDER BY promedio DESC
+
+Sort  (cost=20112.77..20112.82 rows=21 width=43) (actual time=47.421..48.571 rows=16 loops=1)
+  Sort Key: (round(avg(m.valor), 2)) DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=898 read=9992
+  ->  Finalize GroupAggregate  (cost=20084.14..20112.31 rows=21 width=43) (actual time=46.140..48.558 rows=16 loops=1)
+        Group Key: d.nombre
+        Buffers: shared hit=898 read=9992
+        ->  Gather Merge  (cost=20084.14..20111.68 rows=42 width=43) (actual time=46.000..48.510 rows=43 loops=1)
+              Workers Planned: 2
+              Workers Launched: 2
+              Buffers: shared hit=898 read=9992
+              ->  Partial GroupAggregate  (cost=19084.12..19106.80 rows=21 width=43) (actual time=41.401..42.550 rows=14 loops=3)
+                    Group Key: d.nombre
+                    Buffers: shared hit=898 read=9992
+                    ->  Sort  (cost=19084.12..19091.59 rows=2990 width=16) (actual time=41.307..41.585 rows=5628 loops=3)
+                          Sort Key: d.nombre
+                          Sort Method: quicksort  Memory: 505kB
+                          Buffers: shared hit=898 read=9992
+                          Worker 0:  Sort Method: quicksort  Memory: 382kB
+                          Worker 1:  Sort Method: quicksort  Memory: 425kB
+                          ->  Hash Join  (cost=28.83..18911.51 rows=2990 width=16) (actual time=0.589..39.804 rows=5628 loops=3)
+                                Hash Cond: (u.id_distrito = d.id_distrito)
+                                Buffers: shared hit=824 read=9992
+                                ->  Hash Join  (cost=27.36..18900.60 rows=2990 width=9) (actual time=0.542..38.877 rows=5628 loops=3)
+                                      Hash Cond: (s.id_ubicacion = u.id_ubicacion)
+                                      Buffers: shared hit=793 read=9992
+                                      ->  Hash Join  (cost=13.49..18878.80 rows=2990 width=9) (actual time=0.446..37.938 rows=5628 loops=3)
+                                            Hash Cond: ((m.id_sensor)::text = (s.id_sensor)::text)
+                                            Buffers: shared hit=778 read=9992
+                                            ->  Hash Join  (cost=1.20..18858.56 rows=2990 width=13) (actual time=0.331..36.846 rows=5628 loops=3)
+                                                  Hash Cond: (m.id_variable = v.id_variable)
+                                                  Buffers: shared hit=735 read=9992
+                                                  ->  Parallel Seq Scan on medicion_2025 m  (cost=0.00..18706.38 rows=44845 width=15) (actual time=0.288..33.672 rows=36371 loops=3)
+                                                        Filter: ((fecha_hora >= '2025-01-01 00:00:00'::timestamp without time zone) AND (fecha_hora < '2025-02-01 00:00:00'::timestamp without time zone))
+                                                        Rows Removed by Filter: 390850
+                                                        Buffers: shared hit=704 read=9992
+                                                  ->  Hash  (cost=1.19..1.19 rows=1 width=2) (actual time=0.018..0.019 rows=1 loops=3)
+                                                        Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                                        Buffers: shared hit=3
+                                                        ->  Seq Scan on variable v  (cost=0.00..1.19 rows=1 width=2) (actual time=0.013..0.015 rows=1 loops=3)
+                                                              Filter: ((nombre)::text = 'no2'::text)
+                                                              Rows Removed by Filter: 14
+                                                              Buffers: shared hit=3
+                                            ->  Hash  (cost=8.24..8.24 rows=324 width=12) (actual time=0.093..0.094 rows=324 loops=3)
+                                                  Buckets: 1024  Batches: 1  Memory Usage: 22kB
+                                                  Buffers: shared hit=15
+                                                  ->  Seq Scan on sensor s  (cost=0.00..8.24 rows=324 width=12) (actual time=0.007..0.052 rows=324 loops=3)
+                                                        Buffers: shared hit=15
+                                      ->  Hash  (cost=8.94..8.94 rows=394 width=8) (actual time=0.084..0.084 rows=394 loops=3)
+                                            Buckets: 1024  Batches: 1  Memory Usage: 24kB
+                                            Buffers: shared hit=15
+                                            ->  Seq Scan on ubicacion u  (cost=0.00..8.94 rows=394 width=8) (actual time=0.005..0.039 rows=394 loops=3)
+                                                  Buffers: shared hit=15
+                                ->  Hash  (cost=1.21..1.21 rows=21 width=15) (actual time=0.021..0.022 rows=21 loops=3)
+                                      Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                      Buffers: shared hit=3
+                                      ->  Seq Scan on distrito d  (cost=0.00..1.21 rows=21 width=15) (actual time=0.012..0.014 rows=21 loops=3)
+                                            Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=14
+Planning Time: 0.482 ms
+Execution Time: 48.619 ms

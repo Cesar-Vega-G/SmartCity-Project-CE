@@ -1,0 +1,60 @@
+SELECT d.nombre, ROUND(AVG(m.valor), 2) AS promedio
+        FROM medicion m
+        JOIN variable v ON v.id_variable = m.id_variable
+        JOIN sensor s ON s.id_sensor = m.id_sensor
+        JOIN ubicacion u ON u.id_ubicacion = s.id_ubicacion
+        JOIN distrito d ON d.id_distrito = u.id_distrito
+        WHERE v.nombre = 'no2'
+          AND m.fecha_hora >= '2025-01-01' AND m.fecha_hora < '2025-02-01'
+        GROUP BY d.nombre
+        ORDER BY promedio DESC
+
+Sort  (cost=11914.95..11915.01 rows=21 width=43) (actual time=12.214..12.218 rows=16 loops=1)
+  Sort Key: (round(avg(m.valor), 2)) DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=449
+  ->  HashAggregate  (cost=11914.18..11914.49 rows=21 width=43) (actual time=12.200..12.208 rows=16 loops=1)
+        Group Key: d.nombre
+        Batches: 1  Memory Usage: 24kB
+        Buffers: shared hit=449
+        ->  Hash Join  (cost=242.72..11876.84 rows=7467 width=16) (actual time=0.656..9.785 rows=16885 loops=1)
+              Hash Cond: (u.id_distrito = d.id_distrito)
+              Buffers: shared hit=449
+              ->  Hash Join  (cost=241.24..11851.81 rows=7467 width=9) (actual time=0.641..7.944 rows=16885 loops=1)
+                    Hash Cond: (s.id_ubicacion = u.id_ubicacion)
+                    Buffers: shared hit=448
+                    ->  Hash Join  (cost=227.38..11818.13 rows=7467 width=9) (actual time=0.535..5.874 rows=16885 loops=1)
+                          Hash Cond: ((m.id_sensor)::text = (s.id_sensor)::text)
+                          Buffers: shared hit=443
+                          ->  Nested Loop  (cost=215.09..11785.98 rows=7467 width=13) (actual time=0.439..3.295 rows=16885 loops=1)
+                                Buffers: shared hit=438
+                                ->  Seq Scan on variable v  (cost=0.00..1.19 rows=1 width=2) (actual time=0.002..0.006 rows=1 loops=1)
+                                      Filter: ((nombre)::text = 'no2'::text)
+                                      Rows Removed by Filter: 14
+                                      Buffers: shared hit=1
+                                ->  Bitmap Heap Scan on medicion_2025 m  (cost=215.09..11660.36 rows=12444 width=15) (actual time=0.435..2.270 rows=16885 loops=1)
+                                      Recheck Cond: ((id_variable = v.id_variable) AND (fecha_hora >= '2025-01-01 00:00:00'::timestamp without time zone) AND (fecha_hora < '2025-02-01 00:00:00'::timestamp without time zone))
+                                      Heap Blocks: exact=417
+                                      Buffers: shared hit=437
+                                      ->  Bitmap Index Scan on medicion_2025_id_variable_fecha_hora_idx  (cost=0.00..211.98 rows=12444 width=0) (actual time=0.402..0.402 rows=16885 loops=1)
+                                            Index Cond: ((id_variable = v.id_variable) AND (fecha_hora >= '2025-01-01 00:00:00'::timestamp without time zone) AND (fecha_hora < '2025-02-01 00:00:00'::timestamp without time zone))
+                                            Buffers: shared hit=20
+                          ->  Hash  (cost=8.24..8.24 rows=324 width=12) (actual time=0.094..0.095 rows=324 loops=1)
+                                Buckets: 1024  Batches: 1  Memory Usage: 22kB
+                                Buffers: shared hit=5
+                                ->  Seq Scan on sensor s  (cost=0.00..8.24 rows=324 width=12) (actual time=0.003..0.047 rows=324 loops=1)
+                                      Buffers: shared hit=5
+                    ->  Hash  (cost=8.94..8.94 rows=394 width=8) (actual time=0.103..0.104 rows=394 loops=1)
+                          Buckets: 1024  Batches: 1  Memory Usage: 24kB
+                          Buffers: shared hit=5
+                          ->  Seq Scan on ubicacion u  (cost=0.00..8.94 rows=394 width=8) (actual time=0.003..0.047 rows=394 loops=1)
+                                Buffers: shared hit=5
+              ->  Hash  (cost=1.21..1.21 rows=21 width=15) (actual time=0.012..0.012 rows=21 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                    Buffers: shared hit=1
+                    ->  Seq Scan on distrito d  (cost=0.00..1.21 rows=21 width=15) (actual time=0.004..0.006 rows=21 loops=1)
+                          Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=18
+Planning Time: 0.694 ms
+Execution Time: 12.268 ms
