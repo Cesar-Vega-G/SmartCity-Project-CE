@@ -52,3 +52,14 @@ Madrid no publica CO2, velocidad en calles normales ni tiempo de recorrido. Se c
 - CO2: `420 + 60 x CO` ppm. El 60 es un supuesto nuestro, es una estimacion.
 
 Tablas en Postgres: `spark_kpi_movilidad` y `spark_kpi_ambiente` (por distrito y hora). Limitaciones: no considera semaforos y los promedios esconden presas puntuales; en la ciudad la ocupacion casi nunca pasa de 15 %, por eso la velocidad urbana estimada casi no cambia en el dia (47 km/h) aunque la congestion si (3,5 de madrugada, 24 a mediodia).
+
+## Dashboard (`dashboard/`)
+
+```
+pip install -r requirements.txt
+python -m streamlit run dashboard/app.py
+```
+
+Abre en `localhost:8501`. Necesita la carga completa: los 5 scripts del README (incluido `crear.py`, que crea las vistas) y `spark/indicadores.py` para las tablas `spark_kpi_*`.
+
+Cada quien trabaja en su archivo de `dashboard/secciones/` para no chocar: `indicadores.py` (Cesar), `graficos.py` y `detalle.py` (Luis), `consultas.py` (Sebastian). En `dashboard/conexiones.py` estan `pg_df`, `mongo`, `hdfs`, `correr_spark` y `origen` (la etiqueta de fuente que pide el enunciado debajo de cada grafico).
