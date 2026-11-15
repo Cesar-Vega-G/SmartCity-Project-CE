@@ -83,10 +83,17 @@ services:
     container_name: smartcity_spark_master
     hostname: spark-master
     command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.master.Master"]
+    environment:
+      PG_DB: ${PG_DB}
+      PG_USER: ${PG_USER}
+      PG_PASSWORD: ${PG_PASSWORD}
     ports:
       - "8080:8080"
+      - "4040:4040"
     volumes:
       - ./spark:/proyecto/spark
+      - ./spark/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf:ro
+      - ./spark/log4j2.properties:/opt/spark/conf/log4j2.properties:ro
 
   spark-worker:
     image: apache/spark:3.5.9-python3
@@ -100,6 +107,8 @@ services:
       - "8081:8081"
     volumes:
       - ./spark:/proyecto/spark
+      - ./spark/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf:ro
+      - ./spark/log4j2.properties:/opt/spark/conf/log4j2.properties:ro
     depends_on:
       - spark-master
 
