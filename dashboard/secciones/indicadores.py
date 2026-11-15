@@ -5,6 +5,7 @@ from conexiones import mongo, origen, pg_df
 AMBIENTALES = ["no2", "pm10", "pm25", "co", "o3", "temperatura", "precipitacion", "ruido_db"]
 
 
+# formato con punto de miles
 def num(x, dec=0):
     if x is None:
         return "—"
@@ -17,6 +18,7 @@ def valor(df, col):
 
 
 @st.cache_data(ttl=600)
+# sale de lo que calculo spark
 def movilidad(desde, hasta, distritos):
     return pg_df("""
         SELECT SUM(vehiculos_hora) AS vehiculos, AVG(velocidad_urbana_kmh) AS vel_urbana,
@@ -42,6 +44,7 @@ def ambiente(desde, hasta, distritos):
 
 
 @st.cache_data(ttl=600)
+# variacion contra el periodo anterior del mismo largo
 def energia(desde, hasta, distritos):
     sql = """SELECT SUM(valor) AS total FROM v_medicion_detalle
              WHERE variable = 'consumo_kwh' AND fecha_hora >= %s AND fecha_hora < %s AND distrito = ANY(%s)"""
@@ -67,6 +70,7 @@ def sensores(distritos, tipos):
 
 
 @st.cache_data(ttl=600)
+# conteos de lecturas, alertas, eventos e incidentes
 def conteos_mongo(desde, hasta, distritos, tipos):
     db = mongo()
     rango = {"$gte": desde, "$lt": hasta}

@@ -8,6 +8,7 @@ HDFS = "hdfs://namenode:8020/smartcity"
 LECTURAS_JSON = f"{HDFS}/raw/mongo/lecturas.json"
 LECTURAS = f"{HDFS}/procesado/lecturas"
 
+# postgres dentro de la red de docker
 PG_URL = f"jdbc:postgresql://postgres:5432/{os.environ.get('PG_DB', 'smartcity')}"
 PG_PROPS = {
     "user": os.environ.get("PG_USER", "smartcity"),
@@ -18,6 +19,7 @@ PG_PROPS = {
 VARIABLES = ["no2", "pm10", "pm25", "co", "o3", "temperatura", "humedad", "precipitacion", "ruido_db",
              "intensidad", "ocupacion", "carga", "velocidad", "ocupacion_parking", "consumo_kwh"]
 
+# esquema fijo para no leer todo el json para adivinarlo
 ESQUEMA_LECTURA = StructType([
     StructField("id_sensor", StringType()),
     StructField("tipo", StringType()),
@@ -50,6 +52,7 @@ def guardar_pg(df, tabla):
     df.write.jdbc(PG_URL, tabla, mode="overwrite", properties=PG_PROPS)
 
 
+# saca los campos anidados a columnas normales
 def aplanar(df):
     return df.select(
         "id_sensor", "tipo", "categoria",

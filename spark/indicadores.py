@@ -2,11 +2,13 @@ from pyspark.sql import functions as F
 
 from comun_spark import crear_spark, guardar_pg, leer_lecturas
 
+# 50 km/h limite en ciudad, co2 de fondo 420 ppm
 VEL_LIBRE = 50.0
 FONDO_CO2 = 420.0
 CO2_POR_CO = 60.0
 
 
+# deja en null los valores marcados como invalidos
 def valor(var):
     malo = F.array_contains(F.coalesce(F.col("invalidos"), F.array().cast("array<string>")), var)
     return F.when(malo, None).otherwise(F.col(var))
@@ -24,6 +26,7 @@ trafico = (lecturas.filter(F.col("tipo") == "trafico")
            .withColumn("velocidad", F.when(F.col("velocidad") > 0, F.col("velocidad")))
            .withColumn("tramo", F.least(F.floor(F.col("ocupacion") / 5) * 5, F.lit(90)).cast("int")))
 
+# curva de velocidad segun ocupacion, sale de la m30
 real = trafico.filter(F.col("velocidad").isNotNull() & F.col("ocupacion").isNotNull())
 vel_libre = real.filter(F.col("ocupacion") < 15).agg(F.avg("velocidad")).first()[0]
 print("lecturas con velocidad real:", real.count())
@@ -36,6 +39,7 @@ curva = (real.groupBy("tramo")
 curva.show(20)
 guardar_pg(curva, "spark_curva_velocidad")
 
+# la m30 se queda con su velocidad real
 m30 = real.select("id_sensor").distinct().withColumn("es_m30", F.lit(True))
 print("puntos con velocidad real (M30):", m30.count())
 
@@ -60,6 +64,7 @@ movilidad = (por_punto.groupBy("distrito", "hora")
              .withColumn("tiempo_min_km",
                          F.when(F.col("velocidad_urbana_kmh") > 0, F.round(60 / F.col("velocidad_urbana_kmh"), 2))))
 
+# co2 estimado a partir del co
 ambiente = (lecturas.filter(F.col("tipo") == "calidad_aire")
             .select("distrito", "hora", valor("co").alias("co"), valor("pm25").alias("pm25"))
             .groupBy("distrito", "hora")

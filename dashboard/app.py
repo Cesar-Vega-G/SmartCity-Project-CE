@@ -18,6 +18,7 @@ def opciones():
 
 distritos, tipos = opciones()
 
+# filtros, por defecto julio 2026 que tiene todos los tipos
 with st.sidebar:
     st.header("Filtros")
     rango = st.date_input("Periodo", (date(2026, 7, 1), date(2026, 7, 31)),
@@ -35,6 +36,7 @@ filtros = {
     "tipos": sel_tipos or tipos,
 }
 
+# cada quien tiene su archivo en secciones/
 tab1, tab2, tab3, tab4 = st.tabs(["Indicadores", "Graficos", "Mapa y detalle", "Consultas por tecnologia"])
 with tab1:
     indicadores.mostrar(filtros)

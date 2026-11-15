@@ -4,6 +4,7 @@ from comun_spark import ESQUEMA_LECTURA, LECTURAS, LECTURAS_JSON, aplanar, crear
 
 spark = crear_spark("etl_lecturas")
 
+# json de hdfs a parquet por anio
 crudo = spark.read.schema(ESQUEMA_LECTURA).json(LECTURAS_JSON)
 lecturas = aplanar(crudo)
 lecturas.write.mode("overwrite").partitionBy("anio").parquet(LECTURAS)
@@ -11,6 +12,7 @@ lecturas.write.mode("overwrite").partitionBy("anio").parquet(LECTURAS)
 lecturas = spark.read.parquet(LECTURAS)
 print("lecturas en parquet:", lecturas.count())
 
+# resumen por tipo para revisar la carga
 resumen = (lecturas.groupBy("tipo")
            .agg(F.count("*").alias("lecturas"),
                 F.sum(F.when(~F.col("valido"), 1).otherwise(0)).alias("invalidas"),

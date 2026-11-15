@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "data" / "generator
 from comun import conectar_mongo, conectar_pg
 
 
+# una sola conexion para toda la app
 @st.cache_resource
 def pg():
     con = conectar_pg()
@@ -27,6 +28,7 @@ def pg_df(sql, params=None):
         return pd.DataFrame(cur.fetchall(), columns=[c.name for c in cur.description])
 
 
+# hdfs y spark se llaman con docker exec
 def hdfs(*args):
     r = subprocess.run(["docker", "exec", "smartcity_namenode", "hdfs", "dfs", *args],
                        capture_output=True, text=True)
@@ -39,5 +41,6 @@ def correr_spark(script):
     return r.stdout, r.stderr
 
 
+# etiqueta de fuente que pide el enunciado
 def origen(texto):
     st.caption(f"Fuente: {texto}")

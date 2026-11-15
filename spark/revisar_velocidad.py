@@ -11,6 +11,7 @@ print("lecturas con velocidad:", t.count())
 print("de esas, con velocidad 0:", t.filter(F.col("velocidad") == 0).count())
 t.select(F.min("velocidad"), F.expr("percentile(velocidad, 0.5)").alias("mediana"), F.max("velocidad")).show()
 
+# sin ceros ni -1, que son errores del sensor
 v = t.filter(F.col("velocidad") > 0)
 for col in ["carga", "ocupacion", "intensidad"]:
     print(f"correlacion {col}-velocidad (sin ceros):", round(v.stat.corr(col, "velocidad"), 3))

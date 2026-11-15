@@ -1,4 +1,4 @@
-# entrar: docker exec -it smartcity_namenode bash
+# entrar al namenode: docker exec -it smartcity_namenode bash
 
 hdfs dfs -mkdir -p /smartcity/demo
 hdfs dfs -put /datos/raw/clima/clima_01.csv /smartcity/demo/

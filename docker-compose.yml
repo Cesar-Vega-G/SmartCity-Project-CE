@@ -26,6 +26,7 @@ services:
       - ./mongo/init:/docker-entrypoint-initdb.d:ro
       - transfer:/transfer
 
+  # hadoop: namenode guarda el mapa de bloques
   namenode:
     image: apache/hadoop:3.4.1
     container_name: smartcity_namenode
@@ -43,6 +44,7 @@ services:
       - ./hadoop:/proyecto/hadoop
       - transfer:/transfer
 
+  # datanode guarda los bloques
   datanode:
     image: apache/hadoop:3.4.1
     container_name: smartcity_datanode
@@ -55,6 +57,7 @@ services:
     depends_on:
       - namenode
 
+  # yarn reparte los trabajos de mapreduce
   resourcemanager:
     image: apache/hadoop:3.4.1
     container_name: smartcity_resourcemanager
@@ -67,6 +70,7 @@ services:
     depends_on:
       - namenode
 
+  # este corre los map y reduce, por eso lleva python
   nodemanager:
     build: ./hadoop
     image: smartcity-hadoop-python:3.4.1
@@ -78,6 +82,7 @@ services:
     depends_on:
       - resourcemanager
 
+  # spark: el master recibe los trabajos
   spark-master:
     image: apache/spark:3.5.9-python3
     container_name: smartcity_spark_master
@@ -95,6 +100,7 @@ services:
       - ./spark/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf:ro
       - ./spark/log4j2.properties:/opt/spark/conf/log4j2.properties:ro
 
+  # el worker hace el trabajo (2 nucleos, 2 gb)
   spark-worker:
     image: apache/spark:3.5.9-python3
     container_name: smartcity_spark_worker
@@ -117,4 +123,5 @@ volumes:
   mongo_data:
   hdfs_namenode:
   hdfs_datanode:
+  # volumen para pasar el export de mongo a hdfs
   transfer:
