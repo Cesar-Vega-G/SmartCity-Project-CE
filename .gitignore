@@ -223,3 +223,6 @@ data/generated/
 
 # apuntes personales
 apuntes_cesar/
+
+# salidas de claude
+Claude outputs/

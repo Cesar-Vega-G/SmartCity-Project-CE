@@ -24,7 +24,88 @@ services:
     volumes:
       - mongo_data:/data/db
       - ./mongo/init:/docker-entrypoint-initdb.d:ro
+      - transfer:/transfer
+
+  namenode:
+    image: apache/hadoop:3.4.1
+    container_name: smartcity_namenode
+    hostname: namenode
+    user: root
+    command: ["hdfs", "namenode"]
+    env_file: ./hadoop/config
+    environment:
+      ENSURE_NAMENODE_DIR: /hadoop/dfs/name
+    ports:
+      - "9870:9870"
+    volumes:
+      - hdfs_namenode:/hadoop/dfs
+      - ./data/raw:/datos/raw:ro
+      - ./hadoop:/proyecto/hadoop
+      - transfer:/transfer
+
+  datanode:
+    image: apache/hadoop:3.4.1
+    container_name: smartcity_datanode
+    hostname: datanode
+    user: root
+    command: ["hdfs", "datanode"]
+    env_file: ./hadoop/config
+    volumes:
+      - hdfs_datanode:/hadoop/dfs
+    depends_on:
+      - namenode
+
+  resourcemanager:
+    image: apache/hadoop:3.4.1
+    container_name: smartcity_resourcemanager
+    hostname: resourcemanager
+    user: root
+    command: ["yarn", "resourcemanager"]
+    env_file: ./hadoop/config
+    ports:
+      - "8088:8088"
+    depends_on:
+      - namenode
+
+  nodemanager:
+    build: ./hadoop
+    image: smartcity-hadoop-python:3.4.1
+    container_name: smartcity_nodemanager
+    hostname: nodemanager
+    user: root
+    command: ["yarn", "nodemanager"]
+    env_file: ./hadoop/config
+    depends_on:
+      - resourcemanager
+
+  spark-master:
+    image: apache/spark:3.5.9-python3
+    container_name: smartcity_spark_master
+    hostname: spark-master
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.master.Master"]
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./spark:/proyecto/spark
+
+  spark-worker:
+    image: apache/spark:3.5.9-python3
+    container_name: smartcity_spark_worker
+    hostname: spark-worker
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "spark://spark-master:7077"]
+    environment:
+      SPARK_WORKER_CORES: "2"
+      SPARK_WORKER_MEMORY: 2g
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./spark:/proyecto/spark
+    depends_on:
+      - spark-master
 
 volumes:
   pg_data:
   mongo_data:
+  hdfs_namenode:
+  hdfs_datanode:
+  transfer:
