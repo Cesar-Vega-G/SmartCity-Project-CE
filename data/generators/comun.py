@@ -1,5 +1,10 @@
+"""PROPOSITO: compartir catalogos, rutas y conexiones de la carga SmartCity.
+Recibe: configuracion local del archivo .env y los parametros definidos en este modulo.
+Devuelve: constantes del contrato de datos y funciones de conexion a PostgreSQL/MongoDB.
+APORTE SPRINT 2: conectar MongoDB por MONGO_PORT sin cambiar sus credenciales."""
 from pathlib import Path
 
+# RUTAS: calcularlas desde este archivo permite iniciar scripts desde distintas carpetas.
 RAIZ = Path(__file__).resolve().parents[2]
 RAW = RAIZ / "data" / "raw"
 
@@ -78,6 +83,10 @@ MAGNITUDES = {6: "co", 8: "no2", 9: "pm25", 10: "pm10", 14: "o3"}
 
 
 def leer_env():
+    """Leer la configuracion local sin escribir ni mostrar las credenciales.
+    Recibe: ningun argumento; busca .env en RAIZ.
+    Devuelve: diccionario de cadenas clave/valor; queda vacio si el archivo no existe.
+    Cada funcion de conexion aplica sus valores predeterminados cuando falta una clave."""
     datos = {}
     ruta = RAIZ / ".env"
     if ruta.exists():
@@ -89,6 +98,9 @@ def leer_env():
 
 
 def conectar_pg():
+    """Construir una conexion PostgreSQL con la configuracion del proyecto.
+    Recibe: ningun argumento; obtiene puerto, base, usuario y clave mediante leer_env.
+    Devuelve: una conexion psycopg que el llamador debe cerrar cuando termine."""
     import psycopg
     env = leer_env()
     return psycopg.connect(
@@ -101,12 +113,19 @@ def conectar_pg():
 
 
 def conectar_mongo():
+    """Construir el acceso a la base MongoDB smartcity.
+    Recibe: ningun argumento; usa MONGO_HOST/MONGO_PORT y las credenciales locales.
+    Devuelve: un objeto Database de PyMongo para smartcity, respaldado por su MongoClient.
+    El puerto externo puede ser 27018; el servicio dentro de Docker mantiene 27017.
+    PyMongo puede posponer la conexion/autenticacion hasta la primera operacion."""
     from pymongo import MongoClient
     env = leer_env()
     usuario = env.get("MONGO_USER", "smartcity")
     clave = env.get("MONGO_PASSWORD", "smartcity123")
+    # Pasar usuario y clave como argumentos evita problemas con caracteres especiales de una URI.
     cliente = MongoClient(host=env.get("MONGO_HOST", "localhost"),
                           port=int(env.get("MONGO_PORT", "27017")),
                           username=usuario, password=clave, authSource="admin",
+                          # Limitar a diez segundos la seleccion de servidor cuando no hay una instancia disponible.
                           serverSelectionTimeoutMS=10000)
     return cliente["smartcity"]

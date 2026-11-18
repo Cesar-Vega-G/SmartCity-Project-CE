@@ -20,6 +20,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
       MONGO_INITDB_DATABASE: smartcity
     ports:
+      # Recibe MONGO_PORT de .env (27017 por defecto); publica ese puerto del equipo hacia el 27017 del contenedor.
       - "${MONGO_PORT:-27017}:27017"
     volumes:
       - mongo_data:/data/db
