@@ -1,0 +1,3 @@
+{"id_sensor":"A","tipo_evento":"falla_sensor","ubicacion":{"distrito":"Centro"},"timestamp":{"$date":"2026-07-01T00:00:00Z"}}
+{"id_sensor":"B","tipo_evento":"falla_sensor","ubicacion":{"distrito":"Centro"},"timestamp":{"$date":"2026-07-02T00:00:00Z"}}
+{"id_sensor":"B","tipo_evento":"falla_sensor","ubicacion":{"distrito":"Retiro"},"timestamp":{"$date":"2026-07-03T00:00:00Z"}}

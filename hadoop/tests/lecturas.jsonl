@@ -1,0 +1,5 @@
+{"id_sensor":"A","tipo":"meteorologico","ubicacion":{"distrito":"Centro"},"timestamp":{"$date":"2026-07-01T00:00:00Z"},"medicion":{"temperatura":10},"valido":true}
+{"id_sensor":"A","tipo":"meteorologico","ubicacion":{"distrito":"Centro"},"timestamp":{"$date":"2026-07-01T01:00:00Z"},"medicion":{"temperatura":20},"valido":true}
+{"id_sensor":"B","tipo":"meteorologico","ubicacion":{"distrito":"Retiro"},"timestamp":{"$date":"2026-07-01T00:00:00Z"},"medicion":{"temperatura":30,"humedad":-1},"valido":false,"invalidos":["humedad"]}
+{"id_sensor":"B","tipo":"meteorologico","ubicacion":{"distrito":"Retiro"},"timestamp":{"$date":"2026-07-01T01:00:00Z"},"medicion":{"temperatura":40},"valido":false,"invalidos":["temperatura"]}
+{"id_sensor":"C","tipo":"meteorologico","ubicacion":{"distrito":"Centro"},"timestamp":{"$date":"2026-07-01T00:00:00Z"},"medicion":{"temperatura":100},"valido":false}

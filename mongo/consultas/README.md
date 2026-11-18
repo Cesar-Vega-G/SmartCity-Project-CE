@@ -10,7 +10,8 @@ Docker ejecuta el servidor y los cargadores Python preparan los datos. Una vez
 cargados, para consultar solo se necesita Compass y el servicio MongoDB encendido.
 Compass es el cliente; instalarlo no instala ni llena el servidor.
 
-1. Abrir Compass y crear una conexion a `localhost:27017`.
+1. Abrir Compass y conectar a `localhost` usando el puerto `MONGO_PORT` de `.env`
+   (27017 por defecto; 27018 si se configura asi para evitar otra instancia local).
 2. En Authentication usar usuario y contraseña de `.env` (`MONGO_USER`,
    `MONGO_PASSWORD`), con Authentication Database `admin`. No guardar claves en Git.
 3. Conectar y abrir `smartcity`. Deben aparecer `lecturas`, `eventos`, `alertas`

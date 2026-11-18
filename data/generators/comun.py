@@ -105,5 +105,8 @@ def conectar_mongo():
     env = leer_env()
     usuario = env.get("MONGO_USER", "smartcity")
     clave = env.get("MONGO_PASSWORD", "smartcity123")
-    cliente = MongoClient(f"mongodb://{usuario}:{clave}@localhost:27017/?authSource=admin")
+    cliente = MongoClient(host=env.get("MONGO_HOST", "localhost"),
+                          port=int(env.get("MONGO_PORT", "27017")),
+                          username=usuario, password=clave, authSource="admin",
+                          serverSelectionTimeoutMS=10000)
     return cliente["smartcity"]

@@ -1,0 +1,32 @@
+{
+  "consulta": 2,
+  "nombre": "Sensores con mas lecturas",
+  "filtros": {
+    "variable": "temperatura",
+    "distritos": [],
+    "tipos": []
+  },
+  "entrada": "/smartcity/demo/mapreduce/lecturas.jsonl",
+  "ruta_hdfs": "/smartcity/resultados/consulta_2_20261118T212121_276a509871/resultado",
+  "columnas": [
+    "id_sensor",
+    "cantidad"
+  ],
+  "filas": [
+    [
+      "A",
+      2
+    ],
+    [
+      "B",
+      2
+    ]
+  ],
+  "aplicaciones_yarn": [
+    "application_1795036543890_0001",
+    "application_1795036543890_0002"
+  ],
+  "segundos": 112.84,
+  "avisos": [],
+  "aprobado": true
+}

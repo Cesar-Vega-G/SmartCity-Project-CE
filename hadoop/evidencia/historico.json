@@ -1,0 +1,199 @@
+{
+  "fecha_utc": "2026-11-18T21:28:33.629218+00:00",
+  "datos": {
+    "lecturas": 3151581,
+    "eventos": 8936
+  },
+  "consultas": [
+    {
+      "consulta": 1,
+      "nombre": "Mediciones por sensor",
+      "filtros": {},
+      "entrada": "/smartcity/raw/mongo/lecturas.json",
+      "ruta_hdfs": "/smartcity/resultados/consulta_1_20261118T212833_0055f25b83/resultado",
+      "columnas": [
+        "id_sensor",
+        "cantidad"
+      ],
+      "aplicaciones_yarn": [
+        "application_1795036543890_0003"
+      ],
+      "segundos": 89.788,
+      "avisos": [],
+      "ok": true,
+      "numero_filas": 315,
+      "muestra": [
+        [
+          "S-00001",
+          23376
+        ],
+        [
+          "S-00002",
+          23376
+        ],
+        [
+          "S-00003",
+          23376
+        ]
+      ]
+    },
+    {
+      "consulta": 2,
+      "nombre": "Sensores con mas lecturas",
+      "filtros": {},
+      "entrada": "/smartcity/raw/mongo/lecturas.json",
+      "ruta_hdfs": "/smartcity/resultados/consulta_2_20261118T213008_d7b0198841/resultado",
+      "columnas": [
+        "id_sensor",
+        "cantidad"
+      ],
+      "aplicaciones_yarn": [
+        "application_1795036543890_0004",
+        "application_1795036543890_0005"
+      ],
+      "segundos": 100.118,
+      "avisos": [],
+      "ok": true,
+      "numero_filas": 40,
+      "muestra": [
+        [
+          "S-00001",
+          23376
+        ],
+        [
+          "S-00002",
+          23376
+        ],
+        [
+          "S-00003",
+          23376
+        ]
+      ]
+    },
+    {
+      "consulta": 3,
+      "nombre": "Temperatura promedio historica",
+      "filtros": {},
+      "entrada": "/smartcity/raw/mongo/lecturas.json",
+      "ruta_hdfs": "/smartcity/resultados/consulta_3_20261118T213153_e756bf7582/resultado",
+      "columnas": [
+        "variable",
+        "unidad",
+        "cantidad",
+        "promedio",
+        "minimo",
+        "maximo"
+      ],
+      "aplicaciones_yarn": [
+        "application_1795036543890_0006"
+      ],
+      "segundos": 57.64,
+      "avisos": [],
+      "ok": true,
+      "numero_filas": 1,
+      "muestra": [
+        [
+          "temperatura",
+          "C",
+          490896,
+          16.365812717968353,
+          -5.5,
+          40.8
+        ]
+      ]
+    },
+    {
+      "consulta": 4,
+      "nombre": "Eventos por distrito",
+      "filtros": {},
+      "entrada": "/smartcity/raw/mongo/eventos.json",
+      "ruta_hdfs": "/smartcity/resultados/consulta_4_20261118T213258_75ab8a4089/resultado",
+      "columnas": [
+        "distrito",
+        "cantidad"
+      ],
+      "aplicaciones_yarn": [
+        "application_1795036543890_0007"
+      ],
+      "segundos": 28.838,
+      "avisos": [],
+      "ok": true,
+      "numero_filas": 21,
+      "muestra": [
+        [
+          "Arganzuela",
+          292
+        ],
+        [
+          "Barajas",
+          376
+        ],
+        [
+          "Carabanchel",
+          1083
+        ]
+      ]
+    },
+    {
+      "consulta": 5,
+      "nombre": "Comportamiento diario de sensores en un periodo",
+      "filtros": {
+        "desde": "2026-07-01",
+        "hasta": "2026-08-01",
+        "variable": "temperatura"
+      },
+      "entrada": "/smartcity/raw/mongo/lecturas.json",
+      "ruta_hdfs": "/smartcity/resultados/consulta_5_20261118T213332_69db3f272d/resultado",
+      "columnas": [
+        "dia",
+        "id_sensor",
+        "variable",
+        "unidad",
+        "cantidad",
+        "promedio",
+        "minimo",
+        "maximo"
+      ],
+      "aplicaciones_yarn": [
+        "application_1795036543890_0008"
+      ],
+      "segundos": 93.392,
+      "avisos": [],
+      "ok": true,
+      "numero_filas": 651,
+      "muestra": [
+        [
+          "2026-07-01",
+          "S-00025",
+          "temperatura",
+          "C",
+          24,
+          30.058333333333334,
+          21.8,
+          37.2
+        ],
+        [
+          "2026-07-01",
+          "S-00029",
+          "temperatura",
+          "C",
+          24,
+          30.058333333333337,
+          21.8,
+          37.2
+        ],
+        [
+          "2026-07-01",
+          "S-00033",
+          "temperatura",
+          "C",
+          24,
+          30.058333333333337,
+          21.8,
+          37.2
+        ]
+      ]
+    }
+  ],
+  "aprobado": true
+}

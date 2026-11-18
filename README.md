@@ -29,7 +29,9 @@ servicios encendidos (`docker compose up -d`) y Compass.
 Despues de cargar MongoDB, pegar [indices.js](mongo/rendimiento/indices.js) en
 **Open MongoDB Shell** de Compass para crear los indices. Repetir tras cada recarga.
 
-Postgres queda en el puerto 5433 y Mongo en el 27017 (usuario y contraseña en `.env`).
+Postgres queda en el puerto 5433 y Mongo en `MONGO_PORT` (27017 por defecto;
+usuario y contraseña en `.env`). Si otra instancia local ocupa 27017, usar
+`MONGO_PORT=27018` y conectar Compass a ese puerto para consultar el Mongo de Docker.
 
 Medicion de rendimiento opcional (el benchmark de Mongo elimina y recrea indices; no es parte del uso diario): `python postgres/rendimiento/medir_pg.py` y `python mongo/rendimiento/medir_mongo.py`. Los resultados quedan en `docs/`.
 
@@ -43,7 +45,22 @@ Cada integrante guarda sus pipelines localmente; no aparecen automaticamente al 
 
 Consultar [estado y pendientes de Mongo](mongo/consultas/VERIFICACION.md) antes de dar por cerrado el avance.
 
-## Estructura
+## Sprint 2 — Sebastian
+
+Las cinco preguntas de Hadoop se ejecutan con MapReduce:
+`python hadoop/ejecutar_mapreduce.py 1` (IDs 1-5).
+La consulta 5 requiere `--desde 2026-07-01 --hasta 2026-08-01`.
+Preparacion, reglas y pruebas en [Hadoop](hadoop/README.md).
+
+Dashboard: `python -m streamlit run dashboard/app.py`, pestaña **Consultas por tecnologia**.
+Incluye las diez consultas PostgreSQL, diez MongoDB y cinco Hadoop. El catalogo y
+puente de Spark quedan preparados para las diez consultas de Luis; la interfaz
+indica explicitamente cuando aun falta su modulo.
+
+[Seccion tecnica y pendientes grupales](docs/sprint2_sebastian.md) ·
+[Atributos AF y AC](docs/atributos.md).
+
+## Estructura del repositorio
 
 | Carpeta | Contenido |
 | --- | --- |

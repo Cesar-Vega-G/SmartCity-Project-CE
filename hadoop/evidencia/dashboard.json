@@ -1,0 +1,13 @@
+{
+  "herramienta": "streamlit.testing.v1.AppTest",
+  "aprobado": true,
+  "comprobaciones": [
+    "arranque completo sin indicadores Spark",
+    "consultas solo por boton",
+    "PostgreSQL real: 324 sensores",
+    "MongoDB real: 100 lecturas",
+    "Hadoop: cinco opciones",
+    "resultado oculto al cambiar parametros",
+    "Spark: diez opciones y aviso de dependencia ausente"
+  ]
+}

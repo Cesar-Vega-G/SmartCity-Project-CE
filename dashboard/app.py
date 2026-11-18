@@ -1,6 +1,7 @@
 from datetime import date, datetime, timedelta
 
 import streamlit as st
+from psycopg.errors import UndefinedTable
 
 from conexiones import pg_df
 from secciones import consultas, detalle, graficos, indicadores
@@ -39,7 +40,10 @@ filtros = {
 # cada quien tiene su archivo en secciones/
 tab1, tab2, tab3, tab4 = st.tabs(["Indicadores", "Graficos", "Mapa y detalle", "Consultas por tecnologia"])
 with tab1:
-    indicadores.mostrar(filtros)
+    try:
+        indicadores.mostrar(filtros)
+    except UndefinedTable:
+        st.warning("Los indicadores de Spark todavia no estan preparados. La seccion Consultas por tecnologia sigue disponible.")
 with tab2:
     graficos.mostrar(filtros)
 with tab3:
